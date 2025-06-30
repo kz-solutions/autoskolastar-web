@@ -1,6 +1,26 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "StepsToGettingALicense": {
+      "title": "Steps to getting a <primary>driver's license</primary>",
+      "perex": "Follow the steps and successfully obtain your driving licence with STAR Driving School.",
+      "steps": [
+        {
+          "title": "Fill in the application",
+          "description": "Fill in the application form with your personal details and we will offer you a suitable date and form of tuition."
+        },
+        {
+          "title": "Theory & eTests",
+          "description": "Learn the rules of the road and practice them with eTests to prepare for your theory test."
+        },
+        {
+          "title": "Practical driving",
+          "description": "Gain driving experience under the supervision of professional instructors in real traffic and complex traffic situations."
+        },
+        {
+          "title": "Exams & License",
+          "description": "After completing theory and driving, we will register you for the test. Once you pass, you'll get your driver's license and can set off to pursue your dreams."
+        }
+      ]
+    }
   }
 }

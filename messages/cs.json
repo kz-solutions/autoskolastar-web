@@ -1,0 +1,26 @@
+{
+  "HomePage": {
+    "StepsToGettingALicense": {
+      "title": "Kroky k získání <primary>řidičského průkazu</primary>",
+      "perex": "Postupujte podle jednotlivých kroků a úspěšně získejte řidičský průkaz s Autoškolou STAR.",
+      "steps": [
+        {
+          "title": "Vyplnění přihlášky",
+          "description": "Vyplňte přihlášku s Vašimi osobními údaji a my Vám nabídneme vhodný termín i formu výuky."
+        },
+        {
+          "title": "Teorie & eTesty",
+          "description": "Seznamte se s pravidly silničního provozu a procvičujte si je pomocí eTestů pro přípravu na teoretickou zkoušku."
+        },
+        {
+          "title": "Praktické jízdy",
+          "description": "Získejte zkušenosti s řízením pod dohledem profesionálních  instruktorů v reálném provozu a spletitých dopravních situacích."
+        },
+        {
+          "title": "Zkoušky & Průkaz",
+          "description": "Po absolvování teorie a jízd Vás přihlásíme ke zkouškám. Po splnění získáte řidičský průkaz a můžete se vydat za svými sny."
+        }
+      ]
+    }
+  }
+}

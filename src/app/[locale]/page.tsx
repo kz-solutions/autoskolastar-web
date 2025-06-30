@@ -1,12 +1,9 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import StepsToGettingALicense from "@/components/sections/steps-to-getting-a-license/StepsToGettingALicense";
 
 export default function HomePage() {
-  const t = useTranslations("HomePage");
   return (
-    <div>
-      <h1>{t("title")}</h1>
-      <Link href="/about">{t("about")}</Link>
+    <div className={"w-screen flex flex-col items-center justify-center"}>
+      <StepsToGettingALicense />
     </div>
   );
 }
