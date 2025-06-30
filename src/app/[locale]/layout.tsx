@@ -1,4 +1,5 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import "@/app/globals.css";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Children } from "@/utils/types/Props";
