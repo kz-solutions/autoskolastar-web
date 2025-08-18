@@ -21,6 +21,58 @@
           "description": "After completing theory and driving, we will register you for the test. Once you pass, you'll get your driver's license and can set off to pursue your dreams."
         }
       ]
+    },
+    "BetterExperience": {
+      "slogan": "BETTER EXPERIENCE",
+      "title": "Why choose <primary>us?</primary>",
+      "description": "With us, you will not only learn to drive safely and confidently, but you will also enjoy the whole process. Thanks to clear instruction, patient instructors, and a supportive environment, you will master every step without unnecessary stress. We believe that quality preparation can also be a pleasant experience.",
+      "features": [
+        {
+          "number": "01",
+          "title": "Individual approach to everyone",
+          "description": "We realize that every student is different - some feel more confident behind the wheel, others need more time and support. We will adapt to your pace and find a teaching method that suits you. Our goal is not just to prepare you for exams, but mainly for real traffic."
+        },
+        {
+          "number": "02",
+          "title": "Experienced and patient instructors",
+          "description": "Our team consists of professionals with many years of experience who can remain calm in any situation. They explain everything clearly, without unnecessary stress or pressure. Thanks to their approach, you will feel safe and confident during training."
+        },
+        {
+          "number": "03",
+          "title": "Modern theory and online tools",
+          "description": "You can complete the theoretical part comfortably from home. You have access to online e-tests and well-organized study materials that will effectively prepare you for exams."
+        },
+        {
+          "number": "04",
+          "title": "Practical driving without stress",
+          "description": "From the very first moment behind the wheel to the final exam, you will practice in real traffic conditions with emphasis on your comfort and safety. The goal is to gain not only skills but also the confidence needed for independent driving."
+        },
+        {
+          "number": "05",
+          "title": "High success rate in exams",
+          "description": "Our thorough preparation is reflected in the results. The vast majority of our students successfully pass their exams on the first attempt. We know what to focus on and how to support you to get your license as quickly as possible."
+        }
+      ]
+    },
+    "ContactAndLocation": {
+      "accessibilitySlogan": "Easy accessibility for everyone",
+      "mainHeading": "We will pick you up on your way to getting a driver's license",
+      "description": "You don't have to worry about how you'll get to your lessons - we'll pick you up directly at a place that suits you. Choose from our pick-up points in Bílina and its surroundings and let us pamper you:",
+      "pickupLocations": [
+        "Bílina main train station",
+        "Bílina bus station",
+        "Kaufland parking lot (Sports area)",
+        "In front of Lidl entrance"
+      ],
+      "contactHeading": "CONTACT",
+      "contactSubheading": "LEAVE US YOUR CONTACT AND WE WILL GET BACK TO YOU",
+      "nameLabel": "YOUR NAME",
+      "namePlaceholder": "TOMÁŠ KLEMENT",
+      "contactLabel": "CONTACT",
+      "contactPlaceholder": "KZSOLUTIONS@INFO.COM / +420 735 070 337",
+      "submitButton": "SEND",
+      "mapPlaceholder": "BÍLINA",
+      "mapSubtext": "Map will be inserted here"
     }
   }
 }

@@ -53,38 +53,34 @@ body {
 
 /* Heading xl */
 .text-heading_xl {
-  @apply
-  text-[clamp(25px,_calc(25px+5vw), _96px)]
-  leading-[1.3]
-  font-bold
-  tracking-[var(--headline-letter-spacing)];
+  font-size: clamp(25px, calc(25px + 5vw), 96px);
+  line-height: 1.3;
+  font-weight: bold;
+  letter-spacing: var(--headline-letter-spacing);
 }
 
 /* Heading lg */
 .text-heading_lg {
-  @apply
-  text-[clamp(18px,_calc(18px+2.1vw), _48px)]
-  leading-[1.1]
-  font-bold
-  tracking-[var(--headline-letter-spacing)];
+  font-size: clamp(18px, calc(18px + 2.1vw), 48px);
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: var(--headline-letter-spacing);
 }
 
 /* Heading md */
 .text-heading_md {
-  @apply
-  text-[clamp(16px,_calc(16px+1.1vw), _32px)]
-  leading-[1.1]
-  font-bold
-  tracking-[var(--headline-letter-spacing)];
+  font-size: clamp(16px, calc(16px + 1.1vw), 32px);
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: var(--headline-letter-spacing);
 }
 
 /* Heading sm */
 .text-heading_sm {
-  @apply
-  text-[clamp(_14px,calc(14px+1vw), _28px)]
-  leading-[1.1]
-  font-bold
-  tracking-[var(--headline-letter-spacing)];
+  font-size: clamp(14px, calc(14px + 1vw), 28px);
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: var(--headline-letter-spacing);
 }
 
 /* BODY */

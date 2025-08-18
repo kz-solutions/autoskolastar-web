@@ -21,6 +21,58 @@
           "description": "Po absolvování teorie a jízd Vás přihlásíme ke zkouškám. Po splnění získáte řidičský průkaz a můžete se vydat za svými sny."
         }
       ]
+    },
+    "BetterExperience": {
+      "slogan": "LEPŠÍ ZKUŠENOST",
+      "title": "Proč si vybrat <primary>nás?</primary>",
+      "description": "S námi se nejen naučíte bezpečně a sebevědomě řídit, ale zároveň si celý proces užijete. Díky přehledné výuce, trpělivým instruktorům a podpůrnému prostředí zvládnete každý krok bez zbytečného stresu. Věříme, že kvalitní příprava může být zároveň příjemným zážitkem.",
+      "features": [
+        {
+          "number": "01",
+          "title": "Individuální přístup ke každému",
+          "description": "Uvědomujeme si, že každý student je jiný - někdo se cítí za volantem jistěji, jiný potřebuje více času a podpory. Přizpůsobíme se Vašemu tempu a najdeme způsob výuky, který Vám bude vyhovovat. Našim cílem není jen Vás připravit na zkoušky, ale hlavně na reálný provoz."
+        },
+        {
+          "number": "02",
+          "title": "Zkušení a trpěliví instruktoři",
+          "description": "Náš tým tvoří profesionálové s dlouholetou praxí, kteří umí zachovat klid v každé situaci. Vysvětlí vše srozumitelně, bez zbytečného stresu nebo nátlaku. Díky jejich přístupu se budete během výcviku cítit bezpečně a sebevědomě."
+        },
+        {
+          "number": "03",
+          "title": "Moderní teorie a online nástroje",
+          "description": "Teoretickou část můžete absolvovat pohodlně z domova. Máte přístup k online e-testům a přehledně zpracovaným studijním materiálům, které Vás efektivně připraví na zkoušky."
+        },
+        {
+          "number": "04",
+          "title": "Praktické jízdy bez stresu",
+          "description": "Od první chvíle za volantem až po finální zkoušku budete cvičit v reálném provozu s důrazem na Váš komfort a bezpečnost. Cílem je získat nejen dovednosti, ale i sebevědomí potřebné pro samostatnou jízdu."
+        },
+        {
+          "number": "05",
+          "title": "Vysoká úspěšnost u zkoušek",
+          "description": "Naše důkladná příprava se odráží ve výsledcích. Naprostá většina našich studentů úspěšně složí zkoušky na první pokus. Víme, na co se zaměřit a jak Vás podpořit, abyste získali řidičák co nejdříve."
+        }
+      ]
+    },
+    "ContactAndLocation": {
+      "accessibilitySlogan": "Snadná dostupnost pro každého",
+      "mainHeading": "Vyzvedneme vás na cestu za řidičákem",
+      "description": "Nemusíte řešit, jak se dostanete na své lekce - my vás vyzvedneme přímo na místě, které vám vyhovuje. Vyberte si z našich stanovišť v Bílině a okolí a nechte se hýčkat:",
+      "pickupLocations": [
+        "Železniční zastávka Bílina hl. n.",
+        "Autobusové nádraží Bílina",
+        "Parkoviště u Kauflandu (Sportovní areál)",
+        "Před vchodem do Lidlu"
+      ],
+      "contactHeading": "KONTAKT",
+      "contactSubheading": "ZANECHTE NÁM NA VÁS KONTAKT A MY SE OZVEME",
+      "nameLabel": "VAŠE JMÉNO",
+      "namePlaceholder": "TOMÁŠ KLEMENT",
+      "contactLabel": "KONTAKT",
+      "contactPlaceholder": "KZSOLUTIONS@INFO.COM / +420 735 070 337",
+      "submitButton": "ODESLAT",
+      "mapPlaceholder": "BÍLINA",
+      "mapSubtext": "Mapa bude vložena zde"
     }
   }
 }
