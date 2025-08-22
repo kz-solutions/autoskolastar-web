@@ -1,5 +1,51 @@
 {
   "HomePage": {
+    "LicenseCategories": {
+      "slogan": "WHAT WE OFFER",
+      "title": "Choose your <primary>dream</primary> driving license",
+      "subtitle": "Choose a course from our wide range to best suit your time and individual needs.",
+      "findOutMore": "Find out more",
+      "leftCategories": [
+        {
+          "title": "Buses",
+          "group": "group D",
+          "description": "The course prepares for driving buses with more than 8 passengers, includes theoretical preparation and practical driving in real traffic. A condition is meeting the legal age and health fitness for obtaining a driving license.",
+          "price": "Price from 16,990 CZK"
+        },
+        {
+          "title": "Truck combinations",
+          "group": "group C, C+E",
+          "description": "Group C training teaches how to drive vehicles over 3.5 tons, the C+E extension adds driving with a trailer over 750 kg; includes theory, maneuvering and driving in real traffic.",
+          "price": "Price from 16,990 CZK"
+        }
+      ],
+      "centerLeftCategory": {
+        "title": "Motorcycles",
+        "group": "group A",
+        "description": "We offer complete motorcycle training for groups AM, A1, A2 and A: from 15 years for AM, 16 years for A1, 18 years for A2 and 24 years (or after 2 years of holding A2) for A. It includes theoretical and practical training on the training ground and in road traffic. Supplementary exams A1→A2 and A2→A are provided, additional conditional rides can be purchased. A condition is health fitness and a valid application for training.",
+        "price": "Price from 16,990 CZK"
+        },
+      "centerRightCategory": {
+        "title": "Buses",
+        "group": "group B",
+        "description": "Entitles to drive motor vehicles up to a total weight of 3.5 tons and a maximum of 8 passengers plus the driver (possibly with a trailer up to 750 kg, if the total weight of the driving set does not exceed 3.5 tons). It also entitles to drive tractors and self-propelled working machines with a maximum permissible weight of up to 3.5 tons.",
+        "price": "Price from 16,990 CZK"
+        },
+      "rightCategories": [
+        {
+          "title": "Tractors",
+          "group": "group T",
+          "description": "The Group T course prepares you for driving self-propelled working machines with a maximum speed of 40 km/h, including off-road and road driving. It requires reaching the specified age, medical fitness, and successful completion of exams.",
+          "price": "Price from 16,990 CZK"
+        },
+        {
+          "title": "Driver training",
+          "group": "",
+          "description": "Professional training for professional drivers includes basic and periodic courses focused on safety, legislation, and operation of a digital tachograph. It is intended for holders of the relevant driving license and requires valid medical fitness according to regulations.",
+          "price": "Price from 16,990 CZK"
+        }
+      ]
+    },
     "StepsToGettingALicense": {
       "title": "Steps to getting a <primary>driver's license</primary>",
       "perex": "Follow the steps and successfully obtain your driving licence with STAR Driving School.",
@@ -71,8 +117,43 @@
       "contactLabel": "CONTACT",
       "contactPlaceholder": "KZSOLUTIONS@INFO.COM / +420 735 070 337",
       "submitButton": "SEND",
-      "mapPlaceholder": "BÍLINA",
-      "mapSubtext": "Map will be inserted here"
-    }
-  }
-}
+             "mapPlaceholder": "BÍLINA",
+       "mapSubtext": "Map will be inserted here"
+     },
+     "Footer": {
+       "companyDescription": "Professional driving school with long tradition in Bílina and surroundings. We specialize in quality driving instruction for all vehicle categories with an individual approach to each student.",
+       "email": "info@autoskolastar.cz",
+       "phone": "+420 735 070 337",
+       "address": "Bílina, Czech Republic",
+       "quickLinks": "Quick Links",
+       "drivingLicenses": "Driving Licenses",
+       "howToGetLicense": "How to Get License",
+       "whyChooseUs": "Why Choose Us",
+       "contact": "Contact",
+       "services": "Services",
+       "pricing": "Pricing",
+       "theoryCourses": "Theory Courses",
+       "practicalDriving": "Practical Driving",
+       "exams": "Exams",
+       "support": "Support",
+       "faq": "FAQ",
+       "help": "Help",
+       "privacyPolicy": "Privacy Policy",
+       "termsOfService": "Terms of Service",
+       "allRightsReserved": "All rights reserved"
+     },
+     "Header": {
+       "home": "Home",
+       "services": "Services",
+       "contact": "Contact",
+       "about": "About",
+       "getStarted": "Get Started"
+     },
+     "Hero": {
+       "mainHeading": "Driving easily and quickly",
+       "locations": "BÍLINA – MOST – LITVÍNOV",
+       "description": "We will teach you to drive from scratch, in a friendly team and at a fair price. At Autoškola Star, we will prepare you for final exams, whether you are a complete beginner or a professional driver.",
+       "ctaButton": "I am interested"
+     }
+   }
+ }

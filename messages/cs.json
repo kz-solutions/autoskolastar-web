@@ -1,5 +1,51 @@
 {
   "HomePage": {
+    "LicenseCategories": {
+      "slogan": "CO NABÍZÍME",
+      "title": "Vyberte si váš <primary>vysněný</primary> řidičský průkaz",
+      "subtitle": "Zvolte si kurz z naší široké nabídky tak, aby co nejlépe odpovídal Vašim časovým možnostem i individuálním potřebám.",
+      "findOutMore": "Zjistit více",
+      "leftCategories": [
+        {
+          "title": "Autobusy",
+          "group": "skupina D",
+          "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
+          "price": "Cena od 16 990 Kč"
+        },
+        {
+          "title": "Nákladní soupravy",
+          "group": "skupina C, C+E",
+          "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
+          "price": "Cena od 16 990 Kč"
+        }
+      ],
+      "centerLeftCategory": {
+        "title": "Motorky",
+        "group": "skupina A",
+        "description": "Nabízíme kompletní výuku motocyklových skupin AM, A1, A2 a A: od 15 let pro AM, 16 let pro A1, 18 let pro A2 a 24 let (nebo po 2 letech držení A2) pro A. Součástí je teoretická i praktická příprava na cvičišti i v silničním provozu. Doplňovací zkoušky A1→A2 a A2→A jsou zajištěny, další kondiční jízdy je možné dokoupit. Podmínkou je zdravotní způsobilost a platná přihláška k výcviku.",
+        "price": "Cena od 16 990 Kč"
+      },
+      "centerRightCategory": {
+        "title": "Autobusy",
+        "group": "skupina B",
+        "description": "Opravňuje k řízení motorových vozidel do celkové hmotnosti 3,5 tuny a max. počtu 8 pasažérů plus řidič (případně s přívěsem do 750 kg, pokud celková hmotnost jízdní soupravy nepřekročí 3,5 tuny). Dále opravňuje k řízení traktorů a samojízdných pracovních strojů o maximální přípustné hmotnosti do 3,5 tuny.",
+        "price": "Cena od 16 990 Kč"
+      },
+      "rightCategories": [
+        {
+          "title": "Traktory",
+          "group": "skupina T",
+          "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
+          "price": "Cena od 16 990 Kč"
+        },
+        {
+          "title": "Školení řidičů",
+          "group": "",
+          "description": "Odborné školení pro profesionální řidiče zahrnuje základní i periodické kurzy zaměřené na bezpečnost, legislativu a obsluhu digitálního tachografu. Je určeno držitelům příslušného řidičského průkazu a vyžaduje platnou lékařskou způsobilost dle předpisů.",
+          "price": "Cena od 16 990 Kč"
+        }
+      ]
+    },
     "StepsToGettingALicense": {
       "title": "Kroky k získání <primary>řidičského průkazu</primary>",
       "perex": "Postupujte podle jednotlivých kroků a úspěšně získejte řidičský průkaz s Autoškolou STAR.",
@@ -71,8 +117,43 @@
       "contactLabel": "KONTAKT",
       "contactPlaceholder": "KZSOLUTIONS@INFO.COM / +420 735 070 337",
       "submitButton": "ODESLAT",
-      "mapPlaceholder": "BÍLINA",
-      "mapSubtext": "Mapa bude vložena zde"
-    }
-  }
-}
+             "mapPlaceholder": "BÍLINA",
+       "mapSubtext": "Mapa bude vložena zde"
+     },
+     "Footer": {
+       "companyDescription": "Profesionální autoškola s dlouholetou tradicí v Bílině a okolí. Specializujeme se na kvalitní výuku řízení všech kategorií vozidel s individuálním přístupem ke každému studentovi.",
+       "email": "info@autoskolastar.cz",
+       "phone": "+420 735 070 337",
+       "address": "Bílina, Česká republika",
+       "quickLinks": "Rychlé odkazy",
+       "drivingLicenses": "Řidičské průkazy",
+       "howToGetLicense": "Jak získat průkaz",
+       "whyChooseUs": "Proč si vybrat nás",
+       "contact": "Kontakt",
+       "services": "Služby",
+       "pricing": "Ceník",
+       "theoryCourses": "Teoretické kurzy",
+       "practicalDriving": "Praktické jízdy",
+       "exams": "Zkoušky",
+       "support": "Podpora",
+       "faq": "Často kladené otázky",
+       "help": "Nápověda",
+       "privacyPolicy": "Ochrana osobních údajů",
+       "termsOfService": "Obchodní podmínky",
+       "allRightsReserved": "Všechna práva vyhrazena"
+     },
+     "Header": {
+       "home": "Úvod",
+       "services": "Služby",
+       "contact": "Kontakt",
+       "about": "O nás",
+       "getStarted": "Začít"
+     },
+     "Hero": {
+       "mainHeading": "Řízení snadno a rychle",
+       "locations": "BÍLINA – MOST – LITVÍNOV",
+       "description": "Naučíme vás řídit od základů, v přátelském kolektivu a za férovou cenu. V Autoškole Star vás přípravíme na závěrečné zkoušky ať už jste úplný začátečník, nebo profesionální řidič.",
+       "ctaButton": "Mám zájem"
+     }
+   }
+ }

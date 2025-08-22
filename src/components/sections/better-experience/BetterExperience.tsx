@@ -8,7 +8,7 @@ const BetterExperience = () => {
   const t = useTranslations("HomePage.BetterExperience");
 
   return (
-    <section className="bg-[#181D27] px-12 py-32">
+    <section className="bg-[#181D27] px-4 sm:px-6 lg:px-12 py-32">
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
         <header className="text-center mb-24">
