@@ -2,6 +2,11 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Hero = () => {
   const t = useTranslations("HomePage.Hero");

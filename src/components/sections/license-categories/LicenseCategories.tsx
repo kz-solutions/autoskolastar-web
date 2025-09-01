@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
+import Label from "@/components/core/Label";
 
 interface Category {
   title: string;
@@ -15,8 +16,8 @@ const LicenseCategories = () => {
   const t = useTranslations("HomePage.LicenseCategories");
 
   return (
-         <section className="bg-white px-4 sm:px-6 lg:px-12 py-32">
-       <div className="max-w-[1320px] mx-auto w-full">
+    <section className="bg-white px-4 sm:px-6 lg:px-12 py-32">
+      <div className="max-w-[1320px] mx-auto w-full">
         {/* Header Section */}
         <header className="text-center mb-24">
           {/* Mobile */}
@@ -29,25 +30,10 @@ const LicenseCategories = () => {
               <StarIcon className="text-primary-500 w-4 h-4" />
             </div>
           </div>
-          
+
           {/* Desktop */}
-          <div className="hidden lg:block relative w-full mb-6">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4">
-              <StarIcon className="text-primary-500 w-6 h-6" />
-            </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4">
-              <StarIcon className="text-primary-500 w-6 h-6" />
-            </div>
-            
-            <div className="flex items-center justify-center">
-              <div className="w-64 lg:w-96 h-0.5 bg-primary-500 opacity-20"></div>
-              <span className="text-sm text-primary-500 uppercase tracking-widest mx-8 lg:mx-16">
-                {t("slogan")}
-              </span>
-              <div className="w-64 lg:w-96 h-0.5 bg-primary-500 opacity-20"></div>
-            </div>
-          </div>
-          
+          <Label text={t("slogan")} />
+
           <h1 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-6 sm:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
@@ -55,7 +41,7 @@ const LicenseCategories = () => {
               ),
             })}
           </h1>
-          
+
           <p className="text-base sm:text-lg text-neutral-600 max-w-4xl mx-auto leading-relaxed px-4">
             {t("subtitle")}
           </p>
@@ -65,11 +51,8 @@ const LicenseCategories = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* Left side - 2 cards */}
           <div className="lg:col-span-3 space-y-6">
-            {t.raw("leftCategories").map((category: Category, index: number) => (
-              <div
-                key={category.title}
-                className=" px-5 py-8 flex flex-col"
-              >
+            {t.raw("leftCategories").map((category: Category) => (
+              <div key={category.title} className=" px-5 py-8 flex flex-col">
                 <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 flex items-center justify-center">
                   <div className="text-neutral-400 text-center px-4">
                     <div className="text-sm font-medium mb-1">Image</div>
@@ -103,8 +86,13 @@ const LicenseCategories = () => {
                 </div>
               </div>
               <h3 className="text-heading_sm text-neutral-800 mb-2">
-                <span className="font-bold">{t("centerLeftCategory.title")}</span>
-                <span className="font-normal"> {t("centerLeftCategory.group")}</span>
+                <span className="font-bold">
+                  {t("centerLeftCategory.title")}
+                </span>
+                <span className="font-normal">
+                  {" "}
+                  {t("centerLeftCategory.group")}
+                </span>
               </h3>
               <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
                 {t("centerLeftCategory.description")}
@@ -128,8 +116,13 @@ const LicenseCategories = () => {
                 </div>
               </div>
               <h3 className="text-heading_sm text-neutral-800 mb-2">
-                <span className="font-bold">{t("centerRightCategory.title")}</span>
-                <span className="font-normal"> {t("centerRightCategory.group")}</span>
+                <span className="font-bold">
+                  {t("centerRightCategory.title")}
+                </span>
+                <span className="font-normal">
+                  {" "}
+                  {t("centerRightCategory.group")}
+                </span>
               </h3>
               <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
                 {t("centerRightCategory.description")}
@@ -145,11 +138,8 @@ const LicenseCategories = () => {
 
           {/* Right side - 2 cards */}
           <div className="lg:col-span-3 space-y-6">
-            {t.raw("rightCategories").map((category: Category, index: number) => (
-              <div
-                key={category.title}
-                className="p-6 flex flex-col"
-              >
+            {t.raw("rightCategories").map((category: Category) => (
+              <div key={category.title} className="p-6 flex flex-col">
                 <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 flex items-center justify-center">
                   <div className="text-neutral-400 text-center px-4">
                     <div className="text-sm font-medium mb-1">Image</div>
