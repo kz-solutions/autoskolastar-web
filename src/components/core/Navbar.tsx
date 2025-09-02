@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LangSwitch from "@/components/core/LangSwitch";
+import { Link } from "@/i18n/navigation";
 
 const Navbar = () => {
   const t = useTranslations("HomePage.Header");
@@ -107,12 +108,12 @@ const Navbar = () => {
         <div className="w-full px-4 sm:px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
               <StarIcon className="text-primary-500 w-8 h-8" />
               <span className="text-2xl font-bold text-neutral-800">
                 Autoškola STAR
               </span>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">

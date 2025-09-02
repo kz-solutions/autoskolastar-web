@@ -10,39 +10,45 @@
           "title": "Autobusy",
           "group": "skupina D",
           "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
-          "price": "Cena od 16 990 Kč"
+          "price": "Cena od 42 990 Kč",
+          "href": "/ridicak/d"
         },
         {
           "title": "Nákladní soupravy",
           "group": "skupina C, C+E",
           "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
-          "price": "Cena od 16 990 Kč"
+          "price": "Cena od 35 990 Kč",
+          "href": "/ridicak/c"
         }
       ],
       "centerLeftCategory": {
         "title": "Motorky",
         "group": "skupina A",
         "description": "Nabízíme kompletní výuku motocyklových skupin AM, A1, A2 a A: od 15 let pro AM, 16 let pro A1, 18 let pro A2 a 24 let (nebo po 2 letech držení A2) pro A. Součástí je teoretická i praktická příprava na cvičišti i v silničním provozu. Doplňovací zkoušky A1→A2 a A2→A jsou zajištěny, další kondiční jízdy je možné dokoupit. Podmínkou je zdravotní způsobilost a platná přihláška k výcviku.",
-        "price": "Cena od 16 990 Kč"
+        "price": "Cena od 25 990 Kč",
+        "href": "/ridicak/a"
       },
       "centerRightCategory": {
         "title": "Autobusy",
         "group": "skupina B",
         "description": "Opravňuje k řízení motorových vozidel do celkové hmotnosti 3,5 tuny a max. počtu 8 pasažérů plus řidič (případně s přívěsem do 750 kg, pokud celková hmotnost jízdní soupravy nepřekročí 3,5 tuny). Dále opravňuje k řízení traktorů a samojízdných pracovních strojů o maximální přípustné hmotnosti do 3,5 tuny.",
-        "price": "Cena od 16 990 Kč"
+        "price": "Cena od 21 990 Kč",
+        "href": "/ridicak/b"
       },
       "rightCategories": [
         {
           "title": "Traktory",
           "group": "skupina T",
           "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
-          "price": "Cena od 16 990 Kč"
+          "price": "Cena od 18 990 Kč",
+          "href": "/ridicak/t"
         },
         {
           "title": "Školení řidičů",
           "group": "",
           "description": "Odborné školení pro profesionální řidiče zahrnuje základní i periodické kurzy zaměřené na bezpečnost, legislativu a obsluhu digitálního tachografu. Je určeno držitelům příslušného řidičského průkazu a vyžaduje platnou lékařskou způsobilost dle předpisů.",
-          "price": "Cena od 16 990 Kč"
+          "price": "Cena od 2 990 Kč",
+          "href": "/skoleni-ridicu"
         }
       ]
     },
@@ -126,17 +132,19 @@
        "phone": "+420 735 070 337",
        "address": "Bílina, Česká republika",
        "quickLinks": "Rychlé odkazy",
+       "home": "Domů",
        "drivingLicenses": "Řidičské průkazy",
        "howToGetLicense": "Jak získat průkaz",
        "whyChooseUs": "Proč si vybrat nás",
        "contact": "Kontakt",
        "services": "Služby",
+       "licenseCategoryB": "Řidičák skupiny B",
        "pricing": "Ceník",
+       "faq": "Často kladené otázky",
        "theoryCourses": "Teoretické kurzy",
        "practicalDriving": "Praktické jízdy",
        "exams": "Zkoušky",
        "support": "Podpora",
-       "faq": "Často kladené otázky",
        "help": "Nápověda",
        "privacyPolicy": "Ochrana osobních údajů",
        "termsOfService": "Obchodní podmínky",
@@ -153,7 +161,270 @@
        "mainHeading": "Řízení snadno a rychle",
        "locations": "BÍLINA – MOST – LITVÍNOV",
        "description": "Naučíme vás řídit od základů, v přátelském kolektivu a za férovou cenu. V Autoškole Star vás přípravíme na závěrečné zkoušky ať už jste úplný začátečník, nebo profesionální řidič.",
-       "ctaButton": "Mám zájem"
-     }
-   }
- }
+             "ctaButton": "Mám zájem"
+    }
+  },
+  "LicensePage": {
+    "B": {
+      "title": "Řidičský průkaz skupiny B",
+      "description": "Získejte řidičský průkaz skupiny B a otevřete si cestu k svobodě a nezávislosti. Naše komplexní výuka kombinuje moderní teoretické přístupy s praktickými jízdami v reálném provozu, aby vás připravila na bezpečné a sebevědomé řízení.",
+      "courseDetails": {
+        "title": "Podrobnosti o kurzu",
+        "duration": {
+          "label": "Délka kurzu",
+          "value": "2-3 měsíce"
+        },
+        "vehicles": {
+          "label": "Minimální věk",
+          "value": "18 let"
+        },
+        "certification": {
+          "label": "Zahrnuje",
+          "value": "Teorie + praktické jízdy"
+        },
+        "price": {
+          "label": "Cena",
+          "value": "21 990 Kč"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Výcviková vozidla",
+        "sedan": {
+          "title": "Škoda Octavia",
+          "description": "Prostorný sedan s výbornou viditelností a moderním vybavením pro pohodlnou výuku."
+        },
+        "hatchback": {
+          "title": "Ford Focus",
+          "description": "Kompaktní hatchback s citlivým řízením a pokročilými bezpečnostními systémy."
+        },
+        "suv": {
+          "title": "Škoda Karoq",
+          "description": "Vyšší posez a skvělý výhled na silnici pro sebevědomé řízení v městském provozu."
+        }
+      },
+      "enrollButton": "Přihlásit se ke kurzu"
+    },
+    "A": {
+      "title": "Řidičský průkaz skupiny A",
+      "description": "Získejte oprávnění k řízení motocyklů bez omezení výkonu. Naše profesionální výuka vás připraví na bezpečné ovládání výkonných motocyklů v městském i mimoměstském provozu.",
+      "courseDetails": {
+        "title": "Podrobnosti o kurzu",
+        "duration": {
+          "label": "Délka kurzu",
+          "value": "1-2 měsíce"
+        },
+        "vehicles": {
+          "label": "Minimální věk",
+          "value": "24 let (nebo 20 s A2)"
+        },
+        "certification": {
+          "label": "Předpoklady",
+          "value": "Zdravotní způsobilost"
+        },
+        "price": {
+          "label": "Cena",
+          "value": "25 990 Kč"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Výcviková vozidla",
+        "sport": {
+          "title": "Honda CB 650F",
+          "description": "Sportovní motocykl s vyváženými jízdními vlastnostmi, ideální pro výuku pokročilých technik."
+        },
+        "naked": {
+          "title": "Yamaha MT-07",
+          "description": "Naked bike s výbornou ovladatelností a ergonomií pro pohodlnou výuku."
+        },
+        "touring": {
+          "title": "BMW F 800 GT",
+          "description": "Touring motocykl s pokročilými bezpečnostními systémy pro výuku na dálnicích."
+        }
+      },
+      "enrollButton": "Přihlásit se ke kurzu"
+    },
+    "C": {
+      "title": "Řidičský průkaz skupiny C",
+      "description": "Staňte se profesionálním řidičem nákladních vozidel. Komplexní výuka zahrnuje teorii i praxi řízení vozidel nad 3,5 tuny včetně manipulace s nákladem a bezpečnostních předpisů.",
+      "courseDetails": {
+        "title": "Podrobnosti o kurzu",
+        "duration": {
+          "label": "Délka kurzu",
+          "value": "3-4 měsíce"
+        },
+        "vehicles": {
+          "label": "Minimální věk",
+          "value": "21 let"
+        },
+        "certification": {
+          "label": "Předpoklady",
+          "value": "Řidičák B + zdravotní"
+        },
+        "price": {
+          "label": "Cena",
+          "value": "35 990 Kč"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Výcviková vozidla",
+        "medium": {
+          "title": "MAN TGL 8.180",
+          "description": "Středně těžký nákladní vůz s moderním vybavením pro základní výuku."
+        },
+        "box": {
+          "title": "Iveco Eurocargo",
+          "description": "Skříňové vozidlo ideální pro výuku manipulace s nákladem a parkování."
+        },
+        "flatbed": {
+          "title": "Mercedes Atego",
+          "description": "Valník s hydraulickou rukou pro výuku nakládky a vázání nákladu."
+        }
+      },
+      "enrollButton": "Přihlásit se ke kurzu"
+    },
+    "D": {
+      "title": "Řidičský průkaz skupiny D",
+      "description": "Získejte oprávnění k řízení autobusů a velkoobjemových vozidel pro přepravu osob. Profesionální příprava na odpovědnou práci v osobní dopravě.",
+      "courseDetails": {
+        "title": "Podrobnosti o kurzu",
+        "duration": {
+          "label": "Délka kurzu",
+          "value": "4-5 měsíců"
+        },
+        "vehicles": {
+          "label": "Minimální věk",
+          "value": "24 let"
+        },
+        "certification": {
+          "label": "Předpoklady",
+          "value": "Řidičák B + zdravotní"
+        },
+        "price": {
+          "label": "Cena",
+          "value": "42 990 Kč"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Výcviková vozidla",
+        "city": {
+          "title": "Mercedes Citaro",
+          "description": "Městský autobus s nízkopodlažním designem pro výuku v městském provozu."
+        },
+        "intercity": {
+          "title": "Iveco Crossway",
+          "description": "Meziměstský autobus s komfortním vybavením pro výuku na delších trasách."
+        },
+        "minibus": {
+          "title": "Mercedes Sprinter",
+          "description": "Mikrobus pro základní výuku a získání prvních zkušeností s přepravou osob."
+        }
+      },
+      "enrollButton": "Přihlásit se ke kurzu"
+    },
+    "T": {
+      "title": "Řidičský průkaz skupiny T",
+      "description": "Získejte oprávnění k řízení traktorů a samojízdných pracovních strojů. Ideální pro práci v zemědělství, lesnictví nebo stavebnictví.",
+      "courseDetails": {
+        "title": "Podrobnosti o kurzu",
+        "duration": {
+          "label": "Délka kurzu",
+          "value": "1 měsíc"
+        },
+        "vehicles": {
+          "label": "Minimální věk",
+          "value": "17 let"
+        },
+        "certification": {
+          "label": "Zahrnuje",
+          "value": "Teorie + praktický výcvik"
+        },
+        "price": {
+          "label": "Cena",
+          "value": "18 990 Kč"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Výcviková vozidla",
+        "agricultural": {
+          "title": "John Deere 6120M",
+          "description": "Moderní zemědělský traktor s GPS navigací a automatickým řízením."
+        },
+        "construction": {
+          "title": "Case IH Puma",
+          "description": "Univerzální traktor vhodný pro zemědělské i stavební práce."
+        },
+        "forestry": {
+          "title": "Fendt 724 Vario",
+          "description": "Lesní traktor s posilovačem řízení pro práci v těžkém terénu."
+        }
+      },
+      "enrollButton": "Přihlásit se ke kurzu"
+    }
+  },
+  "DriverTrainingPage": {
+    "title": "Školení řidičů",
+    "description": "Odborné školení pro profesionální řidiče a řidiče referenty. Zajistěte bezpečnost na silnicích a splňte zákonné požadavky s naším certifikovaným školením.",
+    "trainingTypes": {
+      "title": "Typy školení",
+      "referent": {
+        "label": "Školení řidičů referentů",
+        "description": "Pro zaměstnance řídící služební vozidla do 3,5t. Zákonná povinnost dle zákoníku práce. Opakování každé 2 roky.",
+        "price": "2 990 Kč"
+      },
+      "professional": {
+        "label": "Školení profesionálních řidičů",
+        "description": "Pro řidiče z povolání - základní a periodické kurzy zaměřené na bezpečnost a legislativu.",
+        "price": "4 990 Kč"
+      }
+    },
+    "content": {
+      "title": "Obsah školení",
+      "items": [
+        {
+          "title": "Pravidla silničního provozu",
+          "description": "Aktuální legislativa a dopravní předpisy platné v ČR."
+        },
+        {
+          "title": "Zásady bezpečné jízdy",
+          "description": "Techniky defenzivního řízení a prevence dopravních nehod."
+        },
+        {
+          "title": "Řešení krizových situací",
+          "description": "Postupy při nehodách a mimořádných událostech na silnici."
+        },
+        {
+          "title": "Povinná výbava vozidla",
+          "description": "Seznámení s povinnou výbavou a její správné použití."
+        },
+        {
+          "title": "Zdravotní způsobilost",
+          "description": "Důležitost fyzické a psychické kondice pro bezpečné řízení."
+        },
+        {
+          "title": "Digitální tachograf",
+          "description": "Obsluha a používání digitálního tachografu pro profesionální řidiče."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Výhody školení",
+      "employer": {
+        "title": "Pro zaměstnavatele",
+        "items": {
+          "0": "Snížení rizika dopravních nehod a škod na majetku",
+          "1": "Zajištění souladu s platnou legislativou",
+          "2": "Zvýšení bezpečnostní kultury ve firmě"
+        }
+      },
+      "employee": {
+        "title": "Pro zaměstnance",
+        "items": {
+          "0": "Zvýšení bezpečnosti a sebevědomí za volantem",
+          "1": "Osvojení defenzivních technik řízení",
+          "2": "Získání certifikátu o absolvování školení"
+        }
+      }
+    },
+    "contactButton": "Kontaktovat nás"
+  }
+}

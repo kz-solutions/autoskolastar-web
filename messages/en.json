@@ -10,39 +10,45 @@
           "title": "Buses",
           "group": "group D",
           "description": "The course prepares for driving buses with more than 8 passengers, includes theoretical preparation and practical driving in real traffic. A condition is meeting the legal age and health fitness for obtaining a driving license.",
-          "price": "Price from 16,990 CZK"
+          "price": "Price from 42,990 CZK",
+          "href": "/ridicak/d"
         },
         {
           "title": "Truck combinations",
           "group": "group C, C+E",
           "description": "Group C training teaches how to drive vehicles over 3.5 tons, the C+E extension adds driving with a trailer over 750 kg; includes theory, maneuvering and driving in real traffic.",
-          "price": "Price from 16,990 CZK"
+          "price": "Price from 42,990 CZK",
+          "href": "/ridicak/c"
         }
       ],
       "centerLeftCategory": {
         "title": "Motorcycles",
         "group": "group A",
         "description": "We offer complete motorcycle training for groups AM, A1, A2 and A: from 15 years for AM, 16 years for A1, 18 years for A2 and 24 years (or after 2 years of holding A2) for A. It includes theoretical and practical training on the training ground and in road traffic. Supplementary exams A1→A2 and A2→A are provided, additional conditional rides can be purchased. A condition is health fitness and a valid application for training.",
-        "price": "Price from 16,990 CZK"
+        "price": "Price from 16,990 CZK",
+        "href": "/ridicak/a"
         },
       "centerRightCategory": {
         "title": "Buses",
         "group": "group B",
         "description": "Entitles to drive motor vehicles up to a total weight of 3.5 tons and a maximum of 8 passengers plus the driver (possibly with a trailer up to 750 kg, if the total weight of the driving set does not exceed 3.5 tons). It also entitles to drive tractors and self-propelled working machines with a maximum permissible weight of up to 3.5 tons.",
-        "price": "Price from 16,990 CZK"
+        "price": "Price from 16,990 CZK",
+        "href": "/ridicak/b"
         },
       "rightCategories": [
         {
           "title": "Tractors",
           "group": "group T",
           "description": "The Group T course prepares you for driving self-propelled working machines with a maximum speed of 40 km/h, including off-road and road driving. It requires reaching the specified age, medical fitness, and successful completion of exams.",
-          "price": "Price from 16,990 CZK"
+          "price": "Price from 42,990 CZK",
+          "href": "/ridicak/t"
         },
         {
           "title": "Driver training",
           "group": "",
           "description": "Professional training for professional drivers includes basic and periodic courses focused on safety, legislation, and operation of a digital tachograph. It is intended for holders of the relevant driving license and requires valid medical fitness according to regulations.",
-          "price": "Price from 16,990 CZK"
+          "price": "Price from 42,990 CZK",
+          "href": "/skoleni-ridicu"
         }
       ]
     },
@@ -126,17 +132,19 @@
        "phone": "+420 735 070 337",
        "address": "Bílina, Czech Republic",
        "quickLinks": "Quick Links",
+       "home": "Home",
        "drivingLicenses": "Driving Licenses",
        "howToGetLicense": "How to Get License",
        "whyChooseUs": "Why Choose Us",
        "contact": "Contact",
        "services": "Services",
+       "licenseCategoryB": "Category B License",
        "pricing": "Pricing",
+       "faq": "FAQ",
        "theoryCourses": "Theory Courses",
        "practicalDriving": "Practical Driving",
        "exams": "Exams",
        "support": "Support",
-       "faq": "FAQ",
        "help": "Help",
        "privacyPolicy": "Privacy Policy",
        "termsOfService": "Terms of Service",
@@ -153,7 +161,270 @@
        "mainHeading": "Driving easily and quickly",
        "locations": "BÍLINA – MOST – LITVÍNOV",
        "description": "We will teach you to drive from scratch, in a friendly team and at a fair price. At Autoškola Star, we will prepare you for final exams, whether you are a complete beginner or a professional driver.",
-       "ctaButton": "I am interested"
-     }
-   }
- }
+             "ctaButton": "I am interested"
+    }
+  },
+  "LicensePage": {
+    "B": {
+      "title": "Category B Driving License",
+      "description": "Get your Category B driving license and open the path to freedom and independence. Our comprehensive training combines modern theoretical approaches with practical driving in real traffic to prepare you for safe and confident driving.",
+      "courseDetails": {
+        "title": "Course Details",
+        "duration": {
+          "label": "Course Duration",
+          "value": "2-3 months"
+        },
+        "vehicles": {
+          "label": "Minimum Age",
+          "value": "18 years"
+        },
+        "certification": {
+          "label": "Includes",
+          "value": "Theory + practical driving"
+        },
+        "price": {
+          "label": "Price",
+          "value": "21,990 CZK"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Training Vehicles",
+        "sedan": {
+          "title": "Škoda Octavia",
+          "description": "Spacious sedan with excellent visibility and modern equipment for comfortable training."
+        },
+        "hatchback": {
+          "title": "Ford Focus",
+          "description": "Compact hatchback with responsive steering and advanced safety systems."
+        },
+        "suv": {
+          "title": "Škoda Karoq",
+          "description": "Higher seating position and great road view for confident driving in city traffic."
+        }
+      },
+      "enrollButton": "Enroll in Course"
+    },
+    "A": {
+      "title": "Category A Driving License",
+      "description": "Get authorization to ride motorcycles without power restrictions. Our professional training prepares you for safe operation of powerful motorcycles in urban and highway traffic.",
+      "courseDetails": {
+        "title": "Course Details",
+        "duration": {
+          "label": "Course Duration",
+          "value": "1-2 months"
+        },
+        "vehicles": {
+          "label": "Minimum Age",
+          "value": "24 years (or 20 with A2)"
+        },
+        "certification": {
+          "label": "Requirements",
+          "value": "Medical fitness"
+        },
+        "price": {
+          "label": "Price",
+          "value": "25,990 CZK"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Training Vehicles",
+        "sport": {
+          "title": "Honda CB 650F",
+          "description": "Sport motorcycle with balanced riding characteristics, ideal for advanced technique training."
+        },
+        "naked": {
+          "title": "Yamaha MT-07",
+          "description": "Naked bike with excellent handling and ergonomics for comfortable training."
+        },
+        "touring": {
+          "title": "BMW F 800 GT",
+          "description": "Touring motorcycle with advanced safety systems for highway training."
+        }
+      },
+      "enrollButton": "Enroll in Course"
+    },
+    "C": {
+      "title": "Category C Driving License",
+      "description": "Become a professional truck driver. Comprehensive training includes theory and practice of driving vehicles over 3.5 tons, including cargo handling and safety regulations.",
+      "courseDetails": {
+        "title": "Course Details",
+        "duration": {
+          "label": "Course Duration",
+          "value": "3-4 months"
+        },
+        "vehicles": {
+          "label": "Minimum Age",
+          "value": "21 years"
+        },
+        "certification": {
+          "label": "Requirements",
+          "value": "License B + medical"
+        },
+        "price": {
+          "label": "Price",
+          "value": "35,990 CZK"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Training Vehicles",
+        "medium": {
+          "title": "MAN TGL 8.180",
+          "description": "Medium-duty truck with modern equipment for basic training."
+        },
+        "box": {
+          "title": "Iveco Eurocargo",
+          "description": "Box truck ideal for cargo handling and parking training."
+        },
+        "flatbed": {
+          "title": "Mercedes Atego",
+          "description": "Flatbed truck with hydraulic crane for loading and cargo securing training."
+        }
+      },
+      "enrollButton": "Enroll in Course"
+    },
+    "D": {
+      "title": "Category D Driving License",
+      "description": "Get authorization to drive buses and large passenger vehicles. Professional preparation for responsible work in passenger transport.",
+      "courseDetails": {
+        "title": "Course Details",
+        "duration": {
+          "label": "Course Duration",
+          "value": "4-5 months"
+        },
+        "vehicles": {
+          "label": "Minimum Age",
+          "value": "24 years"
+        },
+        "certification": {
+          "label": "Requirements",
+          "value": "License B + medical"
+        },
+        "price": {
+          "label": "Price",
+          "value": "42,990 CZK"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Training Vehicles",
+        "city": {
+          "title": "Mercedes Citaro",
+          "description": "City bus with low-floor design for urban traffic training."
+        },
+        "intercity": {
+          "title": "Iveco Crossway",
+          "description": "Intercity bus with comfortable equipment for long-distance training."
+        },
+        "minibus": {
+          "title": "Mercedes Sprinter",
+          "description": "Minibus for basic training and first passenger transport experience."
+        }
+      },
+      "enrollButton": "Enroll in Course"
+    },
+    "T": {
+      "title": "Category T Driving License",
+      "description": "Get authorization to drive tractors and self-propelled work machines. Ideal for work in agriculture, forestry, or construction.",
+      "courseDetails": {
+        "title": "Course Details",
+        "duration": {
+          "label": "Course Duration",
+          "value": "1 month"
+        },
+        "vehicles": {
+          "label": "Minimum Age",
+          "value": "17 years"
+        },
+        "certification": {
+          "label": "Includes",
+          "value": "Theory + practical training"
+        },
+        "price": {
+          "label": "Price",
+          "value": "18,990 CZK"
+        }
+      },
+      "trainingVehicles": {
+        "title": "Training Vehicles",
+        "agricultural": {
+          "title": "John Deere 6120M",
+          "description": "Modern agricultural tractor with GPS navigation and automatic steering."
+        },
+        "construction": {
+          "title": "Case IH Puma",
+          "description": "Universal tractor suitable for agricultural and construction work."
+        },
+        "forestry": {
+          "title": "Fendt 724 Vario",
+          "description": "Forest tractor with power steering for heavy terrain work."
+        }
+      },
+      "enrollButton": "Enroll in Course"
+    }
+  },
+  "DriverTrainingPage": {
+    "title": "Driver Training",
+    "description": "Professional training for commercial drivers and employee drivers. Ensure road safety and meet legal requirements with our certified training programs.",
+    "trainingTypes": {
+      "title": "Training Types",
+      "referent": {
+        "label": "Employee Driver Training",
+        "description": "For employees driving company vehicles up to 3.5t. Legal requirement under labor law. Repeat every 2 years.",
+        "price": "2,990 CZK"
+      },
+      "professional": {
+        "label": "Professional Driver Training",
+        "description": "For professional drivers - basic and periodic courses focused on safety and legislation.",
+        "price": "4,990 CZK"
+      }
+    },
+    "content": {
+      "title": "Training Content",
+      "items": [
+        {
+          "title": "Traffic Rules",
+          "description": "Current legislation and traffic regulations valid in Czech Republic."
+        },
+        {
+          "title": "Safe Driving Principles",
+          "description": "Defensive driving techniques and traffic accident prevention."
+        },
+        {
+          "title": "Crisis Management",
+          "description": "Procedures for accidents and emergency situations on the road."
+        },
+        {
+          "title": "Mandatory Vehicle Equipment",
+          "description": "Familiarization with mandatory equipment and its proper use."
+        },
+        {
+          "title": "Medical Fitness",
+          "description": "Importance of physical and mental condition for safe driving."
+        },
+        {
+          "title": "Digital Tachograph",
+          "description": "Operation and use of digital tachograph for professional drivers."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Training Benefits",
+      "employer": {
+        "title": "For Employers",
+        "items": {
+          "0": "Reduced risk of traffic accidents and property damage",
+          "1": "Compliance with current legislation",
+          "2": "Enhanced safety culture in the company"
+        }
+      },
+      "employee": {
+        "title": "For Employees",
+        "items": {
+          "0": "Increased safety and confidence behind the wheel",
+          "1": "Mastering defensive driving techniques",
+          "2": "Obtaining training completion certificate"
+        }
+      }
+    },
+    "contactButton": "Contact Us"
+  }
+}
