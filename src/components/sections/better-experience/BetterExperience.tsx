@@ -4,6 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import Label from "@/components/core/Label";
+import Image from "next/image";
 
 const BetterExperience = () => {
   const t = useTranslations("HomePage.BetterExperience");
@@ -63,19 +64,17 @@ const BetterExperience = () => {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
+              {/* Feature Image */}
               <div
                 className={`px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
               >
                 <div className="bg-neutral-800 rounded-lg h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden shadow-lg">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-neutral-400 text-center px-4">
-                      <div className="text-base sm:text-lg font-medium mb-2">
-                        Image {feature.number}
-                      </div>
-                      <div className="text-sm">Will be inserted here</div>
-                    </div>
-                  </div>
+                  <Image
+                    src={`/images/whyus_${index + 1}.png`}
+                    alt={feature.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>

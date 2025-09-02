@@ -8,10 +8,10 @@ const Footer = () => {
   const t = useTranslations("HomePage.Footer");
 
   return (
-    <footer className="bg-neutral-900 text-white">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-12 py-16">
+    <footer className="bg-neutral-900 text-white mt-auto w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-12 py-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
@@ -20,142 +20,101 @@ const Footer = () => {
                 Autoškola STAR
               </span>
             </div>
-            <p className="text-neutral-300 text-sm leading-relaxed mb-6">
+            <p className="text-neutral-300 text-sm leading-relaxed max-w-md">
               {t("companyDescription")}
             </p>
-            <div className="space-y-2 text-sm text-neutral-300">
-              <p>📧 {t("email")}</p>
-              <p>📞 {t("phone")}</p>
-              <p>📍 {t("address")}</p>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="grid grid-cols-2 gap-8">
+            {/* Left Column */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                {t("quickLinks")}
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("home")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#license-categories"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("drivingLicenses")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#steps"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("howToGetLicense")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#why-choose-us"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("whyChooseUs")}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right Column */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                {t("services")}
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/cs/ridicak/b"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("licenseCategoryB")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pricing"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("pricing")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    {t("contact")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/cs/skoleni-ridicu"
+                    className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
+                  >
+                    Školení řidičů
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">
-              {t("quickLinks")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#license-categories"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("drivingLicenses")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#steps"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("howToGetLicense")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#why-choose-us"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("whyChooseUs")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("contact")}
-                </a>
-              </li>
-            </ul>
-          </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">
-              {t("services")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("pricing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#theory"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("theoryCourses")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#practical"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("practicalDriving")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#exams"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("exams")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact & Support */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">
-              {t("support")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#faq"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("faq")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#help"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("help")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#privacy"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("privacyPolicy")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#terms"
-                  className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
-                >
-                  {t("termsOfService")}
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-neutral-700 pt-8">
+        <div className="border-t border-neutral-700 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Autoškola STAR.{" "}

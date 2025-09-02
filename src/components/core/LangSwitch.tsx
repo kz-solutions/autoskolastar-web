@@ -1,6 +1,6 @@
 "use client";
-import React, { startTransition, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { startTransition, useEffect, useState, useRef } from "react";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import EN from "@/images/flags/en.png";
 import CS from "@/images/flags/cs.png";
 import Image from "next/image";
@@ -20,7 +20,9 @@ const LangSwitch = ({
   className = "",
 }: { shouldClose?: boolean } & ClassName) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { push } = useRouter();
+  const router = useRouter();
+  const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const locale = useLocale();
   const [selectedLang, setSelectedLang] = useState(locale);
@@ -28,36 +30,35 @@ const LangSwitch = ({
   const handleLanguageChange = (lang: string) => {
     setSelectedLang(lang);
     setIsOpen(false);
-    const item = document.querySelector(
-      `link[rel="alternate"][hreflang="${lang}"]`,
-    );
-    let href = item
-      ?.getAttribute("href")
-      ?.replace(
-        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-        "",
-      );
-
-    if (!href) {
-      if (process.env.NEXT_PUBLIC_VERCEL_BRANCH !== "production") {
-        console.warn(
-          "Generate alternate links so lang switch can extract proper url",
-        );
-      }
-      href = `/${lang}`;
-    }
-
+    
     startTransition(() => {
-      push(href, { scroll: false });
+      router.replace(pathname, { locale: lang });
     });
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (shouldClose) setIsOpen(false);
   }, [shouldClose]);
 
   return (
-    <div className={`relative z-10 my-auto h-[33px] w-22 ${className}`}>
+    <div ref={dropdownRef} className={`relative z-10 my-auto h-[33px] w-22 ${className}`}>
       <div
         className={`default-ease absolute h-[33px] overflow-hidden left-0 right-0 top-0 items-baseline flex flex-col rounded-2xl border border-gray-200 bg-white duration-300 ${!isOpen ? "shadow-xs" : "shadow-lg shadow-gray-700/50"}`}
         style={{
