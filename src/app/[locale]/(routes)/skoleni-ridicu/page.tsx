@@ -63,16 +63,16 @@ async function DriverTrainingContent() {
             {t("content.title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, index) => (
+            {t.raw("content.items").map((item: {title: string, description: string}, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-sm border p-6">
                 <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
                   <div className="w-6 h-6 bg-primary-600 rounded"></div>
                 </div>
                 <h3 className="font-semibold text-neutral-800 mb-2">
-                  {t(`content.items.${index}.title`)}
+                  {item.title}
                 </h3>
                 <p className="text-neutral-600 text-sm">
-                  {t(`content.items.${index}.description`)}
+                  {item.description}
                 </p>
               </div>
             ))}

@@ -70,7 +70,7 @@ const BetterExperience = () => {
               >
                 <div className="bg-neutral-800 rounded-lg h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden shadow-lg">
                   <Image
-                    src={`/images/whyus_${index + 1}.png`}
+                    src={`/images/better-experience/whyus_${index + 1}.png`}
                     alt={feature.title}
                     fill
                     className="object-cover"

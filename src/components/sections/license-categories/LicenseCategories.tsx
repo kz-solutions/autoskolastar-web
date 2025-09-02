@@ -12,21 +12,13 @@ interface Category {
   group: string;
   description: string;
   price: string;
+  href: string;
 }
 
 const LicenseCategories = () => {
   const t = useTranslations("HomePage.LicenseCategories");
   
-  // Map category groups to URLs
-  const getCategoryUrl = (group: string) => {
-    if (group.includes('skupina D')) return '/ridicak/d';
-    if (group.includes('skupina C')) return '/ridicak/c';
-    if (group.includes('skupina A')) return '/ridicak/a';
-    if (group.includes('skupina B')) return '/ridicak/b';
-    if (group.includes('skupina T')) return '/ridicak/t';
-    if (group === '') return '/skoleni-ridicu'; // driver training
-    return '#'; // fallback for other categories
-  };
+
 
   return (
     <section className="bg-white px-4 sm:px-6 lg:px-12 py-32">
@@ -65,7 +57,7 @@ const LicenseCategories = () => {
           {/* Left side - 2 cards */}
           <div className="lg:col-span-3 space-y-6">
             {t.raw("leftCategories").map((category: Category, index: number) => {
-              const imageMap = ['/images/ridicak_d.png', '/images/ridicak_c.png'];
+              const imageMap = ['/images/drivers-licence/caterogy_d.png', '/images/drivers-licence/category_c.png'];
               return (
               <div key={category.title} className=" px-5 py-8 flex flex-col">
                 <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
@@ -89,7 +81,7 @@ const LicenseCategories = () => {
                   {category.price}
                 </div>
                 <Link 
-                  href={getCategoryUrl(category.group)} 
+                  href={category.href} 
                   prefetch={true}
                   className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
                 >
@@ -105,7 +97,7 @@ const LicenseCategories = () => {
             <div className="p-6 h-full flex flex-col">
               <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
                 <Image
-                  src="/images/ridicak_a.png"
+                  src="/images/drivers-licence/category_a.png"
                   alt={t("centerLeftCategory.title")}
                   width={400}
                   height={384}
@@ -129,7 +121,7 @@ const LicenseCategories = () => {
                 {t("centerLeftCategory.price")}
               </div>
               <Link 
-                href="/ridicak/a" 
+                href={t("centerLeftCategory.href")} 
                 prefetch={true}
                 className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
               >
@@ -143,7 +135,7 @@ const LicenseCategories = () => {
             <div className="p-6 h-full flex flex-col">
               <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
                 <Image
-                  src="/images/ridicak_b.png"
+                  src="/images/drivers-licence/category_b.png"
                   alt={t("centerRightCategory.title")}
                   width={400}
                   height={384}
@@ -167,7 +159,7 @@ const LicenseCategories = () => {
                 {t("centerRightCategory.price")}
               </div>
               <Link 
-                href="/ridicak/b" 
+                href={t("centerRightCategory.href")} 
                 prefetch={true}
                 className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
               >
@@ -179,7 +171,7 @@ const LicenseCategories = () => {
           {/* Right side - 2 cards */}
           <div className="lg:col-span-3 space-y-6">
             {t.raw("rightCategories").map((category: Category, index: number) => {
-              const imageMap = ['/images/ridicak_t.png', '/images/skoleni_ridicu.png'];
+              const imageMap = ['/images/drivers-licence/category_t.png', '/images/drivers_training.png'];
               return (
               <div key={category.title} className="p-6 flex flex-col">
                 <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
@@ -203,7 +195,7 @@ const LicenseCategories = () => {
                   {category.price}
                 </div>
                 <Link 
-                  href={getCategoryUrl(category.group)} 
+                  href={category.href} 
                   prefetch={true}
                   className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
                 >

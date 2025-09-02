@@ -9,8 +9,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LangSwitch from "@/components/core/LangSwitch";
 import { Link } from "@/i18n/navigation";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const Navbar = () => {
   const t = useTranslations("HomePage.Header");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
