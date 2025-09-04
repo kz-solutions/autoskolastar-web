@@ -1,98 +1,81 @@
 "use client";
 
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
+import ScrollIndicator from "@/components/core/ScrollIndicator";
+import { useHeroTimeline } from "@/hooks/gsap/hero/useHeroTimeline";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Hero = () => {
   const t = useTranslations("HomePage.Hero");
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useHeroTimeline(ref);
 
   return (
-         <section id="home" className="relative w-full min-h-[85svh] overflow-hidden">
-       {/* 1) Gray background */}
-       <div className="absolute inset-0 z-0 bg-gradient-to-r from-neutral-100 via-neutral-200 to-gray-400" />
- 
-       {/* 2) Grid lines via CSS */}
-       <div className="absolute inset-0 z-[1] pointer-events-none">
-
-         
-         {/* Dashed lines - main horizontal */}
-         <div className="absolute inset-0 opacity-40">
-           {Array.from({ length: 6 }, (_, i) => (
-             <div
-               key={`dash-h-${i}`}
-               className="absolute left-0 right-0 h-0.5 bg-white"
-               style={{ 
-                 top: `${15 + i * 35}%`,
-                 background: 'repeating-linear-gradient(to right, white 0px, white 20px, transparent 20px, transparent 40px)'
-               }}
-             />
-           ))}
-         </div>
-         
-         {/* Dashed lines - main vertical */}
-         <div className="absolute inset-0 opacity-40">
-           {Array.from({ length: 8 }, (_, i) => (
-             <div
-               key={`dash-v-${i}`}
-               className="absolute top-0 bottom-0 w-0.5 bg-white"
-               style={{ 
-                 left: `${10 + i * 12}%`,
-                 background: 'repeating-linear-gradient(to bottom, white 0px, white 20px, transparent 20px, transparent 40px)'
-               }}
-             />
-           ))}
-         </div>
-       </div>
-
-       {/* Car image - positioned on the right */}
-       <div className="absolute right-0 bottom-0 z-[2] pointer-events-none">
-         <Image
-           src="/images/herocar.png"
-           alt="Modern car"
-           width={800}
-           height={600}
-           priority
-           className="
-             w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] xl:w-[650px] 
-             h-auto object-contain
-             transform translate-x-[10%] sm:translate-x-[5%] md:translate-x-0
-           "
-         />
-       </div>
-
-      {/* Content container */}
-      <div className="relative z-10 w-full h-full px-4 sm:px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-[1320px] mx-auto h-full">
-          <div className="flex items-center h-full">
-            {/* Left side - Text content */}
-            <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 pl-0 lg:pl-8">
-              {/* Main heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-800 leading-tight">
-                {t("mainHeading")}
-              </h1>
-
-              {/* Locations */}
-              <div className="text-3xl sm:text-2xl lg:text-3xl text-primary-600">
-                {t("locations")}
-              </div>
-
-              {/* Description */}
-              <p className="text-lg sm:text-xl lg:text-2xl text-neutral-700 leading-relaxed max-w-2xl">
-                {t("description")}
-              </p>
-
-              {/* CTA Button */}
-              <button className="bg-primary-600 text-white px-16 py-3 rounded-2xl hover:bg-primary-700 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl">
-                {t("ctaButton")}
-              </button>
-            </div>
-          </div>
+    <section ref={ref} id="home" className="w-screen h-screen">
+      <div
+        data-hero-bg
+        className="absolute inset-0 pointer-events-none white"
+      />
+      <ScrollIndicator />
+      <div className={"absolute h-screen w-screen top-0 left-0"}>
+        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <h1
+            data-hero-line-top
+            className="text-heading_xl text-center whitespace-nowrap leading-[1]!"
+          >
+            Každá cesta
+          </h1>
+          <h1
+            data-hero-line-bottom
+            className="text-heading_xl text-center whitespace-nowrap leading-[1]!"
+          >
+            má svůj začátek
+          </h1>
+        </div>
+      </div>
+      <div className={"absolute h-screen w-screen top-0 left-0"}>
+        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <h1
+            data-hero-line-top-2
+            className="opacity-0 text-heading_xl text-center whitespace-nowrap leading-[1]!"
+          >
+            a ta tvoje
+          </h1>
+          <h1
+            data-hero-line-bottom-2
+            className="opacity-0 hero-line hero-bottom text-heading_xl text-center whitespace-nowrap leading-[1]!"
+          >
+            začíná{" "}
+            <span data-hero-line-here className={"inline-block"}>
+              tady
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div className={"absolute h-screen w-screen top-0 left-0"}>
+        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <h1
+            data-hero-line-top-3
+            className="opacity-0 text-zinc-100 text-heading_lg text-center whitespace-nowrap"
+          >
+            Autoškola, která tě připraví na všechno.
+          </h1>
+          <h1
+            data-hero-line-bottom-3
+            className="opacity-0 text-zinc-300 text-heading_md font-medium! text-center whitespace-nowrap leading-[2]!"
+          >
+            Bez stresu. S jistotou. S instruktory, co stojí na tvé straně.
+          </h1>
         </div>
       </div>
     </section>
