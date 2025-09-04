@@ -3,8 +3,8 @@ import Hero from "@/components/sections/hero/Hero";
 import LicenseCategories from "@/components/sections/license-categories/LicenseCategories";
 import StepsToGettingALicense from "@/components/sections/steps-to-getting-a-license/StepsToGettingALicense";
 import ContactAndLocation from "@/components/sections/contact-and-location/ContactAndLocation";
-import BetterExperience from "@/components/sections/better-experience/BetterExperience";
 import Footer from "@/components/core/Footer";
+import WhyChooseUs from "@/components/sections/why-choose-us/WhyChooseUs";
 
 export default function HomePage() {
   return (
@@ -13,7 +13,7 @@ export default function HomePage() {
       <Hero />
       <LicenseCategories />
       <StepsToGettingALicense />
-      <BetterExperience />
+      <WhyChooseUs />
       <ContactAndLocation />
       <Footer />
     </div>

@@ -1,13 +1,49 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import Label from "@/components/core/Label";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const BetterExperience = () => {
+const WhyChooseUs = () => {
   const t = useTranslations("HomePage.BetterExperience");
+  const ref = useRef(null);
+
+  const reasons = t.raw("features");
+
+  useGSAP(
+    () => {
+      const q = gsap.utils.selector(ref);
+
+      const texts = q("[data-reason-text]") as HTMLElement[];
+
+      texts.forEach((el) => {
+        const idx = Number(el.dataset.reasonText ?? 0);
+        console.log(idx);
+        const fromX = idx % 2 === 0 ? -40 : 40;
+
+        gsap.fromTo(
+          el.children.length ? el.children : el,
+          { opacity: 0, x: fromX },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1.6,
+            ease: "power4.out",
+            stagger: 0.18,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 70%",
+            },
+          },
+        );
+      });
+    },
+    { scope: ref },
+  );
 
   return (
     <section className="bg-[#181D27] px-4 sm:px-6 lg:px-12 py-32">
@@ -41,8 +77,8 @@ const BetterExperience = () => {
         </header>
 
         {/* Features Section */}
-        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
-          {t.raw("features").map((feature: any, index: number) => (
+        <div ref={ref} className="space-y-16 sm:space-y-24 lg:space-y-32">
+          {reasons.map((feature: any, index: number) => (
             <div
               key={feature.number}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
@@ -51,6 +87,7 @@ const BetterExperience = () => {
             >
               {/* Text Content */}
               <div
+                data-reason-text={index}
                 className={`space-y-4 sm:space-y-6 px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
                 <div className="text-primary-500 text-3xl sm:text-4xl font-bold">
@@ -66,6 +103,7 @@ const BetterExperience = () => {
 
               {/* Feature Image */}
               <div
+                data-reason-image={index}
                 className={`px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
               >
                 <div className="bg-neutral-800 rounded-lg h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden shadow-lg">
@@ -85,4 +123,4 @@ const BetterExperience = () => {
   );
 };
 
-export default BetterExperience;
+export default WhyChooseUs;

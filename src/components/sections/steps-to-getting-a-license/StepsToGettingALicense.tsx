@@ -27,7 +27,7 @@ const StepsToGettingALicense = () => {
         defaults: { duration: 1.1, ease: "power4.out" },
         scrollTrigger: {
           trigger: ref.current,
-          start: "center center",
+          start: "top 60%",
         },
       });
 
