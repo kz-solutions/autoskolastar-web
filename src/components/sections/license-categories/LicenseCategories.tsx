@@ -54,9 +54,9 @@ const LicenseCategories = () => {
         </header>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Left side - 2 cards */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-6 flex flex-col">
             {t
               .raw("leftCategories")
               .map((category: Category, index: number) => {
@@ -67,7 +67,7 @@ const LicenseCategories = () => {
                 return (
                   <div
                     key={category.title}
-                    className=" px-5 py-8 flex flex-col"
+                    className="p-6 flex flex-col h-full"
                   >
                     <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
                       <Image
@@ -83,10 +83,7 @@ const LicenseCategories = () => {
                       <span className="font-bold">{category.title}</span>
                       <span className="font-normal"> {category.group}</span>
                     </h3>
-                    <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
-                      {category.description}
-                    </p>
-                    <div className="text-lg text-gray-700 mb-3">
+                    <div className="text-lg text-gray-700 mb-3 mt-auto">
                       {category.price}
                     </div>
                     <Link
@@ -102,8 +99,8 @@ const LicenseCategories = () => {
           </div>
 
           {/* Center-left - 1 card */}
-          <div className="lg:col-span-3">
-            <div className="p-6 h-full flex flex-col">
+          <div className="lg:col-span-3 flex">
+            <div className="p-6 w-full flex flex-col h-full">
               <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_a.png"
@@ -123,7 +120,7 @@ const LicenseCategories = () => {
                   {t("centerLeftCategory.group")}
                 </span>
               </h3>
-              <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
+              <p className="text-sm text-neutral-600 mb-3 leading-relaxed flex-grow">
                 {t("centerLeftCategory.description")}
               </p>
               <div className="text-lg text-gray-700 mb-3">
@@ -132,7 +129,7 @@ const LicenseCategories = () => {
               <Link
                 href={t("centerLeftCategory.href")}
                 prefetch={true}
-                className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
+                className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center mt-auto"
               >
                 {t("findOutMore")}
               </Link>
@@ -140,8 +137,8 @@ const LicenseCategories = () => {
           </div>
 
           {/* Center-right - 1 card */}
-          <div className="lg:col-span-3">
-            <div className="p-6 h-full flex flex-col">
+          <div className="lg:col-span-3 flex">
+            <div className="p-6 w-full flex flex-col h-full">
               <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_b.png"
@@ -161,7 +158,7 @@ const LicenseCategories = () => {
                   {t("centerRightCategory.group")}
                 </span>
               </h3>
-              <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
+              <p className="text-sm text-neutral-600 mb-3 leading-relaxed flex-grow">
                 {t("centerRightCategory.description")}
               </p>
               <div className="text-lg text-gray-700 mb-3">
@@ -170,7 +167,7 @@ const LicenseCategories = () => {
               <Link
                 href={t("centerRightCategory.href")}
                 prefetch={true}
-                className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center"
+                className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center mt-auto"
               >
                 {t("findOutMore")}
               </Link>
@@ -178,7 +175,7 @@ const LicenseCategories = () => {
           </div>
 
           {/* Right side - 2 cards */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-6 flex flex-col">
             {t
               .raw("rightCategories")
               .map((category: Category, index: number) => {
@@ -187,7 +184,7 @@ const LicenseCategories = () => {
                   "/images/drivers_training.png",
                 ];
                 return (
-                  <div key={category.title} className="p-6 flex flex-col">
+                  <div key={category.title} className="p-6 flex flex-col h-full">
                     <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
                       <Image
                         src={imageMap[index]}
@@ -202,10 +199,7 @@ const LicenseCategories = () => {
                       <span className="font-bold">{category.title}</span>
                       <span className="font-normal"> {category.group}</span>
                     </h3>
-                    <p className="text-sm text-neutral-600 mb-4 leading-relaxed flex-grow">
-                      {category.description}
-                    </p>
-                    <div className="text-lg text-gray-700 mb-3">
+                    <div className="text-lg text-gray-700 mb-3 mt-auto">
                       {category.price}
                     </div>
                     <Link

@@ -24,14 +24,14 @@
       "centerLeftCategory": {
         "title": "Motorky",
         "group": "skupina A",
-        "description": "Nabízíme kompletní výuku motocyklových skupin AM, A1, A2 a A: od 15 let pro AM, 16 let pro A1, 18 let pro A2 a 24 let (nebo po 2 letech držení A2) pro A. Součástí je teoretická i praktická příprava na cvičišti i v silničním provozu. Doplňovací zkoušky A1→A2 a A2→A jsou zajištěny, další kondiční jízdy je možné dokoupit. Podmínkou je zdravotní způsobilost a platná přihláška k výcviku.",
+        "description": "Kompletní výuka motocyklových skupin AM, A1, A2 a A s teoretickou i praktickou přípravou. Doplňovací zkoušky a kondiční jízdy jsou k dispozici.",
         "price": "Cena od 25 990 Kč",
         "href": "/ridicak/a"
       },
       "centerRightCategory": {
         "title": "Autobusy",
         "group": "skupina B",
-        "description": "Opravňuje k řízení motorových vozidel do celkové hmotnosti 3,5 tuny a max. počtu 8 pasažérů plus řidič (případně s přívěsem do 750 kg, pokud celková hmotnost jízdní soupravy nepřekročí 3,5 tuny). Dále opravňuje k řízení traktorů a samojízdných pracovních strojů o maximální přípustné hmotnosti do 3,5 tuny.",
+        "description": "Opravňuje k řízení vozidel do 3,5 tuny s max. 8 pasažéry, včetně přívěsu do 750 kg. Také traktory a pracovní stroje do 3,5 tuny.",
         "price": "Cena od 21 990 Kč",
         "href": "/ridicak/b"
       },
@@ -252,7 +252,7 @@
     },
     "C": {
       "title": "Řidičský průkaz skupiny C",
-      "description": "Staňte se profesionálním řidičem nákladních vozidel. Komplexní výuka zahrnuje teorii i praxi řízení vozidel nad 3,5 tuny včetně manipulace s nákladem a bezpečnostních předpisů.",
+      "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
       "courseDetails": {
         "title": "Podrobnosti o kurzu",
         "duration": {
@@ -291,7 +291,7 @@
     },
     "D": {
       "title": "Řidičský průkaz skupiny D",
-      "description": "Získejte oprávnění k řízení autobusů a velkoobjemových vozidel pro přepravu osob. Profesionální příprava na odpovědnou práci v osobní dopravě.",
+      "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
       "courseDetails": {
         "title": "Podrobnosti o kurzu",
         "duration": {
@@ -330,7 +330,7 @@
     },
     "T": {
       "title": "Řidičský průkaz skupiny T",
-      "description": "Získejte oprávnění k řízení traktorů a samojízdných pracovních strojů. Ideální pro práci v zemědělství, lesnictví nebo stavebnictví.",
+      "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
       "courseDetails": {
         "title": "Podrobnosti o kurzu",
         "duration": {
