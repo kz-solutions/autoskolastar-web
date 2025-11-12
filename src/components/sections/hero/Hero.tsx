@@ -21,9 +21,9 @@ const Hero = () => {
   useHeroTimeline(ref);
 
   return (
-    <section ref={ref} id="home" className="w-screen h-screen relative overflow-hidden">
+    <section ref={ref} id="home" className="w-screen h-screen overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute w-[92vw] h-full top-1/2 -translate-y-1/2 max-h-[85vh] rounded-2xl overflow-hidden z-0">
         <video
           autoPlay
           loop
@@ -41,7 +41,7 @@ const Hero = () => {
       </div>
       <ScrollIndicator />
       <div className={"absolute h-screen w-screen top-0 left-0 z-10"}>
-        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
           <h1
             data-hero-line-top
             className="text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
@@ -56,8 +56,12 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      <div className={"absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"}>
-        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div
+        className={
+          "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
+        }
+      >
+        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
           <h1
             data-hero-line-top-2
             className="opacity-0 text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
@@ -75,8 +79,12 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      <div className={"absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"}>
-        <div className="relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div
+        className={
+          "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
+        }
+      >
+        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
           <h1
             data-hero-line-top-3
             className="opacity-0 text-white text-heading_lg text-center whitespace-nowrap"

@@ -31,7 +31,7 @@ const ScrollIndicator = () => {
     <div
       ref={ref}
       className={
-        "absolute scroll-indicator-wrapper z-50 h-13 w-7 rounded-full border border-slate-400 center-x top-[85dvh] p-[3px]"
+        "absolute scroll-indicator-wrapper z-50 h-13 w-7 rounded-full border border-slate-400 center-x top-[80dvh] p-[3px]"
       }
     >
       <div className={"relative w-full h-full"}>
