@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
+import { Link } from "@/i18n/navigation";
 
 const Footer = () => {
   const t = useTranslations("HomePage.Footer");
@@ -34,16 +35,16 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("home")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
-                    href="#license-categories"
+                    href="#services"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("drivingLicenses")}
@@ -75,12 +76,12 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="/cs/ridicak/b"
+                  <Link
+                    href="/ridicak/b"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("licenseCategoryB")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -99,12 +100,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/cs/skoleni-ridicu"
+                  <Link
+                    href="/skoleni-ridicu"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     Školení řidičů
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

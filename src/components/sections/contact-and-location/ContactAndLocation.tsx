@@ -25,7 +25,7 @@ const ContactAndLocation = () => {
   };
 
   return (
-    <section className="bg-gray-100 px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
+    <section id="contact" className="bg-gray-100 px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1320px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start lg:items-center">
           {/* Left Column - Map and Location */}

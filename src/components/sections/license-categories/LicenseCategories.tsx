@@ -21,7 +21,7 @@ const LicenseCategories = () => {
 
 
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-12 py-32">
+    <section id="services" className="bg-white px-4 sm:px-6 lg:px-12 py-32">
       <div className="max-w-[1320px] mx-auto w-full">
         {/* Header Section */}
         <header className="text-center mb-24">

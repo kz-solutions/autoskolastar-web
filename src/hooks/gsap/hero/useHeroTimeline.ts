@@ -79,13 +79,31 @@ export const useHeroTimeline = (ref: ReactRef) => {
         "<",
       )
       .to(
-        q("[data-hero-bg]"),
+        q("[data-hero-line-top-2]"),
         {
-          backgroundColor: "#171717",
+          opacity: 0,
           duration: 0.5,
           ease: "power2.out",
         },
         ">-=0.8",
+      )
+      .to(
+        q("[data-hero-line-bottom-2]"),
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "<",
+      )
+      .to(
+        q("[data-hero-bg]"),
+        {
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "<",
       )
       .fromTo(
         q("[data-hero-line-top-3]"),

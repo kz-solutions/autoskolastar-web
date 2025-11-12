@@ -45,7 +45,7 @@ const StepsToGettingALicense = () => {
   );
 
   return (
-    <section className={"bg-gray-100 px-4 sm:px-6 lg:px-12"}>
+    <section id="steps" className={"bg-gray-100 px-4 sm:px-6 lg:px-12"}>
       <header>
         <h2 className={"text-heading_lg text-neutral-800 text-center"}>
           {t.rich("title", {
