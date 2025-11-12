@@ -111,7 +111,7 @@ export const useHeroTimeline = (ref: ReactRef) => {
           scale: 0.5,
           opacity: 0,
           ease: "power2.out",
-          transformOrigin: "55% center",
+          transformOrigin: "center center",
           y: 80,
         },
         { scale: 1, opacity: 1, duration: 2, y: 0 },
@@ -123,11 +123,22 @@ export const useHeroTimeline = (ref: ReactRef) => {
           scale: 0.5,
           opacity: 0,
           ease: "power2.out",
-          transformOrigin: "55% center",
+          transformOrigin: "center center",
           y: 50,
         },
         { scale: 1, opacity: 1, duration: 2, y: 0 },
         "<",
+      )
+      .fromTo(
+        q("[data-hero-line-4]"),
+        {
+          y: -30,
+          opacity: 0,
+          ease: "power2.out",
+          transformOrigin: "center center",
+        },
+        { opacity: 1, duration: 1, y: 0 },
+        ">-=0.1",
       );
   });
 };

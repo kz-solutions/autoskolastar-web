@@ -61,7 +61,10 @@ const Hero = () => {
           "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
         }
       >
-        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div
+          data-hero-line-here
+          className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2"
+        >
           <h1
             data-hero-line-top-2
             className="opacity-0 text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
