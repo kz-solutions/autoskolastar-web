@@ -46,13 +46,13 @@ const Hero = () => {
             data-hero-line-top
             className="text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
           >
-            Každá cesta
+            {t("line1Top")}
           </h1>
           <h1
             data-hero-line-bottom
             className="text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
           >
-            má svůj začátek
+            {t("line1Bottom")}
           </h1>
         </div>
       </div>
@@ -62,15 +62,15 @@ const Hero = () => {
             data-hero-line-top-2
             className="opacity-0 text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
           >
-            a ta tvoje
+            {t("line2Top")}
           </h1>
           <h1
             data-hero-line-bottom-2
             className="opacity-0 text-white hero-line hero-bottom text-heading_xl text-center whitespace-nowrap leading-[1]!"
           >
-            začíná{" "}
+            {t("line2BottomStart")}{" "}
             <span data-hero-line-here className={"inline-block text-white"}>
-              tady
+              {t("line2BottomHere")}
             </span>
           </h1>
         </div>
@@ -81,13 +81,13 @@ const Hero = () => {
             data-hero-line-top-3
             className="opacity-0 text-white text-heading_lg text-center whitespace-nowrap"
           >
-            Autoškola, která tě připraví na všechno.
+            {t("line3Top")}
           </h1>
           <h1
             data-hero-line-bottom-3
             className="opacity-0 text-white text-heading_md font-medium! text-center whitespace-nowrap leading-[2]!"
           >
-            Bez stresu. S jistotou. S instruktory, co stojí na tvé straně.
+            {t("line3Bottom")}
           </h1>
         </div>
       </div>

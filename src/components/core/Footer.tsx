@@ -4,9 +4,11 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import { Link } from "@/i18n/navigation";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const Footer = () => {
   const t = useTranslations("HomePage.Footer");
+  useSmoothScroll();
 
   return (
     <footer className="bg-neutral-900 text-white mt-auto w-full">

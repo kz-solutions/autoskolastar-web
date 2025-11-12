@@ -161,7 +161,14 @@
        "mainHeading": "Řízení snadno a rychle",
        "locations": "BÍLINA – MOST – LITVÍNOV",
        "description": "Naučíme vás řídit od základů, v přátelském kolektivu a za férovou cenu. V Autoškole Star vás přípravíme na závěrečné zkoušky ať už jste úplný začátečník, nebo profesionální řidič.",
-             "ctaButton": "Mám zájem"
+       "ctaButton": "Mám zájem",
+       "line1Top": "Každá cesta",
+       "line1Bottom": "má svůj začátek",
+       "line2Top": "a ta tvoje",
+       "line2BottomStart": "začíná",
+       "line2BottomHere": "tady",
+       "line3Top": "Autoškola, která tě připraví na všechno.",
+       "line3Bottom": "Bez stresu. S jistotou. S instruktory, co stojí na tvé straně."
     }
   },
   "LicensePage": {

@@ -8,11 +8,13 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LangSwitch from "@/components/core/LangSwitch";
 import { Link } from "@/i18n/navigation";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Navbar = () => {
   const t = useTranslations("HomePage.Header");
+  useSmoothScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [shouldHide, setShouldHide] = useState(false);
 
