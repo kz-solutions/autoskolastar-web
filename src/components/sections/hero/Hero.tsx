@@ -61,7 +61,10 @@ const Hero = () => {
           "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
         }
       >
-        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div
+          data-hero-line-here
+          className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2"
+        >
           <h1
             data-hero-line-top-2
             className="opacity-0 text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
@@ -72,10 +75,7 @@ const Hero = () => {
             data-hero-line-bottom-2
             className="opacity-0 text-white hero-line hero-bottom text-heading_xl text-center whitespace-nowrap leading-[1]!"
           >
-            začíná{" "}
-            <span data-hero-line-here className={"inline-block text-white"}>
-              tady
-            </span>
+            začíná <span className={"inline-block text-white"}>tady</span>
           </h1>
         </div>
       </div>
@@ -96,6 +96,14 @@ const Hero = () => {
             className="opacity-0 text-white text-heading_md font-medium! text-center whitespace-nowrap leading-[2]!"
           >
             Bez stresu. S jistotou. S instruktory, co stojí na tvé straně.
+          </h1>
+        </div>
+        <div className="relative top-[70%] -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <h1
+            data-hero-line-4
+            className="opacity-0 text-white text-heading_lg font-medium! text-center whitespace-nowrap"
+          >
+            BÍLINA – MOST – LITVÍNOV
           </h1>
         </div>
       </div>
