@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import Label from "@/components/core/Label";
+import { StarIcon } from "@/icons/Star";
 
 const ContactAndLocation = () => {
   const t = useTranslations("HomePage.ContactAndLocation");
@@ -25,40 +27,42 @@ const ContactAndLocation = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-100 px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
-      <div className="max-w-[1320px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start lg:items-center">
+    <section id="contact" className="bg-white px-4 sm:px-6 lg:px-12 py-32">
+      <div className="max-w-[1320px] mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column - Map and Location */}
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-8">
             {/* Map Component */}
-            <div className="bg-gray-800 rounded-lg h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden shadow-md">
+            <div className="bg-neutral-100 rounded-xl h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden border border-neutral-200">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-white text-center px-4">
-                  <div className="text-xl sm:text-2xl font-bold mb-2">{t("mapPlaceholder")}</div>
-                  <div className="text-sm text-gray-300">{t("mapSubtext")}</div>
+                <div className="text-center px-4">
+                  <div className="text-xl sm:text-2xl font-bold text-neutral-800 mb-2">{t("mapPlaceholder")}</div>
+                  <div className="text-sm text-neutral-500">{t("mapSubtext")}</div>
                 </div>
               </div>
             </div>
-            
+
             {/* Location Info */}
-            <div className="space-y-4 px-4 lg:px-0">
-              <p className="text-sm sm:text-md text-primary-500 font-medium">
-                {t("accessibilitySlogan")}
-              </p>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm text-primary-500 font-medium uppercase tracking-wide mb-3">
+                  {t("accessibilitySlogan")}
+                </p>
+                
+                <h2 className="text-heading_md sm:text-heading_lg text-neutral-800 mb-4 leading-tight">
+                  {t("mainHeading")}
+                </h2>
+                
+                <p className="text-base text-neutral-600 leading-relaxed mb-6">
+                  {t("description")}
+                </p>
+              </div>
               
-              <h2 className="text-heading_md sm:text-heading_lg text-neutral-800 leading-tight">
-                {t("mainHeading")}
-              </h2>
-              
-              <p className="text-sm sm:text-md text-neutral-600 leading-relaxed">
-                {t("description")}
-              </p>
-              
-              <ul className="space-y-2 text-sm sm:text-md text-neutral-600">
+              <ul className="space-y-3">
                 {t.raw("pickupLocations").map((location: string, index: number) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-primary-500 mr-2 mt-0.5 text-xs">•</span>
-                    {location}
+                    <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-base text-neutral-700">{location}</span>
                   </li>
                 ))}
               </ul>
@@ -66,52 +70,63 @@ const ContactAndLocation = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="space-y-6 sm:space-y-8">
-            <div className="text-center">
-              <div className="w-24 sm:w-32 md:w-64 lg:w-128 h-0.5 sm:h-1 bg-neutral-600 mx-auto mb-4"></div>
-              <h2 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-4">{t("contactHeading")}</h2>
-              <div className="w-24 sm:w-32 md:w-64 lg:w-128 h-0.5 sm:h-1 bg-neutral-600 mx-auto"></div>
-            </div>
-            
-            <div className="text-center">
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary-500 mb-6 sm:mb-8 leading-tight max-w-md mx-auto px-4">
+          <div className="space-y-8">
+            {/* Header */}
+            <header className="text-center">
+              {/* Mobile */}
+              <div className="lg:hidden mb-6">
+                <div className="flex items-center justify-center space-x-3">
+                  <StarIcon className="text-primary-500 w-4 h-4" />
+                  <span className="text-sm text-primary-500 uppercase tracking-widest">
+                    {t("contactHeading")}
+                  </span>
+                  <StarIcon className="text-primary-500 w-4 h-4" />
+                </div>
+              </div>
+
+              {/* Desktop */}
+              <Label text={t("contactHeading")} />
+
+              <h2 className="text-heading_md sm:text-heading_lg text-neutral-800 mb-4 leading-tight">
                 {t("contactSubheading")}
-              </h3>
-            </div>
+              </h2>
+            </header>
             
-            <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12 max-w-md mx-auto px-4 lg:px-0">
+            <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto px-4 lg:px-0">
               <div>
-                <label className="block text-sm sm:text-md font-bold text-neutral-700 mb-1 uppercase tracking-wide">
+                <label htmlFor="name" className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider">
                   {t("nameLabel")}
                 </label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder={t("namePlaceholder")}
-                  className="w-full px-4 py-3 bg-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base placeholder-gray-400 placeholder:font-bold text-neutral-800 transition-all duration-200"
+                  className="w-full px-5 py-4 bg-white border-2 border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 text-base placeholder-neutral-400 text-neutral-800 transition-all duration-200"
                 />
               </div>
               
               <div>
-                <label className="block text-sm sm:text-md font-bold text-neutral-700 mb-1 uppercase tracking-wide">
+                <label htmlFor="contact" className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider">
                   {t("contactLabel")}
                 </label>
                 <input
+                  id="contact"
                   type="text"
                   name="contact"
                   value={formData.contact}
                   onChange={handleInputChange}
                   placeholder={t("contactPlaceholder")}
-                  className="w-full px-4 py-3 bg-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base placeholder-gray-400 placeholder:font-bold text-neutral-800 transition-all duration-200"
+                  className="w-full px-5 py-4 bg-white border-2 border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 text-base placeholder-neutral-400 text-neutral-800 transition-all duration-200"
                 />
               </div>
               
-              <div className="text-center pt-2">
+              <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-[#47525b] text-white px-6 sm:px-8 py-3 rounded-xl font-bold text-base hover:bg-[#3a4249] transition-all duration-200 shadow-md hover:shadow-lg"
+                  className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   {t("submitButton")}
                 </button>
