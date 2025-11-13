@@ -148,8 +148,37 @@
        "help": "Help",
        "privacyPolicy": "Privacy Policy",
        "termsOfService": "Terms of Service",
-       "allRightsReserved": "All rights reserved"
-     },
+      "allRightsReserved": "All rights reserved",
+      "contactInfo": {
+        "title": "Contact",
+        "locations": [
+          {
+            "title": "Driving School for Group B - Bílina",
+            "person": "Veronika Janoušková, DiS.",
+            "address": "Litoměřická 16/44, Bílina",
+            "phone": "606 880 318",
+            "email": "veronika@autoskolastar.cz",
+            "ico": "758 743 34"
+          },
+          {
+            "title": "Driving School for Group B - Litvínov",
+            "person": "Martin Obracaník",
+            "address": "Ukrajinská 453, Litvínov",
+            "phone": "606 441 609",
+            "email": "martin@autoskolastar.cz",
+            "ico": "750 609 81"
+          },
+          {
+            "title": "Driving School for Other Groups and Training Center",
+            "person": "Bc. Miloslav Janoušek",
+            "address": "Litoměřická 16/44, Bílina",
+            "phone": "774 566 269",
+            "email": "info@autoskolastar.cz",
+            "ico": "755 924 52"
+          }
+        ]
+      }
+    },
      "Header": {
        "home": "Home",
        "services": "Services",

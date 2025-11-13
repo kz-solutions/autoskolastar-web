@@ -148,8 +148,37 @@
        "help": "Nápověda",
        "privacyPolicy": "Ochrana osobních údajů",
        "termsOfService": "Obchodní podmínky",
-       "allRightsReserved": "Všechna práva vyhrazena"
-     },
+      "allRightsReserved": "Všechna práva vyhrazena",
+      "contactInfo": {
+        "title": "Kontakt",
+        "locations": [
+          {
+            "title": "Skupina B - Bílina",
+            "person": "Veronika Janoušková, DiS.",
+            "address": "Litoměřická 16/44, Bílina",
+            "phone": "606 880 318",
+            "email": "veronika@autoskolastar.cz",
+            "ico": "758 743 34"
+          },
+          {
+            "title": "Skupina B - Litvínov",
+            "person": "Martin Obracaník",
+            "address": "Ukrajinská 453, Litvínov",
+            "phone": "606 441 609",
+            "email": "martin@autoskolastar.cz",
+            "ico": "750 609 81"
+          },
+          {
+            "title": "Ostatní skupiny - Bílina",
+            "person": "Bc. Miloslav Janoušek",
+            "address": "Litoměřická 16/44, Bílina",
+            "phone": "774 566 269",
+            "email": "info@autoskolastar.cz",
+            "ico": "755 924 52"
+          }
+        ]
+      }
+    },
      "Header": {
        "home": "Úvod",
        "services": "Služby",

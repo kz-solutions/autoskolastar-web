@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="bg-neutral-900 text-white mt-auto w-full">
       <div className="mx-auto px-4 sm:px-6 lg:px-12 py-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
@@ -28,8 +28,40 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Contact Info - Simplified */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:col-span-3">
+            {t.raw("contactInfo.locations").map((location: any, index: number) => (
+              <div key={index} className="space-y-2">
+                {/* Title in yellow/gold */}
+                <h4 className="text-base font-semibold text-primary-500">
+                  {location.title}
+                </h4>
+                
+                {/* Phone */}
+                <div className="text-sm text-neutral-300">
+                  <a
+                    href={`tel:${location.phone.replace(/\s/g, "")}`}
+                    className="text-neutral-300 hover:text-primary-500 transition-colors"
+                  >
+                    {location.phone}
+                  </a>
+                </div>
+                
+                {/* Email */}
+                <div className="text-sm text-neutral-300">
+                  <a
+                    href={`mailto:${location.email}`}
+                    className="text-neutral-300 hover:text-primary-500 transition-colors"
+                  >
+                    {location.email}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Navigation Links */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-8 lg:col-span-2">
             {/* Left Column */}
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">
@@ -112,8 +144,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
-
         </div>
 
         {/* Bottom Section */}
