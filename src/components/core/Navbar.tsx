@@ -28,7 +28,7 @@ const Navbar = () => {
       if (!navbarRef.current) return;
 
       let lastPos = 0;
-      let hasScrolled = {
+      const hasScrolled = {
         down: 0,
         up: 0,
       };
@@ -112,7 +112,10 @@ const Navbar = () => {
         <div className="w-full px-4 sm:px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+            <Link
+              href="/"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+            >
               <StarIcon className="text-primary-500 w-8 h-8" />
               <span className="text-2xl font-bold text-neutral-800">
                 Autoškola STAR

@@ -9,20 +9,19 @@ const ContactAndLocation = () => {
   const t = useTranslations("HomePage.ContactAndLocation");
   const [formData, setFormData] = useState({
     name: "",
-    contact: ""
+    contact: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement form submission
-    console.log("Form submitted:", formData);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -36,8 +35,12 @@ const ContactAndLocation = () => {
             <div className="bg-neutral-100 rounded-xl h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden border border-neutral-200">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-4">
-                  <div className="text-xl sm:text-2xl font-bold text-neutral-800 mb-2">{t("mapPlaceholder")}</div>
-                  <div className="text-sm text-neutral-500">{t("mapSubtext")}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-neutral-800 mb-2">
+                    {t("mapPlaceholder")}
+                  </div>
+                  <div className="text-sm text-neutral-500">
+                    {t("mapSubtext")}
+                  </div>
                 </div>
               </div>
             </div>
@@ -48,23 +51,27 @@ const ContactAndLocation = () => {
                 <p className="text-sm text-primary-500 font-medium uppercase tracking-wide mb-3">
                   {t("accessibilitySlogan")}
                 </p>
-                
+
                 <h2 className="text-heading_md sm:text-heading_lg text-neutral-800 mb-4 leading-tight">
                   {t("mainHeading")}
                 </h2>
-                
+
                 <p className="text-base text-neutral-600 leading-relaxed mb-6">
                   {t("description")}
                 </p>
               </div>
-              
+
               <ul className="space-y-3">
-                {t.raw("pickupLocations").map((location: string, index: number) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-base text-neutral-700">{location}</span>
-                  </li>
-                ))}
+                {t
+                  .raw("pickupLocations")
+                  .map((location: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-base text-neutral-700">
+                        {location}
+                      </span>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -91,10 +98,16 @@ const ContactAndLocation = () => {
                 {t("contactSubheading")}
               </h2>
             </header>
-            
-            <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto px-4 lg:px-0">
+
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-8 max-w-md mx-auto px-4 lg:px-0"
+            >
               <div>
-                <label htmlFor="name" className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider">
+                <label
+                  htmlFor="name"
+                  className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider"
+                >
                   {t("nameLabel")}
                 </label>
                 <input
@@ -107,9 +120,12 @@ const ContactAndLocation = () => {
                   className="w-full px-5 py-4 bg-white border-2 border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 text-base placeholder-neutral-400 text-neutral-800 transition-all duration-200"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="contact" className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider">
+                <label
+                  htmlFor="contact"
+                  className="block text-xs font-semibold text-neutral-600 mb-3 uppercase tracking-wider"
+                >
                   {t("contactLabel")}
                 </label>
                 <input
@@ -122,7 +138,7 @@ const ContactAndLocation = () => {
                   className="w-full px-5 py-4 bg-white border-2 border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 text-base placeholder-neutral-400 text-neutral-800 transition-all duration-200"
                 />
               </div>
-              
+
               <div className="pt-4">
                 <button
                   type="submit"

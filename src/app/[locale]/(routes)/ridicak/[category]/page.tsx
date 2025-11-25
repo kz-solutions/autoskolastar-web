@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function LicenseCategoryPage({ params }: Props) {
-  const { locale, category } = await params;
+  const { category } = await params;
 
   const allowedCategories = ["a", "b", "c", "d", "t"];
   if (!allowedCategories.includes(category.toLowerCase())) {
@@ -32,7 +32,7 @@ async function LicenseCategoryContent({ category }: { category: string }) {
   const t = await getTranslations(`LicensePage.${category.toUpperCase()}`);
 
   return (
-    <div className="py-8">
+    <div className="py-8 pb-32">
       {/* Hero sekce */}
       <div className="text-center py-8 px-4 mb-8">
         <h1 className="text-3xl font-bold text-neutral-800 mb-4">
@@ -45,9 +45,8 @@ async function LicenseCategoryContent({ category }: { category: string }) {
 
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-4 space-y-12">
-        
         {/* Podrobnosti o kurzu */}
-        <div>
+        <div className="mb-24">
           <h2 className="text-xl font-bold text-neutral-800 mb-6">
             {t("courseDetails.title")}
           </h2>
@@ -56,25 +55,33 @@ async function LicenseCategoryContent({ category }: { category: string }) {
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("courseDetails.duration.label")}
               </h3>
-              <p className="text-neutral-700">{t("courseDetails.duration.value")}</p>
+              <p className="text-neutral-700">
+                {t("courseDetails.duration.value")}
+              </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("courseDetails.vehicles.label")}
               </h3>
-              <p className="text-neutral-700">{t("courseDetails.vehicles.value")}</p>
+              <p className="text-neutral-700">
+                {t("courseDetails.vehicles.value")}
+              </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("courseDetails.certification.label")}
               </h3>
-              <p className="text-neutral-700">{t("courseDetails.certification.value")}</p>
+              <p className="text-neutral-700">
+                {t("courseDetails.certification.value")}
+              </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("courseDetails.price.label")}
               </h3>
-              <p className="text-neutral-700 font-semibold">{t("courseDetails.price.value")}</p>
+              <p className="text-neutral-700 font-semibold">
+                {t("courseDetails.price.value")}
+              </p>
             </div>
           </div>
           <button className="bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-800 transition-colors">

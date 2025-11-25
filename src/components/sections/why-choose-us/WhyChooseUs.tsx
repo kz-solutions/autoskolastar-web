@@ -12,7 +12,11 @@ const WhyChooseUs = () => {
   const t = useTranslations("HomePage.BetterExperience");
   const ref = useRef(null);
 
-  const reasons = t.raw("features");
+  const reasons = t.raw("features") as Array<{
+    number: string;
+    title: string;
+    description: string;
+  }>;
 
   useGSAP(
     () => {
@@ -22,7 +26,6 @@ const WhyChooseUs = () => {
 
       texts.forEach((el) => {
         const idx = Number(el.dataset.reasonText ?? 0);
-        console.log(idx);
         const fromX = idx % 2 === 0 ? -40 : 40;
 
         gsap.fromTo(
@@ -46,7 +49,10 @@ const WhyChooseUs = () => {
   );
 
   return (
-    <section id="why-choose-us" className="bg-[#181D27] px-4 sm:px-6 lg:px-12 py-32">
+    <section
+      id="why-choose-us"
+      className="bg-[#181D27] px-4 sm:px-6 lg:px-12 py-32"
+    >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
         <header className="text-center mb-24">
@@ -78,7 +84,7 @@ const WhyChooseUs = () => {
 
         {/* Features Section */}
         <div ref={ref} className="space-y-16 sm:space-y-24 lg:space-y-32">
-          {reasons.map((feature: any, index: number) => (
+          {reasons.map((feature, index) => (
             <div
               key={feature.number}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${

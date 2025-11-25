@@ -2,7 +2,6 @@ import React from "react";
 import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/core/Navbar";
 import Footer from "@/components/core/Footer";
-import Image from "next/image";
 
 export default async function DriverTrainingPage() {
   return (
@@ -33,7 +32,6 @@ async function DriverTrainingContent() {
 
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-4 space-y-12">
-        
         {/* Training types */}
         <div>
           <h2 className="text-xl font-bold text-neutral-800 mb-6">
@@ -44,15 +42,23 @@ async function DriverTrainingContent() {
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("trainingTypes.referent.label")}
               </h3>
-              <p className="text-neutral-700 mb-3">{t("trainingTypes.referent.description")}</p>
-              <p className="text-neutral-700 font-semibold">{t("trainingTypes.referent.price")}</p>
+              <p className="text-neutral-700 mb-3">
+                {t("trainingTypes.referent.description")}
+              </p>
+              <p className="text-neutral-700 font-semibold">
+                {t("trainingTypes.referent.price")}
+              </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-primary-700 uppercase tracking-wide mb-1">
                 {t("trainingTypes.professional.label")}
               </h3>
-              <p className="text-neutral-700 mb-3">{t("trainingTypes.professional.description")}</p>
-              <p className="text-neutral-700 font-semibold">{t("trainingTypes.professional.price")}</p>
+              <p className="text-neutral-700 mb-3">
+                {t("trainingTypes.professional.description")}
+              </p>
+              <p className="text-neutral-700 font-semibold">
+                {t("trainingTypes.professional.price")}
+              </p>
             </div>
           </div>
         </div>
@@ -63,19 +69,29 @@ async function DriverTrainingContent() {
             {t("content.title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.raw("content.items").map((item: {title: string, description: string}, index: number) => (
-              <div key={index} className="bg-white rounded-xl shadow-sm border p-6">
-                <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                  <div className="w-6 h-6 bg-primary-600 rounded"></div>
-                </div>
-                <h3 className="font-semibold text-neutral-800 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-neutral-600 text-sm">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            {t
+              .raw("content.items")
+              .map(
+                (
+                  item: { title: string; description: string },
+                  index: number,
+                ) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-sm border p-6"
+                  >
+                    <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-primary-600 rounded"></div>
+                    </div>
+                    <h3 className="font-semibold text-neutral-800 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-neutral-600 text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                ),
+              )}
           </div>
         </div>
 
