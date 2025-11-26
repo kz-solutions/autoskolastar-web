@@ -21,9 +21,9 @@ const Hero = () => {
   useHeroTimeline(ref);
 
   return (
-    <section ref={ref} id="home" className="w-screen h-screen overflow-hidden">
+    <section ref={ref} id="home" className="w-screen h-screen overflow-hidden ">
       {/* Video Background */}
-      <div className="absolute w-[92vw] h-full top-1/2 -translate-y-1/2 max-h-[85vh] rounded-2xl overflow-hidden z-0">
+      <div className="absolute w-[92vw] h-full top-1/2 -translate-y-1/2 max-h-[85vh] rounded-2xl overflow-hidden z-0 ">
         <video
           autoPlay
           loop
@@ -40,7 +40,7 @@ const Hero = () => {
         />
       </div>
       <ScrollIndicator />
-      <div className={"absolute h-screen w-screen top-0 left-0 z-10"}>
+      <div className={"absolute h-screen w-screen top-0 left-0 z-10 "}>
         <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
           <h1
             data-hero-line-top
@@ -87,24 +87,24 @@ const Hero = () => {
           "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
         }
       >
-        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-[90vw] sm:max-w-none px-4 sm:px-0">
           <h1
             data-hero-line-top-3
-            className="opacity-0 text-white text-heading_lg text-center whitespace-nowrap"
+            className="opacity-0 text-white text-heading_lg text-center whitespace-normal sm:whitespace-nowrap break-words"
           >
             {t("line3Top")}
           </h1>
           <h1
             data-hero-line-bottom-3
-            className="opacity-0 text-white text-heading_md font-medium! text-center whitespace-nowrap leading-[2]!"
+            className="opacity-0 text-white text-heading_md font-medium! text-center whitespace-normal leading-[1.5]! sm:leading-[2]! break-words"
           >
             {t("line3Bottom")}
           </h1>
         </div>
-        <div className="relative top-[70%] -translate-y-1/2 left-1/2 -translate-x-1/2">
+        <div className="relative top-[70%] -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-[90vw] sm:max-w-none px-4 sm:px-0">
           <h1
             data-hero-line-4
-            className="opacity-0 text-white text-heading_lg font-medium! text-center whitespace-nowrap"
+            className="opacity-0 text-white text-heading_lg font-medium! text-center whitespace-normal sm:whitespace-nowrap break-words"
           >
             {t("locations")}
           </h1>
