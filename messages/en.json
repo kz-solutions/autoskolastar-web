@@ -11,14 +11,14 @@
           "group": "group D",
           "description": "The course prepares for driving buses with more than 8 passengers, includes theoretical preparation and practical driving in real traffic. A condition is meeting the legal age and health fitness for obtaining a driving license.",
           "price": "Price from 42,990 CZK",
-          "href": "/ridicak/d"
+          "href": "/ridicsky-prukaz/d"
         },
         {
           "title": "Truck combinations",
           "group": "group C, C+E",
           "description": "Group C training teaches how to drive vehicles over 3.5 tons, the C+E extension adds driving with a trailer over 750 kg; includes theory, maneuvering and driving in real traffic.",
           "price": "Price from 42,990 CZK",
-          "href": "/ridicak/c"
+          "href": "/ridicsky-prukaz/c"
         }
       ],
       "centerLeftCategory": {
@@ -26,14 +26,14 @@
         "group": "group A",
         "description": "Complete training for motorcycle groups AM, A1, A2 and A with theoretical and practical preparation. Supplementary exams and conditional rides available.",
         "price": "Price from 16,990 CZK",
-        "href": "/ridicak/a"
+        "href": "/ridicsky-prukaz/a"
       },
       "centerRightCategory": {
         "title": "Buses",
         "group": "group B",
         "description": "Authorizes driving vehicles up to 3.5 tons with max. 8 passengers, including trailers up to 750 kg. Also tractors and work machines up to 3.5 tons.",
         "price": "Price from 16,990 CZK",
-        "href": "/ridicak/b"
+        "href": "/ridicsky-prukaz/b"
       },
       "rightCategories": [
         {
@@ -41,7 +41,7 @@
           "group": "group T",
           "description": "The Group T course prepares you for driving self-propelled working machines with a maximum speed of 40 km/h, including off-road and road driving. It requires reaching the specified age, medical fitness, and successful completion of exams.",
           "price": "Price from 42,990 CZK",
-          "href": "/ridicak/t"
+          "href": "/ridicsky-prukaz/t"
         },
         {
           "title": "Driver training",

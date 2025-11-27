@@ -139,6 +139,7 @@ export const useHeroTimeline = (ref: ReactRef) => {
         },
         { opacity: 1, duration: 1, y: 0 },
         ">-=0.1",
-      );
+      )
+      .to({}, { duration: 1 });
   });
 };

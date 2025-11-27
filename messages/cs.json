@@ -11,14 +11,14 @@
           "group": "skupina D",
           "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
           "price": "Cena od 42 990 Kč",
-          "href": "/ridicak/d"
+          "href": "/ridicsky-prukaz/d"
         },
         {
           "title": "Nákladní soupravy",
           "group": "skupina C, C+E",
           "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
           "price": "Cena od 35 990 Kč",
-          "href": "/ridicak/c"
+          "href": "/ridicsky-prukaz/c"
         }
       ],
       "centerLeftCategory": {
@@ -26,14 +26,14 @@
         "group": "skupina A",
         "description": "Kompletní výuka motocyklových skupin AM, A1, A2 a A s teoretickou i praktickou přípravou. Doplňovací zkoušky a kondiční jízdy jsou k dispozici.",
         "price": "Cena od 25 990 Kč",
-        "href": "/ridicak/a"
+        "href": "/ridicsky-prukaz/a"
       },
       "centerRightCategory": {
         "title": "Autobusy",
         "group": "skupina B",
         "description": "Opravňuje k řízení vozidel do 3,5 tuny s max. 8 pasažéry, včetně přívěsu do 750 kg. Také traktory a pracovní stroje do 3,5 tuny.",
         "price": "Cena od 21 990 Kč",
-        "href": "/ridicak/b"
+        "href": "/ridicsky-prukaz/b"
       },
       "rightCategories": [
         {
@@ -41,7 +41,7 @@
           "group": "skupina T",
           "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
           "price": "Cena od 18 990 Kč",
-          "href": "/ridicak/t"
+          "href": "/ridicsky-prukaz/t"
         },
         {
           "title": "Školení řidičů",

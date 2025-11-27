@@ -79,7 +79,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/ridicak/b"
+                    href="/ridicsky-prukaz/b"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("licenseCategoryB")}
@@ -112,8 +112,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
-
         </div>
 
         {/* Bottom Section */}

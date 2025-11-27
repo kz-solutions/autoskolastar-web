@@ -13,9 +13,17 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const Hero = () => {
   const t = useTranslations("HomePage.Hero");
   const ref = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+
+    const v = videoRef.current;
+    if (!v) return;
+    const p = v.play();
+    if (p !== undefined) {
+      p.catch(() => {});
+    }
   }, []);
 
   useHeroTimeline(ref);
@@ -25,13 +33,15 @@ const Hero = () => {
       {/* Video Background */}
       <div className="absolute w-[92vw] h-full top-1/2 -translate-y-1/2 max-h-[85vh] rounded-2xl overflow-hidden z-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src="/videos/bg_video.mp4" type="video/mp4" />
+          <source src="/videos/bg_video.webm" type="video/webm" />
         </video>
         {/* Dark Overlay */}
         <div
