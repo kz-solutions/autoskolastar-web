@@ -39,6 +39,7 @@ const Hero = () => {
           muted
           playsInline
           preload="auto"
+          poster={"/images/hero_poster.jpg"}
           className="w-full h-full object-cover"
         >
           <source src="/videos/bg_video.webm" type="video/webm" />
