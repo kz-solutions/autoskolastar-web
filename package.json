@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@directus/sdk": "^21.0.0",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.13.0",
     "lodash": "^4.17.21",
