@@ -153,6 +153,26 @@
     "Header": {
       "home": "Úvod",
       "services": "Služby",
+      "drivingLicenses": "Řidičské průkazy",
+      "pricing": "Ceník",
+      "important": "Důležité",
+      "importantLinks": [
+        {
+          "label": "Ministerstvo dopravy",
+          "href": "https://www.mdcr.cz/",
+          "external": true
+        },
+        {
+          "label": "eTesty (MDČR)",
+          "href": "https://etesty.md.gov.cz/",
+          "external": true
+        },
+        {
+          "label": "Stáhnout přihlášku",
+          "href": "/pdf/zadost-o-prijeti-k-vyuce-a-vycviku-20240227-up.pdf",
+          "download": true
+        }
+      ],
       "contact": "Kontakt",
       "about": "O nás",
       "getStarted": "Začít"

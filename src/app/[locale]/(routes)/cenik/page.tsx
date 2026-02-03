@@ -2,9 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 
+type PricingCategory = {
+  id: string | number;
+  label: string;
+};
+
+type PricingItem = {
+  id: string | number;
+  label: string;
+  category_id: string | number;
+  price: string;
+  price_per_hour: string;
+};
+
 const Page = () => {
-  const [items, setItems] = useState<Array<any>>([]);
-  const [categories, setCategories] = useState<Array<any>>([]);
+  const [items, setItems] = useState<PricingItem[]>([]);
+  const [categories, setCategories] = useState<PricingCategory[]>([]);
 
   useEffect(() => {
     const loadItems = async () => {
