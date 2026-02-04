@@ -1,22 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import Label from "@/components/core/Label";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { priceTemplate } from "@/utils/common";
 
 interface Category {
   title: string;
   group: string;
   description: string;
-  price: string;
+  code: string;
   href: string;
 }
 
 const LicenseCategories = () => {
   const t = useTranslations("HomePage.LicenseCategories");
+  const [pricing, setPricing] = useState<
+    Array<{ category_code: string; min_price: number }>
+  >([]);
+
+  useEffect(() => {
+    const loadPricing = async () => {
+      const res = await fetch("/api/pricing-categories/starting-prices");
+      const data = await res.json();
+      setPricing(data);
+    };
+
+    loadPricing();
+  }, []);
+
+  const matchPrice = useMemo(() => {
+    return (code: string) => priceTemplate(code, pricing, t);
+  }, [pricing, t]);
 
   return (
     <section
@@ -79,12 +97,14 @@ const LicenseCategories = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-heading_sm text-neutral-800 mb-2">
+                    <h3 className="text-heading_sm text-neutral-800 flex flex-col mb-2">
                       <span className="font-bold">{category.title}</span>
-                      <span className="font-normal"> {category.group}</span>
+                      <span className="font-normal text-2xl">
+                        {category.group}
+                      </span>
                     </h3>
                     <div className="text-lg text-gray-700 mb-3 mt-auto">
-                      {category.price}
+                      {matchPrice(category.code)}
                     </div>
                     <Link
                       href={category.href}
@@ -101,7 +121,7 @@ const LicenseCategories = () => {
           {/* Center-left - 1 card */}
           <div className="lg:col-span-3 flex">
             <div className="p-6 w-full flex flex-col h-full">
-              <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
+              <div className="bg-neutral-100 rounded-lg h-80 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_a.png"
                   alt={t("centerLeftCategory.title")}
@@ -111,12 +131,11 @@ const LicenseCategories = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-heading_sm text-neutral-800 mb-2">
+              <h3 className="text-heading_sm flex flex-col text-neutral-800 mb-2">
                 <span className="font-bold">
                   {t("centerLeftCategory.title")}
                 </span>
-                <span className="font-normal">
-                  {" "}
+                <span className="font-normal text-2xl">
                   {t("centerLeftCategory.group")}
                 </span>
               </h3>
@@ -124,7 +143,7 @@ const LicenseCategories = () => {
                 {t("centerLeftCategory.description")}
               </p>
               <div className="text-lg text-gray-700 mb-3">
-                {t("centerLeftCategory.price")}
+                {matchPrice(t("centerLeftCategory.code"))}
               </div>
               <Link
                 href={t("centerLeftCategory.href")}
@@ -139,7 +158,7 @@ const LicenseCategories = () => {
           {/* Center-right - 1 card */}
           <div className="lg:col-span-3 flex">
             <div className="p-6 w-full flex flex-col h-full">
-              <div className="bg-neutral-100 rounded-lg h-96 w-full mb-4 overflow-hidden">
+              <div className="bg-neutral-100 rounded-lg h-80 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_b.png"
                   alt={t("centerRightCategory.title")}
@@ -149,12 +168,11 @@ const LicenseCategories = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-heading_sm text-neutral-800 mb-2">
+              <h3 className="text-heading_sm flex flex-col  text-neutral-800 mb-2">
                 <span className="font-bold">
                   {t("centerRightCategory.title")}
                 </span>
-                <span className="font-normal">
-                  {" "}
+                <span className="font-normal text-2xl">
                   {t("centerRightCategory.group")}
                 </span>
               </h3>
@@ -162,7 +180,7 @@ const LicenseCategories = () => {
                 {t("centerRightCategory.description")}
               </p>
               <div className="text-lg text-gray-700 mb-3">
-                {t("centerRightCategory.price")}
+                {matchPrice(t("centerRightCategory.code"))}
               </div>
               <Link
                 href={t("centerRightCategory.href")}
@@ -184,7 +202,10 @@ const LicenseCategories = () => {
                   "/images/drivers_training.png",
                 ];
                 return (
-                  <div key={category.title} className="p-6 flex flex-col h-full">
+                  <div
+                    key={category.title}
+                    className="p-6 flex flex-col h-full"
+                  >
                     <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
                       <Image
                         src={imageMap[index]}
@@ -195,12 +216,14 @@ const LicenseCategories = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-heading_sm text-neutral-800 mb-2">
+                    <h3 className="text-heading_sm flex flex-col text-neutral-800 mb-2">
                       <span className="font-bold">{category.title}</span>
-                      <span className="font-normal"> {category.group}</span>
+                      <span className="font-normal text-2xl">
+                        {category.group}
+                      </span>
                     </h3>
                     <div className="text-lg text-gray-700 mb-3 mt-auto">
-                      {category.price}
+                      {matchPrice(category.code)}
                     </div>
                     <Link
                       href={category.href}
