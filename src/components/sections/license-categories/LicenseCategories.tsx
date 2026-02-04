@@ -6,7 +6,7 @@ import { StarIcon } from "@/icons/Star";
 import Label from "@/components/core/Label";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { priceTemplate } from "@/utils/common";
+import { usestartingPriceTemplate } from "@/utils/common";
 
 interface Category {
   title: string;
@@ -33,7 +33,11 @@ const LicenseCategories = () => {
   }, []);
 
   const matchPrice = useMemo(() => {
-    return (code: string) => priceTemplate(code, pricing, t);
+    return (code: string) =>
+      usestartingPriceTemplate(
+        pricing.find(({ category_code }) => category_code === code)
+          ?.min_price ?? 0,
+      );
   }, [pricing, t]);
 
   return (

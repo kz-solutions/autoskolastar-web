@@ -1,7 +1,8 @@
 {
   "HomePage": {
+    "priceTemplate": "{price, number} Kč",
     "LicenseCategories": {
-      "priceTemplate": "Cena od {price, number} Kč",
+      "startingPriceTemplate": "Cena od {price, number} Kč",
       "slogan": "CO NABÍZÍME",
       "title": "Vyberte si váš <primary>vysněný</primary> řidičský průkaz",
       "subtitle": "Zvolte si kurz z naší široké nabídky tak, aby co nejlépe odpovídal Vašim časovým možnostem i individuálním potřebám.",

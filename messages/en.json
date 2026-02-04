@@ -1,7 +1,8 @@
 {
   "HomePage": {
+    "priceTemplate": "{price, number} CZK",
     "LicenseCategories": {
-      "priceTemplate": "Starting at {price, number} CZK",
+      "startingPriceTemplate": "Starting at {price, number} CZK",
       "slogan": "WHAT WE OFFER",
       "title": "Choose your <primary>dream</primary> driving license",
       "subtitle": "Choose a course from our wide range to best suit your time and individual needs.",

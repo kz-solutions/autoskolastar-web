@@ -1,16 +1,12 @@
 import { useTranslations } from "next-intl";
 
-export const priceTemplate = (
-  category_code: string,
-  pricingArray: Array<{ category_code: string; min_price: number }>,
-  t: ReturnType<typeof useTranslations>,
-) => {
+export const usestartingPriceTemplate = (price: number) => {
+  const t = useTranslations("HomePage.LicenseCategories");
+
   return t(
-    "priceTemplate",
+    "startingPriceTemplate",
     {
-      price:
-        pricingArray.find(({ category_code: code }) => code === category_code)
-          ?.min_price ?? 0,
+      price,
     },
     {
       number: {
