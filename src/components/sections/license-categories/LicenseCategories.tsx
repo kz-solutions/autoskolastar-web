@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import Label from "@/components/core/Label";
@@ -32,13 +32,13 @@ const LicenseCategories = () => {
     loadPricing();
   }, []);
 
-  const matchPrice = useMemo(() => {
-    return (code: string) =>
-      useStartingPriceTemplate(
-        pricing.find(({ category_code }) => category_code === code)
-          ?.min_price ?? 0,
-      );
-  }, [pricing]);
+  const formatStartingPrice = useStartingPriceTemplate();
+
+  const matchPrice = (code: string) =>
+    formatStartingPrice(
+      pricing.find(({ category_code }) => category_code === code)?.min_price ??
+        0,
+    );
 
   return (
     <section
