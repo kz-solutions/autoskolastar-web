@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-export const usestartingPriceTemplate = (price: number) => {
+export const useStartingPriceTemplate = (price: number) => {
   const t = useTranslations("HomePage.LicenseCategories");
 
   return t(
