@@ -55,7 +55,7 @@ const Label = ({
       </div>
 
       <div className="flex items-center justify-center">
-        <div
+        <hr
           className={`"w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
         />
         <span
@@ -63,7 +63,7 @@ const Label = ({
         >
           {text || ""}
         </span>
-        <div
+        <hr
           className={`w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
         />
       </div>
