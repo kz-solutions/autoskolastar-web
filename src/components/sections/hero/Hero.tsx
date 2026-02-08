@@ -1,124 +1,52 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import { useTranslations } from "next-intl";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import ScrollIndicator from "@/components/core/ScrollIndicator";
-import { useHeroTimeline } from "@/hooks/gsap/hero/useHeroTimeline";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+import Image from "next/image";
 
 const Hero = () => {
   const t = useTranslations("HomePage.Hero");
-  const ref = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-
-    const v = videoRef.current;
-    if (!v) return;
-    const p = v.play();
-    if (p !== undefined) {
-      p.catch(() => {});
-    }
-  }, []);
-
-  useHeroTimeline(ref);
 
   return (
-    <section ref={ref} id="home" className="w-screen h-screen overflow-hidden ">
-      {/* Video Background */}
-      <div className="absolute w-[92vw] h-full top-1/2 -translate-y-1/2 max-h-[85vh] rounded-2xl overflow-hidden z-0 ">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster={"/images/hero_poster.jpg"}
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/bg_video.webm" type="video/webm" />
-        </video>
-        {/* Dark Overlay */}
-        <div
-          data-hero-bg
-          className="absolute inset-0 bg-black/60 pointer-events-none"
+    <section
+      id="home"
+      className="relative w-full min-h-[100svh] flex items-center justify-center overflow-x-clip"
+    >
+      <div className="relative w-[92vw] h-[85svh] max-h-[85vh] rounded-2xl overflow-hidden">
+        <Image
+          src="/images/hero_poster.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
         />
-      </div>
-      <ScrollIndicator />
-      <div className={"absolute h-screen w-screen top-0 left-0 z-10 "}>
-        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2">
-          <h1
-            data-hero-line-top
-            className="text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
-          >
-            {t("line1Top")}
-          </h1>
-          <h1
-            data-hero-line-bottom
-            className="text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
-          >
-            {t("line1Bottom")}
-          </h1>
-        </div>
-      </div>
-      <div
-        className={
-          "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
-        }
-      >
-        <div
-          data-hero-line-here
-          className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2"
-        >
-          <h1
-            data-hero-line-top-2
-            className="opacity-0 text-white text-heading_xl text-center whitespace-nowrap leading-[1]!"
-          >
-            {t("line2Top")}
-          </h1>
-          <h1
-            data-hero-line-bottom-2
-            className="opacity-0 text-white hero-line hero-bottom text-heading_xl text-center whitespace-nowrap leading-[1]!"
-          >
-            {t("line2BottomStart")}{" "}
-            <span className={"inline-block text-white"}>
-              {t("line2BottomHere")}
-            </span>
-          </h1>
-        </div>
-      </div>
-      <div
-        className={
-          "absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none"
-        }
-      >
-        <div className="relative top-[45%] -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-[90vw] sm:max-w-none px-4 sm:px-0">
-          <h1
-            data-hero-line-top-3
-            className="opacity-0 text-white text-heading_lg text-center whitespace-normal sm:whitespace-nowrap break-words"
-          >
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+
+        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6 sm:px-10">
+          <h1 className="text-white text-heading_lg sm:text-heading_xl leading-[1.1]">
             {t("line3Top")}
           </h1>
-          <h1
-            data-hero-line-bottom-3
-            className="opacity-0 text-white text-heading_md font-medium! text-center whitespace-normal leading-[1.5]! sm:leading-[2]! break-words"
-          >
+          <p className="mt-4 max-w-3xl text-white/90 text-base sm:text-lg leading-relaxed">
             {t("line3Bottom")}
-          </h1>
-        </div>
-        <div className="relative top-[70%] -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-[90vw] sm:max-w-none px-4 sm:px-0">
-          <h1
-            data-hero-line-4
-            className="opacity-0 text-white text-heading_lg font-medium! text-center whitespace-normal sm:whitespace-nowrap break-words"
-          >
+          </p>
+          <p className="mt-8 text-white text-heading_sm sm:text-heading_md font-medium">
             {t("locations")}
-          </h1>
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center rounded-xl bg-primary-600 px-6 py-3 text-white font-semibold shadow-lg hover:bg-primary-700 active:bg-primary-800 transition-colors"
+            >
+              {t("ctaServices")}
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 text-white font-semibold ring-1 ring-white/30 backdrop-blur hover:bg-white/15 transition-colors"
+            >
+              {t("ctaButton")}
+            </a>
+          </div>
         </div>
       </div>
     </section>
