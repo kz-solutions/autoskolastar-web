@@ -16,19 +16,6 @@ interface Category {
   translations?: Array<{ label: string; description: string }>;
 }
 
-type PricingCategory = {
-  id: string | number;
-  label: string;
-};
-
-type PricingItem = {
-  id: string | number;
-  label: string;
-  category_id: string | number;
-  price: string;
-  price_per_hour: string;
-};
-
 const Page = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
