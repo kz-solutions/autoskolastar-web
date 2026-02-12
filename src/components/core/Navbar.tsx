@@ -104,12 +104,12 @@ const Navbar = () => {
 
   return (
     <div ref={scope} className={"bg-black absolute top-0 left-0 right-0 z-50"}>
-      <header
+      <nav
         ref={navbarRef}
-        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform"
+        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform h-16 flex items-center"
       >
         {/* Main header */}
-        <div className="w-full px-4 sm:px-6 lg:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link
@@ -206,7 +206,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-      </header>
+      </nav>
     </div>
   );
 };

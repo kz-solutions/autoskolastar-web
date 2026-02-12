@@ -44,10 +44,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Heading 2xl */
+.text-heading_2xl {
+    font-size: clamp(25px, calc(25px + 5vw), 96px);
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: var(--headline-letter-spacing);
+}
+
 /* Heading xl */
 .text-heading_xl {
-    font-size: clamp(25px, calc(25px + 5vw), 96px);
-    line-height: 1.3;
+    font-size: clamp(22px, calc(22px + 3.5vw), 72px);
+    line-height: 1.2;
     font-weight: bold;
     letter-spacing: var(--headline-letter-spacing);
 }

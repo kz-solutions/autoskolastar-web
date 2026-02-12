@@ -7,12 +7,19 @@ const useIsMobile = (): boolean => {
   const [isMobile, setIsMobile] = useState(false);
 
   useLayoutEffect(() => {
-    const updateSize = (): void => {
+    const updateSize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    window.addEventListener("resize", debounce(updateSize, 250));
+
+    const debouncedUpdate = debounce(updateSize, 250);
+
+    window.addEventListener("resize", debouncedUpdate);
     updateSize();
-    return (): void => window.removeEventListener("resize", updateSize);
+
+    return () => {
+      window.removeEventListener("resize", debouncedUpdate);
+      debouncedUpdate.cancel();
+    };
   }, []);
 
   return isMobile;
