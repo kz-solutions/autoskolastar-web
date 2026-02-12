@@ -53,20 +53,18 @@ const Hero = () => {
           </div>
         </div>
         <div className="absolute h-full w-full top-0 left-0 z-10">
-          <div className="relative top-[15%] left-[10%]">
+          <div className="relative top-[15%] left-[10%] w-4/5">
             <h1
               data-hero-title-top
-              className="text-slate-800 text-heading_xl whitespace-nowrap leading-[1]! mb-2 opacity-0"
+              className="text-slate-800 text-heading_xl leading-[1]! mb-2 opacity-0"
             >
-              {/*{t("line1Top")}*/}
-              První cesta je ta nejdůležitější.
+              {t("mainTitle")}
             </h1>
             <h1
               data-hero-title-bottom
-              className="text-slate-700 text-heading_lg whitespace-nowrap leading-[1]! opacity-0"
+              className="text-slate-700 text-heading_lg leading-[1]! opacity-0"
             >
-              {/*{t("line1Bottom")}*/}
-              Vaše cesta. Vaše tempo.
+              {t("subtitle")}
             </h1>
           </div>
         </div>

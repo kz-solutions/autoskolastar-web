@@ -160,17 +160,11 @@
       "getStarted": "Get Started"
     },
     "Hero": {
-      "mainHeading": "Driving easily and quickly",
       "locations": "BÍLINA – MOST – LITVÍNOV",
       "description": "We will teach you to drive from scratch, in a friendly team and at a fair price. At Autoškola Star, we will prepare you for final exams, whether you are a complete beginner or a professional driver.",
       "ctaButton": "I am interested",
-      "line1Top": "Every journey",
-      "line1Bottom": "has its beginning",
-      "line2Top": "and yours",
-      "line2BottomStart": "starts",
-      "line2BottomHere": "here",
-      "line3Top": "Driving school that prepares you for everything.",
-      "line3Bottom": "Without stress. With confidence. With instructors who stand by your side."
+      "mainTitle": "The first journey is the most important.",
+      "subtitle": "Your road. Your pace."
     }
   },
   "LicensePage": {
