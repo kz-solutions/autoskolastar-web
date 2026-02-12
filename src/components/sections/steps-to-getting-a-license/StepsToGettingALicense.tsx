@@ -59,7 +59,7 @@ const StepsToGettingALicense = () => {
       <div
         ref={ref}
         className={
-          "grid lg:grid-rows-[min-content_max-content] lg:grid-flow-col gap-x-4 lg:gap-x-12 gap-y-8 max-w-[1320px]"
+          "grid lg:grid-cols-[1fr_min-content_1fr_min-content_1fr_min-content_1fr] gap-x-4 lg:gap-x-12 gap-y-8 max-w-[1320px]"
         }
       >
         {steps.map(
@@ -70,30 +70,33 @@ const StepsToGettingALicense = () => {
             const Icon = icons[idx];
             return (
               <React.Fragment key={title}>
-                <div data-step={idx} className={"flex flex-col gap-y-1"}>
-                  <div className={"flex gap-x-2 items-center"}>
-                    <Icon className={"text-primary-500 size-4 mb-0.5"} />
-                    <h5 className={"text-primary-500"}>
-                      {"0".concat(String(idx + 1))}
-                    </h5>
+                <div
+                  className={"grid grid-cols-subgrid grid-rows-2 gap-y-4"}
+                  data-step={idx}
+                >
+                  <div className={"flex flex-col gap-y-1"}>
+                    <div className={"flex gap-x-2 items-center"}>
+                      <Icon className={"text-primary-500 size-4 mb-0.5"} />
+                      <h5 className={"text-primary-500"}>
+                        {"0".concat(String(idx + 1))}
+                      </h5>
+                    </div>
+
+                    <h3 className={"text-heading_md text-neutral-800"}>
+                      {title}
+                    </h3>
                   </div>
 
-                  <h3 className={"text-heading_md text-neutral-800"}>
-                    {title}
-                  </h3>
+                  <p className={"place-self-end-safe text-md text-neutral-600"}>
+                    {description}
+                  </p>
                 </div>
 
-                <p
-                  data-step={idx}
-                  className={"place-self-end-safe text-md text-neutral-600"}
-                >
-                  {description}
-                </p>
                 {idx < steps.length - 1 && (
                   <Divider
                     data-step={idx}
                     orientation={isDesktop ? "vertical" : "horizontal"}
-                    className={"lg:row-span-2 col-span-2"}
+                    className={"lg:col-span-1 col-span-2"}
                   />
                 )}
               </React.Fragment>

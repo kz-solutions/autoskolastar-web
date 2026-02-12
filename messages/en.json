@@ -1,6 +1,8 @@
 {
   "HomePage": {
+    "priceTemplate": "{price, number} CZK",
     "LicenseCategories": {
+      "startingPriceTemplate": "Starting at {price, number} CZK",
       "slogan": "WHAT WE OFFER",
       "title": "Choose your <primary>dream</primary> driving license",
       "subtitle": "Choose a course from our wide range to best suit your time and individual needs.",
@@ -9,45 +11,45 @@
         {
           "title": "Buses",
           "group": "group D",
+          "code": "D",
           "description": "The course prepares for driving buses with more than 8 passengers, includes theoretical preparation and practical driving in real traffic. A condition is meeting the legal age and health fitness for obtaining a driving license.",
-          "price": "Price from 42,990 CZK",
           "href": "/ridicsky-prukaz/d"
         },
         {
           "title": "Truck combinations",
           "group": "group C, C+E",
+          "code": "C",
           "description": "Group C training teaches how to drive vehicles over 3.5 tons, the C+E extension adds driving with a trailer over 750 kg; includes theory, maneuvering and driving in real traffic.",
-          "price": "Price from 42,990 CZK",
           "href": "/ridicsky-prukaz/c"
         }
       ],
       "centerLeftCategory": {
         "title": "Motorcycles",
         "group": "group A",
+        "code": "A",
         "description": "Complete training for motorcycle groups AM, A1, A2 and A with theoretical and practical preparation. Supplementary exams and conditional rides available.",
-        "price": "Price from 16,990 CZK",
         "href": "/ridicsky-prukaz/a"
       },
       "centerRightCategory": {
         "title": "Automobiles",
         "group": "group B",
+        "code": "B",
         "description": "Authorizes driving vehicles up to 3.5 tons with max. 8 passengers, including trailers up to 750 kg. Also tractors and work machines up to 3.5 tons.",
-        "price": "Price from 16,990 CZK",
         "href": "/ridicsky-prukaz/b"
       },
       "rightCategories": [
         {
           "title": "Tractors",
           "group": "group T",
+          "code": "T",
           "description": "The Group T course prepares you for driving self-propelled working machines with a maximum speed of 40 km/h, including off-road and road driving. It requires reaching the specified age, medical fitness, and successful completion of exams.",
-          "price": "Price from 42,990 CZK",
           "href": "/ridicsky-prukaz/t"
         },
         {
           "title": "Driver training",
           "group": "",
+          "code": "training",
           "description": "Professional training for professional drivers includes basic and periodic courses focused on safety, legislation, and operation of a digital tachograph. It is intended for holders of the relevant driving license and requires valid medical fitness according to regulations.",
-          "price": "Price from 42,990 CZK",
           "href": "/skoleni-ridicu"
         }
       ]
@@ -178,17 +180,11 @@
       "getStarted": "Get Started"
     },
     "Hero": {
-      "mainHeading": "Driving easily and quickly",
       "locations": "BÍLINA – MOST – LITVÍNOV",
       "description": "We will teach you to drive from scratch, in a friendly team and at a fair price. At Autoškola Star, we will prepare you for final exams, whether you are a complete beginner or a professional driver.",
       "ctaButton": "I am interested",
-      "line1Top": "Every journey",
-      "line1Bottom": "has its beginning",
-      "line2Top": "and yours",
-      "line2BottomStart": "starts",
-      "line2BottomHere": "here",
-      "line3Top": "Driving school that prepares you for everything.",
-      "line3Bottom": "Without stress. With confidence. With instructors who stand by your side."
+      "mainTitle": "The first journey is the most important.",
+      "subtitle": "Your road. Your pace."
     }
   },
   "LicensePage": {

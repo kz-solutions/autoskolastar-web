@@ -92,7 +92,7 @@ const ContactAndLocation = () => {
               </div>
 
               {/* Desktop */}
-              <Label text={t("contactHeading")} />
+              <Label starBgTWColor={"white"} text={t("contactHeading")} />
 
               <h2 className="text-heading_md sm:text-heading_lg text-neutral-800 mb-4 leading-tight">
                 {t("contactSubheading")}
