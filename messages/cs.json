@@ -1,6 +1,8 @@
 {
   "HomePage": {
+    "priceTemplate": "{price, number} Kč",
     "LicenseCategories": {
+      "startingPriceTemplate": "Cena od {price, number} Kč",
       "slogan": "CO NABÍZÍME",
       "title": "Vyberte si váš <primary>vysněný</primary> řidičský průkaz",
       "subtitle": "Zvolte si kurz z naší široké nabídky tak, aby co nejlépe odpovídal Vašim časovým možnostem i individuálním potřebám.",
@@ -9,45 +11,45 @@
         {
           "title": "Autobusy",
           "group": "skupina D",
+          "code": "D",
           "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
-          "price": "Cena od 42 990 Kč",
           "href": "/ridicsky-prukaz/d"
         },
         {
           "title": "Nákladní soupravy",
           "group": "skupina C, C+E",
+          "code": "C",
           "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
-          "price": "Cena od 35 990 Kč",
           "href": "/ridicsky-prukaz/c"
         }
       ],
       "centerLeftCategory": {
         "title": "Motorky",
         "group": "skupina A",
+        "code": "A",
         "description": "Kompletní výuka motocyklových skupin AM, A1, A2 a A s teoretickou i praktickou přípravou. Doplňovací zkoušky a kondiční jízdy jsou k dispozici.",
-        "price": "Cena od 25 990 Kč",
         "href": "/ridicsky-prukaz/a"
       },
       "centerRightCategory": {
         "title": "Osobní automobily",
         "group": "skupina B",
+        "code": "B",
         "description": "Opravňuje k řízení vozidel do 3,5 tuny s max. 8 pasažéry, včetně přívěsu do 750 kg. Také traktory a pracovní stroje do 3,5 tuny.",
-        "price": "Cena od 21 990 Kč",
         "href": "/ridicsky-prukaz/b"
       },
       "rightCategories": [
         {
           "title": "Traktory",
           "group": "skupina T",
+          "code": "T",
           "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
-          "price": "Cena od 18 990 Kč",
           "href": "/ridicsky-prukaz/t"
         },
         {
           "title": "Školení řidičů",
           "group": "",
+          "code": "training",
           "description": "Odborné školení pro profesionální řidiče zahrnuje základní i periodické kurzy zaměřené na bezpečnost, legislativu a obsluhu digitálního tachografu. Je určeno držitelům příslušného řidičského průkazu a vyžaduje platnou lékařskou způsobilost dle předpisů.",
-          "price": "Cena od 2 990 Kč",
           "href": "/skoleni-ridicu"
         }
       ]
@@ -178,17 +180,11 @@
       "getStarted": "Začít"
     },
     "Hero": {
-      "mainHeading": "Řízení snadno a rychle",
       "locations": "BÍLINA – MOST – LITVÍNOV",
       "description": "Naučíme vás řídit od základů, v přátelském kolektivu a za férovou cenu. V Autoškole Star vás přípravíme na závěrečné zkoušky ať už jste úplný začátečník, nebo profesionální řidič.",
       "ctaButton": "Mám zájem",
-      "line1Top": "Každá cesta",
-      "line1Bottom": "má svůj začátek",
-      "line2Top": "a ta tvoje",
-      "line2BottomStart": "začíná",
-      "line2BottomHere": "tady",
-      "line3Top": "Autoškola, která tě připraví na všechno.",
-      "line3Bottom": "Bez stresu. S jistotou. S instruktory, co stojí na tvé straně."
+      "mainTitle": "První cesta je ta nejdůležitější.",
+      "subtitle": "Vaše cesta. Vaše tempo."
     }
   },
   "LicensePage": {

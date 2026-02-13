@@ -51,33 +51,33 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="bg-[#181D27] px-4 sm:px-6 lg:px-12 py-32"
+      className="bg-[#141414] px-4 sm:px-6 lg:px-12 py-32"
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
         <header className="text-center mb-24">
           <div className="lg:hidden mb-6">
             <div className="flex items-center justify-center space-x-3">
-              <StarIcon className="text-primary-500 w-4 h-4" />
-              <span className="text-sm text-primary-500 uppercase tracking-widest">
+              <StarIcon className="text-primary-400 w-4 h-4" />
+              <span className="text-sm text-primary-400 uppercase tracking-widest">
                 {t("slogan")}
               </span>
-              <StarIcon className="text-primary-500 w-4 h-4" />
+              <StarIcon className="text-primary-400 w-4 h-4" />
             </div>
           </div>
 
           {/* Desktop */}
-          <Label text={t("slogan")} />
+          <Label color={"primary-400"} text={t("slogan")} />
 
-          <h2 className="text-heading_md sm:text-heading_lg text-white mb-6 sm:mb-8 px-4">
+          <h2 className="text-heading_md sm:text-heading_lg text-gray-200 mb-6 sm:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
-                <span className="text-primary-500">{chunks}</span>
+                <span className="text-primary-400">{chunks}</span>
               ),
             })}
           </h2>
 
-          <p className="text-base sm:text-lg text-neutral-300 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
             {t("description")}
           </p>
         </header>
@@ -96,13 +96,13 @@ const WhyChooseUs = () => {
                 data-reason-text={index}
                 className={`space-y-4 sm:space-y-6 px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
-                <div className="text-primary-500 text-3xl sm:text-4xl font-bold">
+                <div className="text-primary-400 text-3xl sm:text-4xl font-bold">
                   {feature.number}
                 </div>
-                <h3 className="text-heading_sm sm:text-heading_md text-white leading-tight">
+                <h3 className="text-heading_sm sm:text-heading_md text-gray-200 leading-tight">
                   {feature.title}
                 </h3>
-                <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

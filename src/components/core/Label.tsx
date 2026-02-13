@@ -5,7 +5,15 @@ import gsap from "gsap";
 
 const DURATION = 0.7;
 
-const Label = ({ text }: { text: string }) => {
+const Label = ({
+  text,
+  color = "primary-500",
+  starBgTWColor = "transparent",
+}: {
+  text: string;
+  color?: string;
+  starBgTWColor?: string;
+}) => {
   const ref = useRef(null);
 
   useGSAP(
@@ -35,19 +43,29 @@ const Label = ({ text }: { text: string }) => {
 
   return (
     <div ref={ref} className="hidden lg:block relative w-full mb-6">
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-0 label-star">
-        <StarIcon className="text-primary-500 w-6 h-6" />
+      <div
+        className={`absolute z-10 left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-0 label-star w-12 bg-${starBgTWColor}`}
+      >
+        <StarIcon className={`text-${color} w-6 h-6`} />
       </div>
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 opacity-0 label-star">
-        <StarIcon className="text-primary-500 w-6 h-6" />
+      <div
+        className={`absolute z-10 right-0 top-1/2 -translate-y-1/2 translate-x-4 opacity-0 label-star w-12 bg-${starBgTWColor}`}
+      >
+        <StarIcon className={`text-${color} w-6 h-6 ml-auto`} />
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="w-64 lg:w-96 h-0.5 bg-primary-500 opacity-20 label-divider" />
-        <span className="label-text opacity-0 translate-y-full text-sm text-primary-500 uppercase tracking-widest mx-8 lg:mx-16">
+        <hr
+          className={`"w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
+        />
+        <span
+          className={`label-text opacity-0 translate-y-full text-sm text-${color} uppercase tracking-widest mx-8 lg:mx-16`}
+        >
           {text || ""}
         </span>
-        <div className="w-64 lg:w-96 h-0.5 bg-primary-500 opacity-20 label-divider" />
+        <hr
+          className={`w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
+        />
       </div>
     </div>
   );

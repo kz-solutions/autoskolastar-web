@@ -142,8 +142,8 @@ const Navbar = () => {
       if (!el) return;
       if (isMobileMenuOpen) {
         gsap.to(el, {
-          height: el.scrollHeight,
-          overflow: "visible",
+          height: Math.min(el.scrollHeight, window.innerHeight - 64),
+          overflow: "auto",
           ...MOBILE_MENU_ANIM.OPEN,
         });
       } else {
@@ -241,11 +241,11 @@ const Navbar = () => {
           aria-hidden="true"
         />
       )}
-      <header
+      <nav
         ref={navbarRef}
-        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform"
+        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform h-16 flex items-center"
       >
-        <div className="w-full px-4 sm:px-6 lg:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between">
             <Link
               href="/"
@@ -349,14 +349,16 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
+        </div>
+      </nav>
 
-          <div
-            ref={mobileMenuRef}
-            id="mobile-nav"
-            className="lg:hidden overflow-hidden"
-          >
-            <div className="mt-4 pb-4 border-t border-neutral-200">
-              <nav className="flex flex-col space-y-4 pt-4">
+      <div
+        ref={mobileMenuRef}
+        id="mobile-nav"
+        className="lg:hidden fixed top-16 left-0 right-0 z-[45] max-h-[calc(100vh-4rem)] overflow-x-hidden overflow-y-auto bg-white shadow-lg"
+      >
+        <div className="border-t border-neutral-200 px-4 py-4">
+          <nav className="flex flex-col space-y-4">
                 {NAV_LINKS.slice(0, 3).map(({ href, key, active }) => (
                   <Link
                     key={key}
@@ -399,12 +401,11 @@ const Navbar = () => {
                   </Link>
                 ))}
               </nav>
-            </div>
-          </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 };
+
 
 export default Navbar;
