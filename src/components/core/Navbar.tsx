@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/icons/Star";
 import gsap from "gsap";
@@ -9,8 +9,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LangSwitch from "@/components/core/LangSwitch";
 import { Link } from "@/i18n/navigation";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useMobileMenu } from "@/hooks/useMobileMenu";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const NAV_LINKS: Array<{ href: string; key: "home" | "drivingLicenses" | "pricing" | "contact"; active?: boolean }> = [
+  { href: "/#home", key: "home", active: true },
+  { href: "/#services", key: "drivingLicenses" },
+  { href: "/cenik", key: "pricing" },
+  { href: "/#contact", key: "contact" },
+];
+
+const NAVBAR_SCROLL = {
+  JITTER: 2,
+  HIDE_AFTER: 160,
+  SHOW_AFTER: 40,
+} as const;
+
+const MOBILE_MENU_ANIM = {
+  OPEN: { duration: 0.3, ease: "power2.out" as const },
+  CLOSE: { duration: 0.25, ease: "power2.in" as const },
+} as const;
 
 type ImportantLink = {
   label: string;
@@ -102,11 +121,41 @@ const Navbar = () => {
 
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const scope = useRef<HTMLDivElement | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((s) => !s);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const importantLinks = parseImportantLinks(t.raw("importantLinks"));
+
+  useMobileMenu(isMobileMenuOpen, closeMobileMenu);
+
+  useLayoutEffect(() => {
+    if (mobileMenuRef.current) {
+      gsap.set(mobileMenuRef.current, { height: 0, overflow: "hidden" });
+    }
+  }, []);
+
+  useGSAP(
+    () => {
+      const el = mobileMenuRef.current;
+      if (!el) return;
+      if (isMobileMenuOpen) {
+        gsap.to(el, {
+          height: el.scrollHeight,
+          overflow: "visible",
+          ...MOBILE_MENU_ANIM.OPEN,
+        });
+      } else {
+        gsap.to(el, {
+          height: 0,
+          overflow: "hidden",
+          ...MOBILE_MENU_ANIM.CLOSE,
+        });
+      }
+    },
+    { dependencies: [isMobileMenuOpen], scope },
+  );
 
   useGSAP(
     () => {
@@ -138,10 +187,6 @@ const Navbar = () => {
           overwrite: "auto",
         });
       };
-      const JITTER = 2;
-      const HIDE_AFTER = 160;
-      const SHOW_AFTER = 40;
-
       ScrollTrigger.create({
         start: 0,
         end: "max",
@@ -164,17 +209,17 @@ const Navbar = () => {
             return;
           }
 
-          if (delta > JITTER) {
+          if (delta > NAVBAR_SCROLL.JITTER) {
             hasScrolled.up = 0;
             hasScrolled.down += Math.abs(delta);
-            if (hasScrolled.down >= HIDE_AFTER) {
+            if (hasScrolled.down >= NAVBAR_SCROLL.HIDE_AFTER) {
               hide();
               hasScrolled.down = 0;
             }
-          } else if (delta < JITTER) {
+          } else if (delta < NAVBAR_SCROLL.JITTER) {
             hasScrolled.down = 0;
             hasScrolled.up += Math.abs(delta);
-            if (hasScrolled.up >= SHOW_AFTER) {
+            if (hasScrolled.up >= NAVBAR_SCROLL.SHOW_AFTER) {
               show();
               hasScrolled.up = 0;
             }
@@ -189,14 +234,19 @@ const Navbar = () => {
 
   return (
     <div ref={scope} className={"bg-black absolute top-0 left-0 right-0 z-50"}>
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
+      )}
       <header
         ref={navbarRef}
         className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform"
       >
-        {/* Main header */}
         <div className="w-full px-4 sm:px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <Link
               href="/"
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
@@ -207,27 +257,21 @@ const Navbar = () => {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               <LangSwitch shouldClose={shouldHide} />
-              <Link
-                href="/#home"
-                className="text-primary-500 font-semibold hover:text-primary-600"
-              >
-                {t("home")}
-              </Link>
-              <Link
-                href="/#services"
-                className="text-neutral-700 hover:text-primary-500"
-              >
-                {t("drivingLicenses")}
-              </Link>
-              <Link
-                href="/cenik"
-                className="text-neutral-700 hover:text-primary-500"
-              >
-                {t("pricing")}
-              </Link>
+              {NAV_LINKS.slice(0, 3).map(({ href, key, active }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  className={
+                    active
+                      ? "text-primary-500 font-semibold hover:text-primary-600"
+                      : "text-neutral-700 hover:text-primary-500"
+                  }
+                >
+                  {t(key)}
+                </Link>
+              ))}
 
               <div
                 className="relative"
@@ -264,15 +308,17 @@ const Navbar = () => {
                 )}
               </div>
 
-              <Link
-                href="/#contact"
-                className="text-neutral-700 hover:text-primary-500"
-              >
-                {t("contact")}
-              </Link>
+              {NAV_LINKS.slice(3).map(({ href, key }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  className="text-neutral-700 hover:text-primary-500"
+                >
+                  {t(key)}
+                </Link>
+              ))}
             </nav>
 
-            {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
               className="lg:hidden p-2 text-neutral-700 hover:text-primary-500 transition-colors"
@@ -304,34 +350,27 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <div
-              id="mobile-nav"
-              className="lg:hidden mt-4 pb-4 border-t border-neutral-200"
-            >
+          <div
+            ref={mobileMenuRef}
+            id="mobile-nav"
+            className="lg:hidden overflow-hidden"
+          >
+            <div className="mt-4 pb-4 border-t border-neutral-200">
               <nav className="flex flex-col space-y-4 pt-4">
-                <Link
-                  href="/#home"
-                  onClick={closeMobileMenu}
-                  className="text-primary-500 font-semibold hover:text-primary-600 transition-colors"
-                >
-                  {t("home")}
-                </Link>
-                <Link
-                  href="/#services"
-                  onClick={closeMobileMenu}
-                  className="text-neutral-700 hover:text-primary-500 transition-colors"
-                >
-                  {t("drivingLicenses")}
-                </Link>
-                <Link
-                  href="/cenik"
-                  onClick={closeMobileMenu}
-                  className="text-neutral-700 hover:text-primary-500 transition-colors"
-                >
-                  {t("pricing")}
-                </Link>
+                {NAV_LINKS.slice(0, 3).map(({ href, key, active }) => (
+                  <Link
+                    key={key}
+                    href={href}
+                    onClick={closeMobileMenu}
+                    className={
+                      active
+                        ? "text-primary-500 font-semibold hover:text-primary-600 transition-colors"
+                        : "text-neutral-700 hover:text-primary-500 transition-colors"
+                    }
+                  >
+                    {t(key)}
+                  </Link>
+                ))}
 
                 <details className="group">
                   <summary className="cursor-pointer list-none text-neutral-700 hover:text-primary-500 transition-colors flex items-center justify-between">
@@ -349,16 +388,19 @@ const Navbar = () => {
                   </div>
                 </details>
 
-                <Link
-                  href="/#contact"
-                  onClick={closeMobileMenu}
-                  className="text-neutral-700 hover:text-primary-500 transition-colors"
-                >
-                  {t("contact")}
-                </Link>
+                {NAV_LINKS.slice(3).map(({ href, key }) => (
+                  <Link
+                    key={key}
+                    href={href}
+                    onClick={closeMobileMenu}
+                    className="text-neutral-700 hover:text-primary-500 transition-colors"
+                  >
+                    {t(key)}
+                  </Link>
+                ))}
               </nav>
             </div>
-          )}
+          </div>
         </div>
       </header>
     </div>
