@@ -13,14 +13,14 @@
           "group": "group D",
           "code": "D",
           "description": "The course prepares for driving buses with more than 8 passengers, includes theoretical preparation and practical driving in real traffic. A condition is meeting the legal age and health fitness for obtaining a driving license.",
-          "href": "/ridicsky-prukaz/d"
+          "href": "/ridicske-prukazy/d"
         },
         {
           "title": "Truck combinations",
           "group": "group C, C+E",
           "code": "C",
           "description": "Group C training teaches how to drive vehicles over 3.5 tons, the C+E extension adds driving with a trailer over 750 kg; includes theory, maneuvering and driving in real traffic.",
-          "href": "/ridicsky-prukaz/c"
+          "href": "/ridicske-prukazy/c"
         }
       ],
       "centerLeftCategory": {
@@ -28,14 +28,14 @@
         "group": "group A",
         "code": "A",
         "description": "Complete training for motorcycle groups AM, A1, A2 and A with theoretical and practical preparation. Supplementary exams and conditional rides available.",
-        "href": "/ridicsky-prukaz/a"
+        "href": "/ridicske-prukazy/a"
       },
       "centerRightCategory": {
         "title": "Automobiles",
         "group": "group B",
         "code": "B",
         "description": "Authorizes driving vehicles up to 3.5 tons with max. 8 passengers, including trailers up to 750 kg. Also tractors and work machines up to 3.5 tons.",
-        "href": "/ridicsky-prukaz/b"
+        "href": "/ridicske-prukazy/b"
       },
       "rightCategories": [
         {
@@ -43,7 +43,7 @@
           "group": "group T",
           "code": "T",
           "description": "The Group T course prepares you for driving self-propelled working machines with a maximum speed of 40 km/h, including off-road and road driving. It requires reaching the specified age, medical fitness, and successful completion of exams.",
-          "href": "/ridicsky-prukaz/t"
+          "href": "/ridicske-prukazy/t"
         },
         {
           "title": "Driver training",
@@ -155,6 +155,26 @@
     "Header": {
       "home": "Home",
       "services": "Services",
+      "drivingLicenses": "Driving licenses",
+      "pricing": "Pricing",
+      "important": "Important",
+      "importantLinks": [
+        {
+          "label": "Ministry of Transport",
+          "href": "https://www.mdcr.cz/",
+          "external": true
+        },
+        {
+          "label": "eTests (MoT CZ)",
+          "href": "https://etesty.md.gov.cz/",
+          "external": true
+        },
+        {
+          "label": "Download application",
+          "href": "/pdf/zadost-o-prijeti-k-vyuce-a-vycviku-20240227-up.pdf",
+          "download": true
+        }
+      ],
       "contact": "Contact",
       "about": "About",
       "getStarted": "Get Started"

@@ -45,28 +45,28 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/sluzby"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("drivingLicenses")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#steps"
+                  <Link
+                    href="/#steps"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("howToGetLicense")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#why-choose-us"
+                  <Link
+                    href="/#why-choose-us"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("whyChooseUs")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -79,27 +79,27 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/ridicsky-prukaz/b"
+                    href="/ridicske-prukazy/b"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("licenseCategoryB")}
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#pricing"
+                  <Link
+                    href="/cenik"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("pricing")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/kontakt"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("contact")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link
