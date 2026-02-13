@@ -127,17 +127,35 @@ const Navbar = () => {
   useSmoothScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isImportantOpen, setIsImportantOpen] = useState(false);
+  const [isImportantMounted, setIsImportantMounted] = useState(false);
   const [shouldHide, setShouldHide] = useState(false);
 
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const scope = useRef<HTMLDivElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const importantDropdownRef = useRef<HTMLDivElement | null>(null);
+  const importantCloseTweenRef = useRef<gsap.core.Tween | null>(null);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((s) => !s);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const importantLinks = parseImportantLinks(t.raw("importantLinks"));
+
+  const openImportant = () => {
+    importantCloseTweenRef.current?.kill();
+    importantCloseTweenRef.current = null;
+    setIsImportantMounted(true);
+    setIsImportantOpen(true);
+  };
+
+  const closeImportant = () => {
+    setIsImportantOpen(false);
+  };
+
+  const toggleImportant = () => {
+    if (isImportantOpen) closeImportant();
+    else openImportant();
+  };
 
   useMobileMenu(isMobileMenuOpen, closeMobileMenu);
 
@@ -157,11 +175,15 @@ const Navbar = () => {
           },
         );
       } else {
-        gsap.to(el, {
+        importantCloseTweenRef.current?.kill();
+        importantCloseTweenRef.current = gsap.to(el, {
           opacity: 0,
           y: -8,
           scale: 0.96,
           ...DROPDOWN_ANIM.CLOSE,
+          onComplete: () => {
+            setIsImportantMounted(false);
+          },
         });
       }
     },
@@ -188,13 +210,15 @@ const Navbar = () => {
       if (isMobileMenuOpen) {
         gsap.to(el, {
           height: Math.min(el.scrollHeight, window.innerHeight - 64),
-          overflow: "auto",
+          overflowY: "auto",
+          overflowX: "hidden",
           ...MOBILE_MENU_ANIM.OPEN,
         });
       } else {
         gsap.to(el, {
           height: 0,
-          overflow: "hidden",
+          overflowY: "hidden",
+          overflowX: "hidden",
           ...MOBILE_MENU_ANIM.CLOSE,
         });
       }
@@ -326,38 +350,42 @@ const Navbar = () => {
 
               <div
                 className="relative"
-                onMouseEnter={() => setIsImportantOpen(true)}
-                onMouseLeave={() => setIsImportantOpen(false)}
+                onMouseEnter={openImportant}
+                onMouseLeave={closeImportant}
               >
                 <button
                   type="button"
                   className="text-neutral-700 hover:text-primary-500 inline-flex items-center gap-2"
                   aria-haspopup="menu"
                   aria-expanded={isImportantOpen}
-                  onClick={() => setIsImportantOpen((s) => !s)}
+                  aria-controls="important-menu"
+                  onClick={toggleImportant}
                 >
                   {t("important")}
                 </button>
 
-                <div
-                  ref={importantDropdownRef}
-                  role="menu"
-                  className="absolute right-0 top-full w-64 pt-2 origin-top-right"
-                  style={{ pointerEvents: isImportantOpen ? "auto" : "none" }}
-                  aria-hidden={!isImportantOpen}
-                >
-                  <div className="rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
-                    {importantLinks.map((item) => (
-                      <ImportantLinkItem
-                        key={item.label}
-                        role="menuitem"
-                        item={item}
-                        variant="desktop"
-                        onClick={() => setIsImportantOpen(false)}
-                      />
-                    ))}
+                {isImportantMounted && (
+                  <div
+                    id="important-menu"
+                    ref={importantDropdownRef}
+                    role="menu"
+                    className="absolute right-0 top-full w-64 pt-2 origin-top-right opacity-0 -translate-y-2 scale-95"
+                    style={{ pointerEvents: isImportantOpen ? "auto" : "none" }}
+                    aria-hidden={!isImportantOpen}
+                  >
+                    <div className="rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
+                      {importantLinks.map((item) => (
+                        <ImportantLinkItem
+                          key={item.label}
+                          role="menuitem"
+                          item={item}
+                          variant="desktop"
+                          onClick={closeImportant}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {NAV_LINKS.slice(3).map(({ href, key }) => (
@@ -407,7 +435,8 @@ const Navbar = () => {
       <div
         ref={mobileMenuRef}
         id="mobile-nav"
-        className="lg:hidden fixed top-16 left-0 right-0 z-[45] max-h-[calc(100vh-4rem)] overflow-x-hidden overflow-y-auto bg-white shadow-lg"
+        aria-hidden={!isMobileMenuOpen}
+        className="lg:hidden fixed top-16 left-0 right-0 z-[45] max-h-[calc(100vh-4rem)] h-0 overflow-hidden overflow-x-hidden bg-white shadow-lg"
       >
         <div className="border-t border-neutral-200 px-4 py-4">
           <nav className="flex flex-col space-y-4">
