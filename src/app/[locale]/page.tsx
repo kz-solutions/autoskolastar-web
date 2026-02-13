@@ -3,6 +3,9 @@ import LicenseCategories from "@/components/sections/license-categories/LicenseC
 import StepsToGettingALicense from "@/components/sections/steps-to-getting-a-license/StepsToGettingALicense";
 import ContactAndLocation from "@/components/sections/contact-and-location/ContactAndLocation";
 import WhyChooseUs from "@/components/sections/why-choose-us/WhyChooseUs";
+import { registerGSAP } from "@/utils/gsap";
+
+registerGSAP();
 
 export default function HomePage() {
   return (
