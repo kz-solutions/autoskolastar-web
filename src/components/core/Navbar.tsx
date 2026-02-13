@@ -7,17 +7,21 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LangSwitch from "@/components/core/LangSwitch";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useMobileMenu } from "@/hooks/useMobileMenu";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const NAV_LINKS: Array<{ href: string; key: "home" | "drivingLicenses" | "pricing" | "contact"; active?: boolean }> = [
-  { href: "/#home", key: "home", active: true },
-  { href: "/#services", key: "drivingLicenses" },
-  { href: "/cenik", key: "pricing" },
-  { href: "/#contact", key: "contact" },
+const NAV_LINKS: Array<{
+  href: string;
+  key: "home" | "drivingLicenses" | "pricing" | "contact";
+  matchPath?: string;
+}> = [
+  { href: "/", key: "home", matchPath: "/" },
+  { href: "/sluzby", key: "drivingLicenses", matchPath: "/sluzby" },
+  { href: "/cenik", key: "pricing", matchPath: "/cenik" },
+  { href: "/kontakt", key: "contact", matchPath: "/kontakt" },
 ];
 
 const NAVBAR_SCROLL = {
@@ -29,6 +33,11 @@ const NAVBAR_SCROLL = {
 const MOBILE_MENU_ANIM = {
   OPEN: { duration: 0.3, ease: "power2.out" as const },
   CLOSE: { duration: 0.25, ease: "power2.in" as const },
+} as const;
+
+const DROPDOWN_ANIM = {
+  OPEN: { duration: 0.2, ease: "power2.out" as const },
+  CLOSE: { duration: 0.15, ease: "power2.in" as const },
 } as const;
 
 type ImportantLink = {
@@ -114,6 +123,7 @@ function ImportantLinkItem({
 
 const Navbar = () => {
   const t = useTranslations("HomePage.Header");
+  const pathname = usePathname();
   useSmoothScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isImportantOpen, setIsImportantOpen] = useState(false);
@@ -122,6 +132,7 @@ const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const scope = useRef<HTMLDivElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+  const importantDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((s) => !s);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -130,9 +141,43 @@ const Navbar = () => {
 
   useMobileMenu(isMobileMenuOpen, closeMobileMenu);
 
+  useGSAP(
+    () => {
+      const el = importantDropdownRef.current;
+      if (!el) return;
+      if (isImportantOpen) {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: -8, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            ...DROPDOWN_ANIM.OPEN,
+          },
+        );
+      } else {
+        gsap.to(el, {
+          opacity: 0,
+          y: -8,
+          scale: 0.96,
+          ...DROPDOWN_ANIM.CLOSE,
+        });
+      }
+    },
+    { dependencies: [isImportantOpen], scope },
+  );
+
   useLayoutEffect(() => {
     if (mobileMenuRef.current) {
       gsap.set(mobileMenuRef.current, { height: 0, overflow: "hidden" });
+    }
+    if (importantDropdownRef.current) {
+      gsap.set(importantDropdownRef.current, {
+        opacity: 0,
+        y: -8,
+        scale: 0.96,
+      });
     }
   }, []);
 
@@ -259,19 +304,25 @@ const Navbar = () => {
 
             <nav className="hidden lg:flex items-center gap-8">
               <LangSwitch shouldClose={shouldHide} />
-              {NAV_LINKS.slice(0, 3).map(({ href, key, active }) => (
-                <Link
-                  key={key}
-                  href={href}
-                  className={
-                    active
-                      ? "text-primary-500 font-semibold hover:text-primary-600"
-                      : "text-neutral-700 hover:text-primary-500"
-                  }
-                >
-                  {t(key)}
-                </Link>
-              ))}
+              {NAV_LINKS.slice(0, 3).map(({ href, key, matchPath }) => {
+                const isActive =
+                  matchPath === "/"
+                    ? pathname === "/" || pathname === "/cs" || pathname === "/en"
+                    : (pathname ?? "").startsWith(matchPath ?? "");
+                return (
+                  <Link
+                    key={key}
+                    href={href}
+                    className={
+                      isActive
+                        ? "text-primary-500 font-semibold hover:text-primary-600"
+                        : "text-neutral-700 hover:text-primary-500"
+                    }
+                  >
+                    {t(key)}
+                  </Link>
+                );
+              })}
 
               <div
                 className="relative"
@@ -288,24 +339,25 @@ const Navbar = () => {
                   {t("important")}
                 </button>
 
-                {isImportantOpen && (
-                  <div
-                    role="menu"
-                    className="absolute right-0 top-full w-64 pt-2"
-                  >
-                    <div className="rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
-                      {importantLinks.map((item) => (
-                        <ImportantLinkItem
-                          key={item.label}
-                          role="menuitem"
-                          item={item}
-                          variant="desktop"
-                          onClick={() => setIsImportantOpen(false)}
-                        />
-                      ))}
-                    </div>
+                <div
+                  ref={importantDropdownRef}
+                  role="menu"
+                  className="absolute right-0 top-full w-64 pt-2 origin-top-right"
+                  style={{ pointerEvents: isImportantOpen ? "auto" : "none" }}
+                  aria-hidden={!isImportantOpen}
+                >
+                  <div className="rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
+                    {importantLinks.map((item) => (
+                      <ImportantLinkItem
+                        key={item.label}
+                        role="menuitem"
+                        item={item}
+                        variant="desktop"
+                        onClick={() => setIsImportantOpen(false)}
+                      />
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
 
               {NAV_LINKS.slice(3).map(({ href, key }) => (
@@ -359,20 +411,28 @@ const Navbar = () => {
       >
         <div className="border-t border-neutral-200 px-4 py-4">
           <nav className="flex flex-col space-y-4">
-                {NAV_LINKS.slice(0, 3).map(({ href, key, active }) => (
-                  <Link
-                    key={key}
-                    href={href}
-                    onClick={closeMobileMenu}
-                    className={
-                      active
-                        ? "text-primary-500 font-semibold hover:text-primary-600 transition-colors"
-                        : "text-neutral-700 hover:text-primary-500 transition-colors"
-                    }
-                  >
-                    {t(key)}
-                  </Link>
-                ))}
+                {NAV_LINKS.slice(0, 3).map(({ href, key, matchPath }) => {
+                  const isActive =
+                    matchPath === "/"
+                      ? pathname === "/" ||
+                        pathname === "/cs" ||
+                        pathname === "/en"
+                      : (pathname ?? "").startsWith(matchPath ?? "");
+                  return (
+                    <Link
+                      key={key}
+                      href={href}
+                      onClick={closeMobileMenu}
+                      className={
+                        isActive
+                          ? "text-primary-500 font-semibold hover:text-primary-600 transition-colors"
+                          : "text-neutral-700 hover:text-primary-500 transition-colors"
+                      }
+                    >
+                      {t(key)}
+                    </Link>
+                  );
+                })}
 
                 <details className="group">
                   <summary className="cursor-pointer list-none text-neutral-700 hover:text-primary-500 transition-colors flex items-center justify-between">

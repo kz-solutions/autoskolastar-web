@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/#services"
+                    href="/sluzby"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("drivingLicenses")}
@@ -79,7 +79,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/ridicsky-prukaz/b"
+                    href="/ridicske-prukazy/b"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("licenseCategoryB")}
@@ -95,7 +95,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/#contact"
+                    href="/kontakt"
                     className="text-neutral-300 hover:text-primary-500 transition-colors text-sm"
                   >
                     {t("contact")}

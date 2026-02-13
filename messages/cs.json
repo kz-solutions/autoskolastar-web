@@ -13,14 +13,14 @@
           "group": "skupina D",
           "code": "D",
           "description": "Kurz připraví na řízení autobusů s více než 8 cestujícími, zahrnuje teoretickou přípravu i praktické jízdy v reálném provozu. Podmínkou je splnění zákonného věku a zdravotní způsobilosti pro získání řidičského průkazu.",
-          "href": "/ridicsky-prukaz/d"
+          "href": "/ridicske-prukazy/d"
         },
         {
           "title": "Nákladní soupravy",
           "group": "skupina C, C+E",
           "code": "C",
           "description": "Výcvik skupiny C naučí řídit vozidla nad 3,5 t, rozšíření C+E přidává jízdu s přívěsem nad 750 kg; zahrnuje teorii, manévrování a jízdy v silničním provozu.",
-          "href": "/ridicsky-prukaz/c"
+          "href": "/ridicske-prukazy/c"
         }
       ],
       "centerLeftCategory": {
@@ -28,14 +28,14 @@
         "group": "skupina A",
         "code": "A",
         "description": "Kompletní výuka motocyklových skupin AM, A1, A2 a A s teoretickou i praktickou přípravou. Doplňovací zkoušky a kondiční jízdy jsou k dispozici.",
-        "href": "/ridicsky-prukaz/a"
+        "href": "/ridicske-prukazy/a"
       },
       "centerRightCategory": {
         "title": "Osobní automobily",
         "group": "skupina B",
         "code": "B",
         "description": "Opravňuje k řízení vozidel do 3,5 tuny s max. 8 pasažéry, včetně přívěsu do 750 kg. Také traktory a pracovní stroje do 3,5 tuny.",
-        "href": "/ridicsky-prukaz/b"
+        "href": "/ridicske-prukazy/b"
       },
       "rightCategories": [
         {
@@ -43,7 +43,7 @@
           "group": "skupina T",
           "code": "T",
           "description": "Kurz skupiny T vás připraví na řízení traktorů samojízdných pracovních strojů s maximální rychlostí do 40 km/h, včetně jízd v terénu i silnici. Vyžaduje dosažení stanoveného věku, lékařskou způsobilost a úspěšné složení zkoušek.",
-          "href": "/ridicsky-prukaz/t"
+          "href": "/ridicske-prukazy/t"
         },
         {
           "title": "Školení řidičů",
