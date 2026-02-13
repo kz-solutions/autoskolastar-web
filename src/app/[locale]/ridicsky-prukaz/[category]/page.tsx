@@ -1,8 +1,6 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/core/Navbar";
-import Footer from "@/components/core/Footer";
 import TrainingVehicles from "@/components/sections/TrainingVehicles";
 
 type Props = {
@@ -18,12 +16,10 @@ export default async function LicenseCategoryPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen flex flex-col">
       <main className="flex-1 pt-20">
         <LicenseCategoryContent category={category} />
       </main>
-      <Footer />
     </div>
   );
 }
