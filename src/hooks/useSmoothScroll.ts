@@ -3,6 +3,37 @@ import gsap from "gsap";
 
 let isListenerAdded = false;
 
+export function useScrollToHashOnLoad() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const raw = window.location.hash;
+    if (!raw || raw === "#") return;
+
+    const targetId = decodeURIComponent(raw.slice(1));
+    if (!targetId) return;
+
+    // Wait a tick so layout is ready (fonts/images/sections).
+    const raf = window.requestAnimationFrame(() => {
+      const el = document.getElementById(targetId);
+      if (!el) return;
+
+      gsap.to(window, {
+        duration: 1.2,
+        scrollTo: {
+          y: el,
+          offsetY: 100,
+        },
+        ease: "power2.inOut",
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(raf);
+    };
+  }, []);
+}
+
 export const useSmoothScroll = () => {
   const hasAddedListener = useRef(false);
 
