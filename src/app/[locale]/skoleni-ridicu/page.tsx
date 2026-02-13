@@ -1,16 +1,12 @@
 import React from "react";
 import { getTranslations } from "next-intl/server";
-import Navbar from "@/components/core/Navbar";
-import Footer from "@/components/core/Footer";
 
 export default async function DriverTrainingPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen flex flex-col">
       <main className="flex-1 pt-20">
         <DriverTrainingContent />
       </main>
-      <Footer />
     </div>
   );
 }
