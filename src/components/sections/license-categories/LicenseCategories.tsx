@@ -62,13 +62,13 @@ const LicenseCategories = () => {
           {/* Desktop */}
           <Label text={t("slogan")} />
 
-          <h1 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-6 sm:mb-8 px-4">
+          <h2 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-6 sm:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
                 <span className="text-primary-500">{chunks}</span>
               ),
             })}
-          </h1>
+          </h2>
 
           <p className="text-base sm:text-lg text-neutral-600 max-w-4xl mx-auto leading-relaxed px-4">
             {t("subtitle")}
