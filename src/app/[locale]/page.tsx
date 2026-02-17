@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         en: "/en",
       },
     },
-    manifest: "/site.webmanifest",
+    manifest: "/manifest.webmanifest",
     title: t("title"),
     description: t("description"),
     keywords: t.raw("keywords"),
