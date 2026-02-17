@@ -45,11 +45,11 @@ const Group = ({ title, items, href, close }: Group) => {
     <div className="flex flex-col">
       <Link
         ref={linkRef}
-        className="group items-baseline hover:underline w-fit flex gap-2 px-3 py-1.5 mb-1"
+        className="group items-baseline hover:underline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1"
         href={href}
         onClick={close}
       >
-        <h4 className="font-[500] text-xl text-slate-800 inline-block">
+        <h4 className="font-[500] lg:text-xl text-slate-800 inline-block">
           {title}
         </h4>
         <div className="w-fit h-fit overflow-hidden">
@@ -64,10 +64,10 @@ const Group = ({ title, items, href, close }: Group) => {
           <Link
             onClick={close}
             key={shortTitle}
-            className="w-fit px-3 py-1"
+            className="w-fit px-1 xl:px-3 py-0.5 xl:py-1.5 "
             href={href}
           >
-            <h5 className="text-lg font-[300] text-slate-700 hover:underline inline-block mb-1">
+            <h5 className="lg:text-lg font-[300] text-slate-700 hover:underline inline-block mb-1">
               {shortTitle}
             </h5>
           </Link>

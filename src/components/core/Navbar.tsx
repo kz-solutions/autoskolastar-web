@@ -324,7 +324,7 @@ const Navbar = () => {
         className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform h-16 flex items-center justify-center"
         onMouseLeave={() => setVisibleSubmenu(null)}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-20 max-w-[1800px]">
+        <div className="w-full px-4 sm:px-6 xl:px-20 max-w-[1800px]">
           <div className="flex items-center justify-between">
             <div className="flex gap-12 items-center ">
               <Link
