@@ -1,4 +1,19 @@
 {
+  "Metadata": {
+    "title": "Driving School Star | Bílina, Most, Litvínov | A,B,C,D,E",
+    "description": "Driving School Star offers driving licenses for categories A-E in Bílina, Most and Litvínov. Modern teaching methods, individual approach and fair prices.",
+    "keywords": [
+      "driving school Most",
+      "driving school Litvínov",
+      "driving school Bílina",
+      "driver's license Most",
+      "driver's license Litvínov",
+      "driver's license Bílina",
+      "driver's license Most price",
+      "driving school Most price",
+      "driving course Most"
+    ]
+  },
   "HomePage": {
     "priceTemplate": "{price, number} CZK",
     "LicenseCategories": {

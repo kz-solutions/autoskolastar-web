@@ -1,4 +1,19 @@
 {
+  "Metadata": {
+    "title": "Autoškola Star | Bílina, Most, Litvínov | sk. A,B,C,D,E",
+    "description": "Autoškola Star nabízí řidičská oprávnění skupin A-E v Bílině, Mostě a Litvínově. Moderní výuka, individuální přístup a férové ceny.",
+    "keywords": [
+      "autoškola Most",
+      "autoškola Litvínov",
+      "autoškola Bílina",
+      "řidičský průkaz Most",
+      "řidičský průkaz Litvínov",
+      "řidičský průkaz Bílina",
+      "řidičák Most cena",
+      "autoškola Most cena",
+      "kurz řízení Most"
+    ]
+  },
   "HomePage": {
     "priceTemplate": "{price, number} Kč",
     "LicenseCategories": {
