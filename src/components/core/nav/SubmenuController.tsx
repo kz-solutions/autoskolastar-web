@@ -62,7 +62,10 @@ const SubmenuController = ({ submenuKey, isVisible, close }: Props) => {
       ref={ref}
       className={`absolute top-full right-0 left-0 bg-white overflow-hidden h-0 shadow flex justify-center`}
     >
-      <div ref={contentRef} className="px-24 pt-12 pb-16">
+      <div
+        ref={contentRef}
+        className="px-12 xl:px-24 pt-8 xl:pt-12 pb-12 xl:pb-16"
+      >
         {submenuKey === "drivingLicenses" && (
           <DrivingLicencesSubmenu close={close} />
         )}
