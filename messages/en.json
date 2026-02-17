@@ -14,6 +14,10 @@
       "driving course Most"
     ]
   },
+  "NotFoundPage": {
+    "title": "Ups… tady cesta končí.",
+    "subtitle": "Vypadá to, že jste zahnuli špatným směrem. Požadovaná stránka neexistuje nebo byla přesunuta."
+  },
   "HomePage": {
     "priceTemplate": "{price, number} CZK",
     "LicenseCategories": {
@@ -173,6 +177,9 @@
       "drivingLicenses": "Driving licenses",
       "pricing": "Pricing",
       "important": "Important",
+      "info": "Info",
+      "fleet": "Fleet",
+      "classrooms": "Classrooms",
       "importantLinks": [
         {
           "label": "Ministry of Transport",
@@ -192,7 +199,43 @@
       ],
       "contact": "Contact",
       "about": "About",
-      "getStarted": "Get Started"
+      "getStarted": "Get Started",
+      "DrivingLicenseSubmenu": {
+        "A": {
+          "title": "Group A",
+          "items": [
+            { "shortTitle": "A2 - Motorcycles up to 35 kW" },
+            { "shortTitle": "A1 - Motorcycles up to 125 ccm" },
+            { "shortTitle": "AM - Mopeds" }
+          ]
+        },
+        "B": {
+          "title": "Group B",
+          "items": [
+            { "shortTitle": "B78 - Automatic transmission" },
+            { "shortTitle": "B96 - Expansion for heavier vehicles" },
+            { "shortTitle": "B+E - Osobní auto s přívěsem" }
+          ]
+        },
+        "Professional": {
+          "title": "Professional",
+          "items": [
+            { "shortTitle": "C - Nákladní automobil" },
+            { "shortTitle": "C+E - Nákladní souprava" },
+            { "shortTitle": "D - Autobus" },
+            { "shortTitle": "T - Traktor" }
+          ]
+        },
+        "Schooling": {
+          "title": "Driver schooling"
+        },
+        "Training": {
+          "title": "Training courses"
+        },
+        "RepeatedLectures": {
+          "title": "Repeated lectures"
+        }
+      }
     },
     "Hero": {
       "locations": "BÍLINA – MOST – LITVÍNOV",
@@ -202,6 +245,7 @@
       "subtitle": "Your road. Your pace."
     }
   },
+
   "LicensePage": {
     "B": {
       "title": "Category B Driving License",

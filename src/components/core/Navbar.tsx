@@ -10,15 +10,16 @@ import LangSwitch from "@/components/core/LangSwitch";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useMobileMenu } from "@/hooks/useMobileMenu";
+import { ROUTES } from "@/utils/routes";
+import SubmenuController from "@/components/core/nav/SubmenuController";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const NAV_LINKS: Array<{
   href: string;
-  key: "home" | "drivingLicenses" | "pricing" | "contact";
+  key: "drivingLicenses" | "pricing" | "contact";
   matchPath?: string;
 }> = [
-  { href: "/", key: "home", matchPath: "/" },
   { href: "/sluzby", key: "drivingLicenses", matchPath: "/sluzby" },
   { href: "/cenik", key: "pricing", matchPath: "/cenik" },
   { href: "/kontakt", key: "contact", matchPath: "/kontakt" },
@@ -277,6 +278,38 @@ const Navbar = () => {
     { scope },
   );
 
+  const LINKS = [
+    {
+      title: t("drivingLicenses"),
+      submenuKey: "drivingLicenses",
+      href: ROUTES.drivingLicenses,
+    },
+    {
+      title: t("info"),
+      submenuKey: "info",
+      href: ROUTES.info,
+    },
+    {
+      title: t("pricing"),
+      href: ROUTES.pricing,
+    },
+    {
+      title: t("fleet"),
+      href: ROUTES.fleet,
+    },
+    {
+      title: t("classrooms"),
+      href: ROUTES.classrooms,
+    },
+  ];
+
+  const CONTACT = {
+    title: t("contact"),
+    href: ROUTES.contact,
+  };
+
+  const [visibleSubmenu, setVisibleSubmenu] = useState<string | null>(null);
+
   return (
     <div ref={scope} className={"bg-black absolute top-0 left-0 right-0 z-50"}>
       {isMobileMenuOpen && (
@@ -288,87 +321,63 @@ const Navbar = () => {
       )}
       <nav
         ref={navbarRef}
-        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform h-16 flex items-center"
+        className="bg-white shadow-sm w-full fixed top-0 z-50 will-change-transform h-16 flex items-center justify-center"
+        onMouseLeave={() => setVisibleSubmenu(null)}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-20 max-w-[1800px]">
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-            >
-              <StarIcon className="text-primary-500 w-8 h-8" />
-              <span className="text-2xl font-bold text-neutral-800">
-                Autoškola STAR
-              </span>
-            </Link>
-
-            <nav className="hidden lg:flex items-center gap-8">
-              <LangSwitch shouldClose={shouldHide} />
-              {NAV_LINKS.slice(0, 3).map(({ href, key, matchPath }) => {
-                const isActive =
-                  matchPath === "/"
-                    ? pathname === "/" || pathname === "/cs" || pathname === "/en"
-                    : (pathname ?? "").startsWith(matchPath ?? "");
-                return (
-                  <Link
-                    key={key}
-                    href={href}
-                    className={
-                      isActive
-                        ? "text-primary-500 font-semibold hover:text-primary-600"
-                        : "text-neutral-700 hover:text-primary-500"
-                    }
-                  >
-                    {t(key)}
-                  </Link>
-                );
-              })}
-
-              <div
-                className="relative"
-                onMouseEnter={() => setIsImportantOpen(true)}
-                onMouseLeave={() => setIsImportantOpen(false)}
+            <div className="flex gap-12 items-center ">
+              <Link
+                href="/"
+                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
-                <button
-                  type="button"
-                  className="text-neutral-700 hover:text-primary-500 inline-flex items-center gap-2"
-                  aria-haspopup="menu"
-                  aria-expanded={isImportantOpen}
-                  onClick={() => setIsImportantOpen((s) => !s)}
-                >
-                  {t("important")}
-                </button>
+                <StarIcon className="text-primary-500 w-8 h-8" />
+                <span className="text-xl font-semibold text-neutral-800">
+                  Autoškola STAR
+                </span>
+              </Link>
 
-                <div
-                  ref={importantDropdownRef}
-                  role="menu"
-                  className="absolute right-0 top-full w-64 pt-2 origin-top-right"
-                  style={{ pointerEvents: isImportantOpen ? "auto" : "none" }}
-                  aria-hidden={!isImportantOpen}
-                >
-                  <div className="rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
-                    {importantLinks.map((item) => (
-                      <ImportantLinkItem
-                        key={item.label}
-                        role="menuitem"
-                        item={item}
-                        variant="desktop"
-                        onClick={() => setIsImportantOpen(false)}
-                      />
-                    ))}
-                  </div>
-                </div>
+              <div className={"hidden lg:flex gap-4"}>
+                {LINKS.map(({ href, title, submenuKey }, idx) => {
+                  const normalizedPath = pathname?.replace(/^\/(cs|en)/, "");
+                  const isActive = normalizedPath?.startsWith(href);
+                  return (
+                    <div key={href} className="flex items-center gap-4">
+                      <Link
+                        onMouseEnter={() =>
+                          setVisibleSubmenu(submenuKey || null)
+                        }
+                        href={href}
+                        className={`hover:text-primary-500 font-semibold transition-all ${isActive ? "text-primary-500 hover:text-primary-600" : "text-slate-600"}`}
+                      >
+                        {title}
+                      </Link>
+                      {idx < LINKS.length - 1 && (
+                        <div
+                          className="self-stretch w-[1px] rounded-md bg-slate-400"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
+              <SubmenuController
+                submenuKey={visibleSubmenu}
+                isVisible={!!visibleSubmenu}
+                close={() => setVisibleSubmenu(null)}
+              />
+            </div>
 
-              {NAV_LINKS.slice(3).map(({ href, key }) => (
-                <Link
-                  key={key}
-                  href={href}
-                  className="text-neutral-700 hover:text-primary-500"
-                >
-                  {t(key)}
-                </Link>
-              ))}
+            <nav className="hidden lg:flex items-center gap-6">
+              <LangSwitch shouldClose={shouldHide} />
+
+              <Link
+                href={CONTACT.href}
+                className="text-white shadow-transparent shadow-md hover:shadow-primary-500/30 transition-all duration-300 bg-primary-500 hover:bg-primary-600 px-4 py-1.5 rounded-lg"
+              >
+                {CONTACT.title}
+              </Link>
             </nav>
 
             <button
@@ -411,61 +420,58 @@ const Navbar = () => {
       >
         <div className="border-t border-neutral-200 px-4 py-4">
           <nav className="flex flex-col space-y-4">
-                {NAV_LINKS.slice(0, 3).map(({ href, key, matchPath }) => {
-                  const isActive =
-                    matchPath === "/"
-                      ? pathname === "/" ||
-                        pathname === "/cs" ||
-                        pathname === "/en"
-                      : (pathname ?? "").startsWith(matchPath ?? "");
-                  return (
-                    <Link
-                      key={key}
-                      href={href}
-                      onClick={closeMobileMenu}
-                      className={
-                        isActive
-                          ? "text-primary-500 font-semibold hover:text-primary-600 transition-colors"
-                          : "text-neutral-700 hover:text-primary-500 transition-colors"
-                      }
-                    >
-                      {t(key)}
-                    </Link>
-                  );
-                })}
+            {NAV_LINKS.slice(0, 3).map(({ href, key, matchPath }) => {
+              const isActive =
+                matchPath === "/"
+                  ? pathname === "/" || pathname === "/cs" || pathname === "/en"
+                  : (pathname ?? "").startsWith(matchPath ?? "");
+              return (
+                <Link
+                  key={key}
+                  href={href}
+                  onClick={closeMobileMenu}
+                  className={
+                    isActive
+                      ? "text-primary-500 font-semibold hover:text-primary-600 transition-colors"
+                      : "text-neutral-700 hover:text-primary-500 transition-colors"
+                  }
+                >
+                  {t(key)}
+                </Link>
+              );
+            })}
 
-                <details className="group">
-                  <summary className="cursor-pointer list-none text-neutral-700 hover:text-primary-500 transition-colors flex items-center justify-between">
-                    <span>{t("important")}</span>
-                  </summary>
-                  <div className="mt-2 flex flex-col">
-                    {importantLinks.map((item) => (
-                      <ImportantLinkItem
-                        key={item.label}
-                        item={item}
-                        variant="mobile"
-                        onClick={closeMobileMenu}
-                      />
-                    ))}
-                  </div>
-                </details>
-
-                {NAV_LINKS.slice(3).map(({ href, key }) => (
-                  <Link
-                    key={key}
-                    href={href}
+            <details className="group">
+              <summary className="cursor-pointer list-none text-neutral-700 hover:text-primary-500 transition-colors flex items-center justify-between">
+                <span>{t("important")}</span>
+              </summary>
+              <div className="mt-2 flex flex-col">
+                {importantLinks.map((item) => (
+                  <ImportantLinkItem
+                    key={item.label}
+                    item={item}
+                    variant="mobile"
                     onClick={closeMobileMenu}
-                    className="text-neutral-700 hover:text-primary-500 transition-colors"
-                  >
-                    {t(key)}
-                  </Link>
+                  />
                 ))}
-              </nav>
+              </div>
+            </details>
+
+            {NAV_LINKS.slice(3).map(({ href, key }) => (
+              <Link
+                key={key}
+                href={href}
+                onClick={closeMobileMenu}
+                className="text-neutral-700 hover:text-primary-500 transition-colors"
+              >
+                {t(key)}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default Navbar;
