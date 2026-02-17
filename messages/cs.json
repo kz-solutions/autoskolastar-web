@@ -14,6 +14,10 @@
       "kurz řízení Most"
     ]
   },
+  "NotFoundPage": {
+    "title": "Ups… tady cesta končí.",
+    "subtitle": "Vypadá to, že jste zahnuli špatným směrem. Požadovaná stránka neexistuje nebo byla přesunuta."
+  },
   "HomePage": {
     "priceTemplate": "{price, number} Kč",
     "LicenseCategories": {
@@ -169,10 +173,12 @@
     },
     "Header": {
       "home": "Úvod",
-      "services": "Služby",
       "drivingLicenses": "Řidičské průkazy",
       "pricing": "Ceník",
+      "info": "Info",
       "important": "Důležité",
+      "fleet": "Vozidla",
+      "classrooms": "Učebny",
       "importantLinks": [
         {
           "label": "Ministerstvo dopravy",
@@ -192,7 +198,43 @@
       ],
       "contact": "Kontakt",
       "about": "O nás",
-      "getStarted": "Začít"
+      "getStarted": "Začít",
+      "DrivingLicenseSubmenu": {
+        "A": {
+          "title": "Skupina A",
+          "items": [
+            { "shortTitle": "A2 - Motocykly do 35 kW" },
+            { "shortTitle": "A1 - Motocykly do 125 ccm" },
+            { "shortTitle": "AM - Mopedy" }
+          ]
+        },
+        "B": {
+          "title": "Skupina B",
+          "items": [
+            { "shortTitle": "B78 - Automatická převodovka" },
+            { "shortTitle": "B96 - Rozšíření pro těžší přívěsy" },
+            { "shortTitle": "B+E - Osobní auto s přívěsem" }
+          ]
+        },
+        "Professional": {
+          "title": "Profesní",
+          "items": [
+            { "shortTitle": "C - Nákladní automobil" },
+            { "shortTitle": "C+E - Nákladní souprava" },
+            { "shortTitle": "D - Autobus" },
+            { "shortTitle": "T - Traktor" }
+          ]
+        },
+        "Schooling": {
+          "title": "Školení řidičů"
+        },
+        "Training": {
+          "title": "Kondiční jízdy"
+        },
+        "RepeatedLectures": {
+          "title": "Opakovaná výuka"
+        }
+      }
     },
     "Hero": {
       "locations": "BÍLINA – MOST – LITVÍNOV",
