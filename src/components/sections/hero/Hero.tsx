@@ -3,6 +3,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useHeroTimeline } from "@/hooks/gsap/hero/useHeroTimeline";
+import Image from "next/image";
 
 const Hero = () => {
   const t = useTranslations("HomePage.Hero");
@@ -28,12 +29,14 @@ const Hero = () => {
       id="home"
       className="w-screen h-screen px-0 md:px-6 lg:px-20! pb-0! md:pb-12! lg:pb-16! pt-0! md:pt-24! mb-12 md:mb-0 relative flex justify-center"
     >
-      <div className="h-full w-full md:rounded-3xl overflow-hidden relative max-w-[1440px] flex items-center">
-        <div className="relative h-full w-full md:rounded-3xl overflow-hidden max-w-[1440px]">
-          <img
+      <div className="h-full w-full md:rounded-3xl overflow-hidden relative flex items-center">
+        <div className="relative h-full w-full md:rounded-3xl overflow-hidden">
+          <Image
             data-hero-img
             src="/images/hero.webp"
-            alt="hero bg"
+            width={1536}
+            height={1024}
+            alt="Main Hero Background"
             className="absolute inset-0 w-full h-full object-cover will-change-transform"
           />
           <div className="absolute inset-0 pointer-events-none">
@@ -55,12 +58,12 @@ const Hero = () => {
             >
               {t("mainTitle")}
             </h1>
-            <h1
+            <h2
               data-hero-title-bottom
               className="text-slate-700 text-heading_lg leading-[1]! opacity-0"
             >
               {t("subtitle")}
-            </h1>
+            </h2>
           </div>
         </div>
       </div>
