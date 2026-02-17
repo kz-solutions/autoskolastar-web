@@ -36,11 +36,6 @@ const MOBILE_MENU_ANIM = {
   CLOSE: { duration: 0.25, ease: "power2.in" as const },
 } as const;
 
-const DROPDOWN_ANIM = {
-  OPEN: { duration: 0.2, ease: "power2.out" as const },
-  CLOSE: { duration: 0.15, ease: "power2.in" as const },
-} as const;
-
 type ImportantLink = {
   label: string;
   href?: string;
@@ -127,7 +122,6 @@ const Navbar = () => {
   const pathname = usePathname();
   useSmoothScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isImportantOpen, setIsImportantOpen] = useState(false);
   const [shouldHide, setShouldHide] = useState(false);
 
   const navbarRef = useRef<HTMLDivElement | null>(null);
@@ -141,33 +135,6 @@ const Navbar = () => {
   const importantLinks = parseImportantLinks(t.raw("importantLinks"));
 
   useMobileMenu(isMobileMenuOpen, closeMobileMenu);
-
-  useGSAP(
-    () => {
-      const el = importantDropdownRef.current;
-      if (!el) return;
-      if (isImportantOpen) {
-        gsap.fromTo(
-          el,
-          { opacity: 0, y: -8, scale: 0.96 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            ...DROPDOWN_ANIM.OPEN,
-          },
-        );
-      } else {
-        gsap.to(el, {
-          opacity: 0,
-          y: -8,
-          scale: 0.96,
-          ...DROPDOWN_ANIM.CLOSE,
-        });
-      }
-    },
-    { dependencies: [isImportantOpen], scope },
-  );
 
   useLayoutEffect(() => {
     if (mobileMenuRef.current) {
