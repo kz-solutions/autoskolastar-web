@@ -23,11 +23,31 @@ const Hero = () => {
 
   useHeroTimeline(ref);
 
+  useLayoutEffect(() => {
+    const setHeroHeight = () => {
+      if (ref.current) {
+        const vh = window.innerHeight;
+        ref.current.style.setProperty("--stable-vh", `${vh}px`);
+      }
+    };
+
+    setHeroHeight();
+
+    window.addEventListener("orientationchange", () => {
+      setTimeout(setHeroHeight, 200);
+    });
+
+    return () => window.removeEventListener("orientationchange", setHeroHeight);
+  }, []);
+
   return (
     <section
       ref={ref}
       id="home"
-      className="w-screen h-screen px-0 md:px-6 lg:px-20! pb-0! md:pb-12! lg:pb-16! pt-0! md:pt-24! mb-12 md:mb-0 relative flex justify-center"
+      style={{
+        height: "var(--stable-vh, 100svh)",
+      }}
+      className="w-screen px-0 md:px-6 lg:px-20! pb-0! md:pb-12! lg:pb-16! pt-0! md:pt-24! mb-12 md:mb-0 relative flex justify-center"
     >
       <div className="h-full w-full md:rounded-3xl overflow-hidden relative flex items-center">
         <div className="relative h-full w-full md:rounded-3xl overflow-hidden">
@@ -38,6 +58,7 @@ const Hero = () => {
             height={1024}
             alt="Main Hero Background"
             className="absolute inset-0 w-full h-full object-cover will-change-transform"
+            priority
           />
           <div className="absolute inset-0 pointer-events-none">
             <div
