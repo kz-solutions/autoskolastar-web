@@ -38,9 +38,19 @@
     --color-primary-950: var(--primary-950);
 }
 
+/* Hide scrollbars globally (scroll still works); avoids horizontal scrollbar in Firefox when content barely overflows */
+html,
+body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
 body {
     background: var(--background);
     color: var(--foreground);
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
 }
 
 /* Heading 2xl */
@@ -128,4 +138,54 @@ section {
 
 header {
     @apply flex flex-col gap-y-4 items-center
+}
+
+/* Burger → X icon (EXACT menu04), scaled to fit our navbar */
+.burger-icon-menu04,
+.burger-icon-menu04 span {
+    display: inline-block;
+    box-sizing: border-box;
+}
+.burger-icon-menu04 {
+    position: relative;
+    width: 50px;
+    height: 44px;
+    transform: scale(0.50); /* matches the visual size from screenshot #3 */
+    transform-origin: center;
+    will-change: transform;
+    pointer-events: none; /* button handles clicks */
+}
+.burger-icon-menu04 span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: currentColor;
+    border-radius: 4px;
+    left: 0;
+}
+.burger-icon-menu04 span:nth-of-type(1) {
+    top: 0;
+    transition: top .3s;
+}
+.burger-icon-menu04 span:nth-of-type(2) {
+    top: 20px;
+    transition: opacity .3s;
+}
+.burger-icon-menu04 span:nth-of-type(3) {
+    bottom: 0;
+    transition: bottom .3s;
+}
+.burger-icon-menu04.active span:nth-of-type(1) {
+    top: 20px;
+    transform: rotate(-45deg);
+    transition: top .3s cubic-bezier(.36, -.42, .68, -.56), transform .3s .3s;
+}
+.burger-icon-menu04.active span:nth-of-type(2) {
+    opacity: 0;
+    transition: opacity .05s .3s;
+}
+.burger-icon-menu04.active span:nth-of-type(3) {
+    bottom: 20px;
+    transform: rotate(45deg);
+    transition: bottom .3s cubic-bezier(.36, -.42, .68, -.56), transform .3s .3s;
 }

@@ -30,7 +30,7 @@ const Group = ({ title, items, href, close }: Group) => {
       },
     });
 
-    tl.to(el, { xPercent: 100, ease: "power2.in" })
+    tl.to(el, { xPercent: 100, ease: "power2.out" })
       .set(el, { xPercent: -100 })
       .to(el, { xPercent: 0, ease: "power1.out" });
 
