@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="bg-[#141414] px-8 lg:px-12 pb-20! md:pb-24! lg:pb-32! pt-16! md:20! lg:28! max-md:gap-y-10!"
+      className="bg-[#141414] px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10!"
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
