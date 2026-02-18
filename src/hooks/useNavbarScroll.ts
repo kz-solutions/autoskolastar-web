@@ -24,7 +24,7 @@ export function useNavbarScroll(
         setShouldHide(false);
         return gsap.to(navbarRef.current, {
           yPercent: 0,
-          duration: 0.4,
+          duration: 0.5,
           ease: "power2.out",
           overwrite: "auto",
         });
@@ -34,7 +34,7 @@ export function useNavbarScroll(
         setShouldHide(true);
         return gsap.to(navbarRef.current, {
           yPercent: -100,
-          duration: 0.4,
+          duration: 0.5,
           ease: "power2.out",
           overwrite: "auto",
         });

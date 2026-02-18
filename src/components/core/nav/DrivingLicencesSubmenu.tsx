@@ -22,7 +22,7 @@ const Group = ({ title, items, href, close }: Group) => {
   useGSAP(() => {
     const el = arrowRef.current;
 
-    gsap.defaults({ duration: 0.3 });
+    gsap.defaults({ duration: 0.3, ease: "power2.out" });
     const tl = gsap.timeline({
       paused: true,
       onComplete: () => {
@@ -30,9 +30,9 @@ const Group = ({ title, items, href, close }: Group) => {
       },
     });
 
-    tl.to(el, { xPercent: 100, ease: "power2.out" })
+    tl.to(el, { xPercent: 100 })
       .set(el, { xPercent: -100 })
-      .to(el, { xPercent: 0, ease: "power1.out" });
+      .to(el, { xPercent: 0 });
 
     linkRef.current?.addEventListener("mouseenter", () => {
       if (!tl.isActive()) {

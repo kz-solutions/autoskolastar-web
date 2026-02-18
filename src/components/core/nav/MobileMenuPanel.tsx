@@ -4,12 +4,13 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/utils/routes";
+import LangSwitch from "@/components/core/LangSwitch";
 import { ImportantLinkItem } from "./ImportantLinkItem";
-import type { NavLink, ImportantLink, MobileSubmenuKey } from "./types";
+import type { NavLink, ImportantLink, InfoSubmenu, MobileSubmenuKey } from "./types";
 
 const ChevronDown = ({ open }: { open: boolean }) => (
   <svg
-    className={`w-5 h-5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+    className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -31,10 +32,12 @@ type Props = {
   contact: { title: string; href: string };
   pathname: string | null;
   importantLinks: ImportantLink[];
+  infoSubmenu: InfoSubmenu | null;
   onClose: () => void;
   openSubmenu: MobileSubmenuKey;
   setOpenSubmenu: (key: MobileSubmenuKey) => void;
   hasSubmenuOpen: boolean;
+  isMenuOpen: boolean;
 };
 
 export function MobileMenuPanel({
@@ -45,10 +48,12 @@ export function MobileMenuPanel({
   contact,
   pathname,
   importantLinks,
+  infoSubmenu,
   onClose,
   openSubmenu,
   setOpenSubmenu,
   hasSubmenuOpen,
+  isMenuOpen,
 }: Props) {
   const tDL = useTranslations("HomePage.Header.DrivingLicenseSubmenu");
   const normalizedPath = pathname?.replace(/^\/(cs|en)/, "") ?? "";
@@ -172,7 +177,7 @@ export function MobileMenuPanel({
               );
             }
 
-            if (submenuKey === "info") {
+            if (submenuKey === "info" && infoSubmenu) {
               return (
                 <div key={href} className="mt-1">
                   <button
@@ -193,15 +198,33 @@ export function MobileMenuPanel({
                     aria-hidden={!isOpen}
                     className={isOpen ? "" : "pointer-events-none"}
                   >
-                    <div className="pl-3 mt-1 flex flex-col border-l-2 border-neutral-200">
-                      {importantLinks.map((item) => (
-                        <ImportantLinkItem
-                          key={item.label}
-                          item={item}
-                          variant="mobile"
-                          onClick={onClose}
-                        />
-                      ))}
+                    <div className="pl-3 mt-1 flex flex-col border-l-2 border-neutral-200 gap-4">
+                      <div className="flex flex-col gap-0.5">
+                        <span className="font-semibold text-neutral-800 text-base">
+                          {infoSubmenu.documents.title}
+                        </span>
+                        {infoSubmenu.documents.items.map((item) => (
+                          <ImportantLinkItem
+                            key={item.label}
+                            item={item}
+                            variant="mobile"
+                            onClick={onClose}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="font-semibold text-neutral-800 text-base">
+                          {infoSubmenu.links.title}
+                        </span>
+                        {infoSubmenu.links.items.map((item) => (
+                          <ImportantLinkItem
+                            key={item.label}
+                            item={item}
+                            variant="mobile"
+                            onClick={onClose}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -220,13 +243,18 @@ export function MobileMenuPanel({
             );
           })}
 
-          <Link
-            href={contact.href}
-            onClick={onClose}
-            className="mt-2 text-white bg-primary-500 hover:bg-primary-600 px-4 py-2.5 rounded-lg text-center font-semibold transition-colors"
-          >
-            {contact.title}
-          </Link>
+          <div className="mt-4 flex flex-col gap-4 md:flex-row md:h-12 md:items-stretch md:gap-3">
+            <Link
+              href={contact.href}
+              onClick={onClose}
+              className="w-full md:flex-1 md:max-w-96 md:h-full flex items-center justify-center text-white bg-primary-500 hover:bg-primary-600 px-5 py-2.5 rounded-lg text-center font-semibold transition-colors"
+            >
+              {contact.title}
+            </Link>
+            <div className="flex items-center md:h-full md:shrink-0">
+              <LangSwitch variant="pills" shouldClose={!isMenuOpen} className="h-full" />
+            </div>
+          </div>
         </nav>
       </div>
     </div>

@@ -5,11 +5,11 @@ export const NAVBAR_SCROLL = {
 } as const;
 
 export const MOBILE_MENU_ANIM = {
-  OPEN: { duration: 0.5, ease: "power2.inOut" as const },
+  OPEN: { duration: 0.5, ease: "power2.out" as const },
   CLOSE: { duration: 0.25, ease: "power2.out" as const },
 } as const;
 
 export const MOBILE_ACCORDION_ANIM = {
-  OPEN: { duration: 0.28, ease: "power2.out" as const },
-  CLOSE: { duration: 0.22, ease: "power2.out" as const },
+  OPEN: { duration: 0.3, ease: "power2.out" as const },
+  CLOSE: { duration: 0.3, ease: "power2.out" as const },
 } as const;

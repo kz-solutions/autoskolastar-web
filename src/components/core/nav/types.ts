@@ -5,6 +5,16 @@ export type ImportantLink = {
   download?: boolean;
 };
 
+export type InfoSubmenuSection = {
+  title: string;
+  items: ImportantLink[];
+};
+
+export type InfoSubmenu = {
+  documents: InfoSubmenuSection;
+  links: InfoSubmenuSection;
+};
+
 export type NavLink = {
   title: string;
   href: string;

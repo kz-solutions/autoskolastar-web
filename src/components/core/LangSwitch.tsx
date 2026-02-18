@@ -15,65 +15,121 @@ const FLAGS = {
   cs: CS,
 };
 
+const LOCALES: Locales[] = ["en", "cs"];
+
+type Variant = "dropdown" | "pills";
+
 const LangSwitch = ({
   shouldClose = false,
   className = "",
-}: { shouldClose?: boolean } & ClassName) => {
-  const [isOpen, setIsOpen] = useState(false);
+  variant = "dropdown",
+}: { shouldClose?: boolean; variant?: Variant } & ClassName) => {
   const router = useRouter();
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
   const locale = useLocale();
   const [selectedLang, setSelectedLang] = useState(locale);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleLanguageChange = (lang: string) => {
-    setSelectedLang(lang);
-    setIsOpen(false);
-    
-    startTransition(() => {
-      router.replace(pathname, { locale: lang });
-    });
-  };
-
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
+    setSelectedLang(locale);
+  }, [locale]);
 
   useEffect(() => {
     if (shouldClose) setIsOpen(false);
   }, [shouldClose]);
 
-  return (
-    <div ref={dropdownRef} className={`relative z-10 my-auto h-[33px] w-22 ${className}`}>
+  const handleLanguageChange = (lang: string) => {
+    if (lang === selectedLang) return;
+    setSelectedLang(lang);
+    if (variant === "dropdown") setIsOpen(false);
+    startTransition(() => {
+      router.replace(pathname, { locale: lang, scroll: false });
+    });
+  };
+
+  useEffect(() => {
+    if (variant !== "dropdown") return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, [variant, isOpen]);
+
+  if (variant === "pills") {
+    return (
       <div
-        className={`default-ease absolute h-[33px] overflow-hidden left-0 right-0 top-0 items-baseline flex flex-col rounded-2xl border border-gray-200 bg-white duration-300 ${!isOpen ? "shadow-xs" : "shadow-lg shadow-gray-700/50"}`}
+        className={`inline-flex h-full min-h-[2.25rem] rounded-full p-0.5 ${className}`}
+        role="radiogroup"
+        aria-label="Vyberte jazyk"
+      >
+        {LOCALES.map((loc) => {
+          const isSelected = selectedLang === loc;
+          return (
+            <button
+              key={loc}
+              type="button"
+              role="radio"
+              aria-checked={isSelected}
+              onClick={() => handleLanguageChange(loc)}
+              className={`inline-flex flex-1 min-w-0 items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium uppercase transition-colors duration-300 ${
+                isSelected
+                  ? "bg-primary-500 text-white shadow-sm"
+                  : "bg-transparent text-gray-800 hover:bg-primary-500/10"
+              }`}
+              aria-label={loc === "en" ? "English" : "Čeština"}
+            >
+              <Image
+                src={FLAGS[loc]}
+                alt=""
+                className="size-5 shrink-0 rounded-full shadow-sm"
+                width={20}
+                height={20}
+              />
+              <span>{loc}</span>
+              {isSelected && (
+                <span className="ml-0.5 text-white" aria-hidden>
+                  ✓
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={dropdownRef}
+      className={`relative z-10 my-auto h-[33px] w-22 ${className}`}
+    >
+      <div
+        className="absolute left-0 right-0 top-0 flex h-[33px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xs transition-[height,box-shadow] duration-300"
         style={{
           height: isOpen
             ? BUTTON_HEIGHT * Object.keys(FLAGS).length
             : BUTTON_HEIGHT,
+          boxShadow: isOpen ? "0 10px 15px -3px rgb(0 0 0 / 0.1)" : undefined,
         }}
       >
         <button
-          onClick={() => setIsOpen(!isOpen)}
           type="button"
+          onClick={() => setIsOpen(!isOpen)}
           className="relative flex w-full items-center gap-2 p-[3px]"
+          aria-expanded={isOpen}
+          aria-haspopup="listbox"
+          aria-label="Vyberte jazyk"
         >
           <Image
-            className="size-[25px] shadow-sm rounded-full"
+            className="size-[25px] rounded-full shadow-sm"
             src={FLAGS[selectedLang as Locales]}
             alt={selectedLang}
           />
@@ -86,19 +142,21 @@ const LangSwitch = ({
         </button>
         {Object.keys(FLAGS)
           .filter((item) => item !== selectedLang)
-          .map((locale) => (
+          .map((loc) => (
             <button
-              key={locale}
-              onClick={() => handleLanguageChange(locale)}
-              className={`flex h-[33px] shrink-0 items-center gap-2 p-[3px] w-full ${isOpen ? "" : "pointer-events-none"} border-gray-300`}
+              key={loc}
+              type="button"
+              role="option"
+              onClick={() => handleLanguageChange(loc)}
+              className={`flex h-[33px] w-full shrink-0 items-center gap-2 border-gray-300 p-[3px] ${!isOpen ? "pointer-events-none" : ""}`}
               tabIndex={isOpen ? 0 : -1}
             >
               <Image
-                src={FLAGS[locale as Locales]}
-                alt={locale}
-                className="size-[25px] shrink-0 shadow-sm rounded-full"
+                src={FLAGS[loc as Locales]}
+                alt={loc}
+                className="size-[25px] shrink-0 rounded-full shadow-sm"
               />
-              <span className={`font-medium uppercase`}>{locale}</span>
+              <span className="font-medium uppercase">{loc}</span>
             </button>
           ))}
       </div>

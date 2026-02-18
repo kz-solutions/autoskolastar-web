@@ -15,10 +15,11 @@ import { useMobileMenuPanel } from "@/hooks/useMobileMenuPanel";
 import { ROUTES } from "@/utils/routes";
 import {
   BurgerButton,
-  MobileMenuPanel,
   SubmenuController,
   parseImportantLinks,
+  parseInfoSubmenu,
 } from "@/components/core/nav";
+import { MobileMenuPanel } from "@/components/core/nav/MobileMenuPanel";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -55,6 +56,7 @@ const Navbar = () => {
   };
 
   const importantLinks = parseImportantLinks(t.raw("importantLinks"));
+  const infoSubmenu = parseInfoSubmenu(t.raw("InfoSubmenu"));
 
   useMobileMenu(isMobileMenuOpen || isMenuClosing, closeMobileMenu);
   useNavbarScroll(navbarRef, setShouldHide, scopeRef);
@@ -144,6 +146,7 @@ const Navbar = () => {
                 isVisible={!!visibleSubmenu}
                 close={() => setVisibleSubmenu(null)}
                 importantLinks={importantLinks}
+                infoSubmenu={infoSubmenu}
               />
             </div>
 
@@ -184,10 +187,12 @@ const Navbar = () => {
           contact={contact}
           pathname={pathname}
           importantLinks={importantLinks}
+          infoSubmenu={infoSubmenu}
           onClose={closeMobileMenu}
           openSubmenu={openMobileSubmenu}
           setOpenSubmenu={setOpenMobileSubmenu}
           hasSubmenuOpen={!!openMobileSubmenu}
+          isMenuOpen={isMobileMenuOpen}
         />
       </div>
     </div>

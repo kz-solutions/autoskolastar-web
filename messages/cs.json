@@ -196,6 +196,37 @@
           "download": true
         }
       ],
+      "InfoSubmenu": {
+        "documents": {
+          "title": "Dokumenty",
+          "items": [
+            {
+              "label": "Stáhnout přihlášku",
+              "href": "/pdf/zadost-o-prijeti-k-vyuce-a-vycviku-20240227-up.pdf",
+              "download": true
+            },
+            {
+              "label": "Lékařská prohlídka",
+              "href": "/informace/lekarska-prohlidka"
+            }
+          ]
+        },
+        "links": {
+          "title": "Odkazy",
+          "items": [
+            {
+              "label": "Ministerstvo dopravy",
+              "href": "https://www.mdcr.cz/",
+              "external": true
+            },
+            {
+              "label": "eTesty (MDČR)",
+              "href": "https://etesty.md.gov.cz/",
+              "external": true
+            }
+          ]
+        }
+      },
       "contact": "Kontakt",
       "about": "O nás",
       "getStarted": "Začít",

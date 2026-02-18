@@ -178,7 +178,7 @@ header {
 .burger-icon-menu04.active span:nth-of-type(1) {
     top: 20px;
     transform: rotate(-45deg);
-    transition: top .3s cubic-bezier(.36, -.42, .68, -.56), transform .3s .3s;
+    transition: top .3s, transform .3s .3s;
 }
 .burger-icon-menu04.active span:nth-of-type(2) {
     opacity: 0;
@@ -187,5 +187,5 @@ header {
 .burger-icon-menu04.active span:nth-of-type(3) {
     bottom: 20px;
     transform: rotate(45deg);
-    transition: bottom .3s cubic-bezier(.36, -.42, .68, -.56), transform .3s .3s;
+    transition: bottom .3s, transform .3s .3s;
 }

@@ -6,6 +6,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { GrLinkNext } from "react-icons/gr";
 
+import type { InfoSubmenu } from "./types";
+
 export interface SubmenuControllerProps {
   submenuKey: string | null;
   isVisible: boolean;
@@ -16,6 +18,7 @@ export interface SubmenuControllerProps {
     external?: boolean;
     download?: boolean;
   }>;
+  infoSubmenu?: InfoSubmenu | null;
 }
 
 const OPACITY = { 1: { opacity: 1 }, 0: { opacity: 0 } };
@@ -36,6 +39,7 @@ function getImportantLinkMeta(item: {
 const ImportantLinkItem = ({
   item,
   close,
+  variant = "default",
 }: {
   item: {
     label: string;
@@ -44,16 +48,18 @@ const ImportantLinkItem = ({
     download?: boolean;
   };
   close: () => void;
+  variant?: "default" | "subitem";
 }) => {
   const { href, disabled, external } = getImportantLinkMeta(item);
   const arrowRef = useRef<HTMLDivElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const isSubitem = variant === "subitem";
 
   useGSAP(() => {
     if (disabled) return;
     const el = arrowRef.current;
 
-    gsap.defaults({ duration: 0.3 });
+    gsap.defaults({ duration: 0.3, ease: "power2.out" });
     const tl = gsap.timeline({
       paused: true,
       onComplete: () => {
@@ -61,9 +67,9 @@ const ImportantLinkItem = ({
       },
     });
 
-    tl.to(el, { xPercent: 100, ease: "power2.out" })
+    tl.to(el, { xPercent: 100 })
       .set(el, { xPercent: -100 })
-      .to(el, { xPercent: 0, ease: "power1.out" });
+      .to(el, { xPercent: 0 });
 
     linkRef.current?.addEventListener("mouseenter", () => {
       if (!tl.isActive()) {
@@ -72,10 +78,17 @@ const ImportantLinkItem = ({
     });
   });
 
+  const labelClass = isSubitem
+    ? "lg:text-lg font-[300] text-slate-700"
+    : "font-[500] lg:text-xl text-slate-800";
+  const disabledLabelClass = isSubitem
+    ? "lg:text-lg font-[300] text-neutral-400"
+    : "font-[500] lg:text-xl text-neutral-400";
+
   if (disabled) {
     return (
-      <span className="group items-baseline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1 text-neutral-400 cursor-not-allowed">
-        <span className="font-[500] lg:text-xl inline-block">{item.label}</span>
+      <span className="group items-baseline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1 cursor-not-allowed">
+        <span className={`${disabledLabelClass} inline-block`}>{item.label}</span>
       </span>
     );
   }
@@ -90,9 +103,7 @@ const ImportantLinkItem = ({
       onClick={close}
       className="group items-baseline hover:underline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1"
     >
-      <span className="font-[500] lg:text-xl text-slate-800 inline-block">
-        {item.label}
-      </span>
+      <span className={`${labelClass} inline-block`}>{item.label}</span>
       <div className="w-fit h-fit overflow-hidden">
         <div ref={arrowRef}>
           <GrLinkNext />
@@ -102,11 +113,100 @@ const ImportantLinkItem = ({
   );
 };
 
+/** Stejná struktura jako DrivingLicencesSubmenu Group: nadpis se šipkou, pod ním odsazené položky bez šipky. */
+function InfoSubmenuView({
+  infoSubmenu,
+  close,
+}: {
+  infoSubmenu: InfoSubmenu;
+  close: () => void;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-x-12 w-fit">
+      <div className="flex flex-col">
+        <div className="px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1">
+          <span className="font-[500] lg:text-xl text-slate-800">
+            {infoSubmenu.documents.title}
+          </span>
+        </div>
+        <div>
+          {infoSubmenu.documents.items.map((item) => {
+            const { href, disabled, external } = getImportantLinkMeta(item);
+            if (disabled) {
+              return (
+                <span
+                  key={item.label}
+                  className="block w-fit px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1 lg:text-lg font-[300] text-neutral-400 cursor-not-allowed"
+                >
+                  {item.label}
+                </span>
+              );
+            }
+            return (
+              <a
+                key={item.label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
+                download={item.download}
+                onClick={close}
+                className="block w-fit px-1 xl:px-3 py-0.5 xl:py-1.5"
+              >
+                <span className="lg:text-lg font-[300] text-slate-700 hover:underline inline-block mb-1">
+                  {item.label}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <div className="px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1">
+          <span className="font-[500] lg:text-xl text-slate-800">
+            {infoSubmenu.links.title}
+          </span>
+        </div>
+        <div>
+          {infoSubmenu.links.items.map((item) => {
+            const { href, disabled, external } = getImportantLinkMeta(item);
+            if (disabled) {
+              return (
+                <span
+                  key={item.label}
+                  className="block w-fit px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1 lg:text-lg font-[300] text-neutral-400 cursor-not-allowed"
+                >
+                  {item.label}
+                </span>
+              );
+            }
+            return (
+              <a
+                key={item.label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
+                download={item.download}
+                onClick={close}
+                className="block w-fit px-1 xl:px-3 py-0.5 xl:py-1.5"
+              >
+                <span className="lg:text-lg font-[300] text-slate-700 hover:underline inline-block mb-1">
+                  {item.label}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const SubmenuController = ({
   submenuKey,
   isVisible,
   close,
   importantLinks = [],
+  infoSubmenu = null,
 }: SubmenuControllerProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -118,7 +218,7 @@ const SubmenuController = ({
       const opened = hasOpened.current;
       if (!el) return;
 
-      gsap.defaults({ duration: 0.5, ease: "power3.out" });
+      gsap.defaults({ duration: 0.5, ease: "power2.out" });
 
       if (opened && !isVisible) {
         gsap.to(el, HEIGHT["0"]);
@@ -162,12 +262,8 @@ const SubmenuController = ({
         {submenuKey === "drivingLicenses" && (
           <DrivingLicencesSubmenu close={close} />
         )}
-        {submenuKey === "info" && (
-          <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-3 w-fit">
-            {importantLinks.map((item) => (
-              <ImportantLinkItem key={item.label} item={item} close={close} />
-            ))}
-          </div>
+        {submenuKey === "info" && infoSubmenu && (
+          <InfoSubmenuView infoSubmenu={infoSubmenu} close={close} />
         )}
       </div>
     </div>
