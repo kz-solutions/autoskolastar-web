@@ -27,7 +27,7 @@ const Hero = () => {
     <section
       ref={ref}
       id="home"
-      className="w-screen h-screen px-0 md:px-6 lg:px-20! pb-0! md:pb-12! lg:pb-16! pt-0! md:pt-24! mb-12 md:mb-0 relative flex justify-center"
+      className="w-screen h-svh px-0 md:px-6 lg:px-20! pb-0! md:pb-12! lg:pb-16! pt-0! md:pt-24! mb-12 md:mb-0 relative flex justify-center"
     >
       <div className="h-full w-full md:rounded-3xl overflow-hidden relative flex items-center">
         <div className="relative h-full w-full md:rounded-3xl overflow-hidden">
