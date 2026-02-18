@@ -43,7 +43,7 @@ const LicenseCategories = () => {
   return (
     <section
       id="services"
-      className="bg-white px-10 lg:px-12 pb-20! md:pb-24! lg:pb-32! pt-0!"
+      className="bg-white px-8 lg:px-12 pb-20! md:pb-24! lg:pb-32! pt-0!"
     >
       <div className="max-w-[1320px] mx-auto w-full">
         {/* Header Section */}
