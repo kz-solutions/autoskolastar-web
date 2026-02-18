@@ -4,17 +4,110 @@ import React, { useRef } from "react";
 import DrivingLicencesSubmenu from "@/components/core/nav/DrivingLicencesSubmenu";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { GrLinkNext } from "react-icons/gr";
 
-interface Props {
+export interface SubmenuControllerProps {
   submenuKey: string | null;
   isVisible: boolean;
   close: () => void;
+  importantLinks?: Array<{
+    label: string;
+    href?: string;
+    external?: boolean;
+    download?: boolean;
+  }>;
 }
 
 const OPACITY = { 1: { opacity: 1 }, 0: { opacity: 0 } };
 const HEIGHT = { 1: { height: "auto" }, 0: { height: 0 } };
 
-const SubmenuController = ({ submenuKey, isVisible, close }: Props) => {
+function getImportantLinkMeta(item: {
+  label: string;
+  href?: string;
+  external?: boolean;
+  download?: boolean;
+}) {
+  const href = (item.href ?? "").trim();
+  const disabled = href.length === 0;
+  const external = item.external ?? href.startsWith("http");
+  return { href, disabled, external };
+}
+
+const ImportantLinkItem = ({
+  item,
+  close,
+}: {
+  item: {
+    label: string;
+    href?: string;
+    external?: boolean;
+    download?: boolean;
+  };
+  close: () => void;
+}) => {
+  const { href, disabled, external } = getImportantLinkMeta(item);
+  const arrowRef = useRef<HTMLDivElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+
+  useGSAP(() => {
+    if (disabled) return;
+    const el = arrowRef.current;
+
+    gsap.defaults({ duration: 0.3 });
+    const tl = gsap.timeline({
+      paused: true,
+      onComplete: () => {
+        gsap.set(el, { xPercent: 0 });
+      },
+    });
+
+    tl.to(el, { xPercent: 100, ease: "power2.out" })
+      .set(el, { xPercent: -100 })
+      .to(el, { xPercent: 0, ease: "power1.out" });
+
+    linkRef.current?.addEventListener("mouseenter", () => {
+      if (!tl.isActive()) {
+        tl.play(0);
+      }
+    });
+  });
+
+  if (disabled) {
+    return (
+      <span className="group items-baseline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1 text-neutral-400 cursor-not-allowed">
+        <span className="font-[500] lg:text-xl inline-block">{item.label}</span>
+      </span>
+    );
+  }
+
+  return (
+    <a
+      ref={linkRef}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      download={item.download}
+      onClick={close}
+      className="group items-baseline hover:underline w-fit flex gap-2 px-1 xl:px-3 py-0.5 xl:py-1.5 mb-1"
+    >
+      <span className="font-[500] lg:text-xl text-slate-800 inline-block">
+        {item.label}
+      </span>
+      <div className="w-fit h-fit overflow-hidden">
+        <div ref={arrowRef}>
+          <GrLinkNext />
+        </div>
+      </div>
+    </a>
+  );
+};
+
+const SubmenuController = ({
+  submenuKey,
+  isVisible,
+  close,
+  importantLinks = [],
+}: SubmenuControllerProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const hasOpened = useRef(false);
@@ -69,7 +162,13 @@ const SubmenuController = ({ submenuKey, isVisible, close }: Props) => {
         {submenuKey === "drivingLicenses" && (
           <DrivingLicencesSubmenu close={close} />
         )}
-        {submenuKey === "info" && <div>TEST 2</div>}
+        {submenuKey === "info" && (
+          <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-3 w-fit">
+            {importantLinks.map((item) => (
+              <ImportantLinkItem key={item.label} item={item} close={close} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
