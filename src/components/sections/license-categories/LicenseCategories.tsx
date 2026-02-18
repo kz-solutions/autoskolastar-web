@@ -43,13 +43,13 @@ const LicenseCategories = () => {
   return (
     <section
       id="services"
-      className="bg-white px-4 sm:px-6 lg:px-12 py-32 pt-0!"
+      className="bg-white px-10 lg:px-12 pb-20! md:pb-24! lg:pb-32! pt-0!"
     >
       <div className="max-w-[1320px] mx-auto w-full">
         {/* Header Section */}
-        <header className="text-center mb-24">
+        <header className="text-center mb-8 sm:12 lg:mb-24">
           {/* Mobile */}
-          <div className="lg:hidden mb-6">
+          <div className="lg:hidden mb-2 lg:mb-6">
             <div className="flex items-center justify-center space-x-3">
               <StarIcon className="text-primary-500 w-4 h-4" />
               <span className="text-sm text-primary-500 uppercase tracking-widest">
@@ -62,7 +62,7 @@ const LicenseCategories = () => {
           {/* Desktop */}
           <Label text={t("slogan")} />
 
-          <h2 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-6 sm:mb-8 px-4">
+          <h2 className="text-heading_lg sm:text-heading_xl text-neutral-800 mb-4 lg:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
                 <span className="text-primary-500">{chunks}</span>
@@ -89,7 +89,7 @@ const LicenseCategories = () => {
                 return (
                   <div
                     key={category.title}
-                    className="p-6 flex flex-col h-full"
+                    className="sm:py-2 md:py-6 flex flex-col h-full"
                   >
                     <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
                       <Image
@@ -124,7 +124,7 @@ const LicenseCategories = () => {
 
           {/* Center-left - 1 card */}
           <div className="lg:col-span-3 flex">
-            <div className="p-6 w-full flex flex-col h-full">
+            <div className="sm:py-2 md:py-6 w-full flex flex-col h-full">
               <div className="bg-neutral-100 rounded-lg h-80 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_a.png"
@@ -161,7 +161,7 @@ const LicenseCategories = () => {
 
           {/* Center-right - 1 card */}
           <div className="lg:col-span-3 flex">
-            <div className="p-6 w-full flex flex-col h-full">
+            <div className="sm:py-2 md:py-6 w-full flex flex-col h-full">
               <div className="bg-neutral-100 rounded-lg h-80 w-full mb-4 overflow-hidden">
                 <Image
                   src="/images/drivers-licence/category_b.png"
@@ -208,7 +208,7 @@ const LicenseCategories = () => {
                 return (
                   <div
                     key={category.title}
-                    className="p-6 flex flex-col h-full"
+                    className="sm:py-2 md:py-6 flex flex-col h-full"
                   >
                     <div className="bg-neutral-100 rounded-lg h-32 w-full mb-4 overflow-hidden">
                       <Image
