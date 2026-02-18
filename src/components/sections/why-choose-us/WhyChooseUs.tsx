@@ -51,12 +51,12 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="bg-[#141414] px-4 sm:px-6 lg:px-12 py-32"
+      className="bg-[#141414] px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10!"
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
-        <header className="text-center mb-24">
-          <div className="lg:hidden mb-6">
+        <header className="text-center mb-8 sm:12 lg:mb-24">
+          <div className="lg:hidden mb-2 lg:mb-6">
             <div className="flex items-center justify-center space-x-3">
               <StarIcon className="text-primary-400 w-4 h-4" />
               <span className="text-sm text-primary-400 uppercase tracking-widest">
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
           {/* Desktop */}
           <Label color={"primary-400"} text={t("slogan")} />
 
-          <h2 className="text-heading_md sm:text-heading_lg text-gray-200 mb-6 sm:mb-8 px-4">
+          <h2 className="text-heading_md sm:text-heading_lg text-gray-200 mb-4 lg:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
                 <span className="text-primary-400">{chunks}</span>
@@ -94,7 +94,7 @@ const WhyChooseUs = () => {
               {/* Text Content */}
               <div
                 data-reason-text={index}
-                className={`space-y-4 sm:space-y-6 px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+                className={`space-y-4 sm:space-y-6 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
                 <div className="text-primary-400 text-3xl sm:text-4xl font-bold">
                   {feature.number}
@@ -110,7 +110,7 @@ const WhyChooseUs = () => {
               {/* Feature Image */}
               <div
                 data-reason-image={index}
-                className={`px-4 lg:px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
+                className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}
               >
                 <div className="bg-neutral-800 rounded-lg h-64 sm:h-72 lg:h-80 w-full relative overflow-hidden shadow-lg">
                   <Image
