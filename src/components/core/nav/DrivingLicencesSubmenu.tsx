@@ -77,13 +77,7 @@ const Group = ({ title, items, href, close }: Group) => {
   );
 };
 
-const DrivingLicencesSubmenu = ({
-  close,
-  variant = "desktop",
-}: {
-  close: () => void;
-  variant?: "desktop" | "mobile";
-}) => {
+const DrivingLicencesSubmenu = ({ close }: { close: () => void }) => {
   const t = useTranslations("HomePage.Header.DrivingLicenseSubmenu");
 
   const groups = {
@@ -122,13 +116,8 @@ const DrivingLicencesSubmenu = ({
     },
   };
 
-  const gridClass =
-    variant === "mobile"
-      ? "flex flex-col gap-6"
-      : "grid grid-cols-4 gap-x-12 w-fit";
-
   return (
-    <div className={gridClass}>
+    <div className="grid grid-cols-4 gap-x-12 w-fit">
       <Group {...groups.a} />
       <Group {...groups.b} />
       <Group {...groups.professional} />
