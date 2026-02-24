@@ -153,7 +153,7 @@ const MainCategory = ({
       <Link
         href={t(`${namespace[side]}.href`)}
         prefetch={true}
-        className="w-1/2 col-span-3 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center mt-auto whitespace-nowrap"
+        className="w-1/2 min-w-min col-span-3 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center mt-auto whitespace-nowrap"
       >
         {t("findOutMore")}
       </Link>
@@ -199,7 +199,7 @@ const CategoryCard = ({
       <Link
         href={category.href}
         prefetch={true}
-        className="w-1/2 bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center whitespace-nowrap"
+        className="w-1/2 min-w-min bg-primary-600 text-white py-2 px-4 rounded-xl hover:bg-primary-700 transition-colors text-sm font-medium inline-block text-center whitespace-nowrap"
       >
         {t("findOutMore")}
       </Link>
