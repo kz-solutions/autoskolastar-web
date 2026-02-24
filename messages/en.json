@@ -197,6 +197,37 @@
           "download": true
         }
       ],
+      "InfoSubmenu": {
+        "documents": {
+          "title": "Documents",
+          "items": [
+            {
+              "label": "Download application",
+              "href": "/pdf/zadost-o-prijeti-k-vyuce-a-vycviku-20240227-up.pdf",
+              "download": true
+            },
+            {
+              "label": "Medical examination",
+              "href": "/informace/lekarska-prohlidka"
+            }
+          ]
+        },
+        "links": {
+          "title": "Links",
+          "items": [
+            {
+              "label": "Ministry of Transport",
+              "href": "https://www.mdcr.cz/",
+              "external": true
+            },
+            {
+              "label": "eTests (MoT CZ)",
+              "href": "https://etesty.md.gov.cz/",
+              "external": true
+            }
+          ]
+        }
+      },
       "contact": "Contact",
       "about": "About",
       "getStarted": "Get Started",

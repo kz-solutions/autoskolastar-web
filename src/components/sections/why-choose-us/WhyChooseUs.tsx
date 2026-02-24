@@ -51,11 +51,11 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="bg-[#141414] px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10!"
+      className="px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10! overflow-x-clip"
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
-        <header className="text-center mb-8 sm:12 lg:mb-24">
+        <header className="text-center mb-8 sm:mb-12 lg:mb-24">
           <div className="lg:hidden mb-2 lg:mb-6">
             <div className="flex items-center justify-center space-x-3">
               <StarIcon className="text-primary-400 w-4 h-4" />
@@ -67,17 +67,17 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Desktop */}
-          <Label color={"primary-400"} text={t("slogan")} />
+          <Label text={t("slogan")} />
 
-          <h2 className="text-heading_md sm:text-heading_lg text-gray-200 mb-4 lg:mb-8 px-4">
+          <h2 className="text-heading_md sm:text-heading_lg text-gray-800 mb-4 lg:mb-8 px-4">
             {t.rich("title", {
               primary: (chunks) => (
-                <span className="text-primary-400">{chunks}</span>
+                <span className="text-primary-500">{chunks}</span>
               ),
             })}
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
             {t("description")}
           </p>
         </header>
@@ -96,13 +96,13 @@ const WhyChooseUs = () => {
                 data-reason-text={index}
                 className={`space-y-4 sm:space-y-6 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
-                <div className="text-primary-400 text-3xl sm:text-4xl font-bold">
+                <div className="text-primary-500 text-3xl sm:text-4xl font-bold">
                   {feature.number}
                 </div>
-                <h3 className="text-heading_sm sm:text-heading_md text-gray-200 leading-tight">
+                <h3 className="text-heading_sm sm:text-heading_md text-gray-700 leading-tight">
                   {feature.title}
                 </h3>
-                <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-500 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -119,6 +119,7 @@ const WhyChooseUs = () => {
                     fill
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800/30 to-gray-800/60 opacity-30" />
                 </div>
               </div>
             </div>
