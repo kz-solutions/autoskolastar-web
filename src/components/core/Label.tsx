@@ -8,7 +8,7 @@ const DURATION = 0.7;
 const Label = ({
   text,
   color = "primary-500",
-  starBgTWColor = "transparent",
+  starBgTWColor = "bg-transparent",
 }: {
   text: string;
   color?: string;
@@ -44,19 +44,19 @@ const Label = ({
   return (
     <div ref={ref} className="hidden lg:block relative w-full mb-6">
       <div
-        className={`absolute z-10 left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-0 label-star w-12 bg-${starBgTWColor}`}
+        className={`absolute z-10 left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-0 label-star w-12 ${starBgTWColor}`}
       >
         <StarIcon className={`text-${color} w-6 h-6`} />
       </div>
       <div
-        className={`absolute z-10 right-0 top-1/2 -translate-y-1/2 translate-x-4 opacity-0 label-star w-12 bg-${starBgTWColor}`}
+        className={`absolute z-10 right-0 top-1/2 -translate-y-1/2 translate-x-4 opacity-0 label-star w-12 ${starBgTWColor}`}
       >
         <StarIcon className={`text-${color} w-6 h-6 ml-auto`} />
       </div>
 
       <div className="flex items-center justify-center">
         <hr
-          className={`"w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
+          className={`"w-64 lg:w-96 h-0.5 text-${color} opacity-20 label-divider`}
         />
         <span
           className={`label-text opacity-0 translate-y-full text-sm text-${color} uppercase tracking-widest mx-8 lg:mx-16`}
@@ -64,7 +64,7 @@ const Label = ({
           {text || ""}
         </span>
         <hr
-          className={`w-64 lg:w-96 h-0.5 bg-${color} opacity-20 label-divider`}
+          className={`w-64 lg:w-96 h-0.5 text-${color} opacity-20 label-divider`}
         />
       </div>
     </div>

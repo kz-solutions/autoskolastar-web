@@ -45,21 +45,28 @@ const StepsToGettingALicense = () => {
   );
 
   return (
-    <section id="steps" className={"bg-gray-100 px-4 sm:px-6 lg:px-12"}>
+    <section
+      id="steps"
+      className={
+        "bg-gray-100 px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10!"
+      }
+    >
       <header>
-        <h2 className={"text-heading_lg text-neutral-800 text-center"}>
+        <h2 className={"text-heading_lg text-neutral-800 text-center px-4"}>
           {t.rich("title", {
             primary: (chunks) => (
               <span className={"text-primary-500"}>{chunks}</span>
             ),
           })}
         </h2>
-        <p className={"text-md text-neutral-600 text-center"}>{t("perex")}</p>
+        <p className={"text-md text-neutral-600 text-center px-4"}>
+          {t("perex")}
+        </p>
       </header>
       <div
         ref={ref}
         className={
-          "grid lg:grid-cols-[1fr_min-content_1fr_min-content_1fr_min-content_1fr] gap-x-4 lg:gap-x-12 gap-y-8 max-w-[1320px]"
+          "grid lg:grid-cols-[1fr_min-content_1fr_min-content_1fr_min-content_1fr] gap-x-4 lg:gap-x-12 gap-y-6 max-w-[1320px]"
         }
       >
         {steps.map(
@@ -87,7 +94,11 @@ const StepsToGettingALicense = () => {
                     </h3>
                   </div>
 
-                  <p className={"place-self-end-safe text-md text-neutral-600"}>
+                  <p
+                    className={
+                      "lg:place-self-end-safe text-md text-neutral-600"
+                    }
+                  >
                     {description}
                   </p>
                 </div>
