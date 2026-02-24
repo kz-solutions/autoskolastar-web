@@ -20,7 +20,7 @@ export function BurgerButton({
   return (
     <button
       onClick={onClick}
-      className="lg:hidden text-neutral-700 hover:text-primary-500 transition-colors w-11 h-11 flex items-center justify-center"
+      className="lg:hidden text-neutral-700 hover:text-primary-500 transition-colors w-11 h-11 flex items-center justify-center ml-3"
       aria-expanded={isOpen}
       aria-controls="mobile-nav"
       aria-disabled={isBusy}
