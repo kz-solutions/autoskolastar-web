@@ -51,11 +51,11 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10!"
+      className="px-8 lg:px-12 max-lg:pb-20! md:max-lg:pb-24! max-lg:pt-16! md:max-lg:pt-20! max-md:gap-y-10! overflow-x-clip"
     >
       <div className="max-w-[1320px] mx-auto">
         {/* Header Section */}
-        <header className="text-center mb-8 sm:12 lg:mb-24">
+        <header className="text-center mb-8 sm:mb-12 lg:mb-24">
           <div className="lg:hidden mb-2 lg:mb-6">
             <div className="flex items-center justify-center space-x-3">
               <StarIcon className="text-primary-400 w-4 h-4" />
