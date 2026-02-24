@@ -103,6 +103,7 @@ const Navbar = () => {
               <Link
                 href="/"
                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+                onMouseEnter={() => setVisibleSubmenu(null)}
               >
                 <StarIcon className="text-primary-500 w-8 h-8" />
                 <span className="text-xl font-semibold text-neutral-800">
