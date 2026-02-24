@@ -221,7 +221,7 @@ const CategorySection = ({
   };
   const imageMap = {
     left: [
-      "/images/drivers-licence/caterogy_d.png",
+      "/images/drivers-licence/category_d.png",
       "/images/drivers-licence/category_c.png",
     ],
     right: [
