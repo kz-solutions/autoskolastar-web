@@ -66,7 +66,7 @@ const LangSwitch = ({
   if (variant === "pills") {
     return (
       <div
-        className={`inline-flex h-full min-h-[2.25rem] rounded-full p-0.5 ${className}`}
+        className={`inline-flex h-full min-h-[2.25rem] rounded-full p-0.5 gap-1 ${className}`}
         role="radiogroup"
         aria-label="Vyberte jazyk"
       >
@@ -82,7 +82,7 @@ const LangSwitch = ({
               className={`inline-flex flex-1 min-w-0 items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium uppercase transition-colors duration-300 ${
                 isSelected
                   ? "bg-primary-500 text-white shadow-sm"
-                  : "bg-transparent text-gray-800 hover:bg-primary-500/10"
+                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
               }`}
               aria-label={loc === "en" ? "English" : "Čeština"}
             >

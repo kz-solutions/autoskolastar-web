@@ -241,7 +241,7 @@ export function MobileMenuPanel({
             );
           })}
 
-          <div className="mt-4 flex flex-col gap-4 md:flex-row md:h-12 md:items-stretch md:gap-3">
+          <div className="mt-4 flex flex-col gap-2 md:flex-row md:h-12 md:items-stretch md:gap-2">
             <Link
               href={contact.href}
               onClick={onClose}
