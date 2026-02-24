@@ -119,6 +119,7 @@ const WhyChooseUs = () => {
                     fill
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 opacity-50" />
                 </div>
               </div>
             </div>
