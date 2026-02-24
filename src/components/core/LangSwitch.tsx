@@ -147,6 +147,7 @@ const LangSwitch = ({
               key={loc}
               type="button"
               role="option"
+              aria-selected={false}
               onClick={() => handleLanguageChange(loc)}
               className={`flex h-[33px] w-full shrink-0 items-center gap-2 border-gray-300 p-[3px] ${!isOpen ? "pointer-events-none" : ""}`}
               tabIndex={isOpen ? 0 : -1}

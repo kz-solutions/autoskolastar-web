@@ -16,7 +16,6 @@ import { ROUTES } from "@/utils/routes";
 import {
   BurgerButton,
   SubmenuController,
-  parseImportantLinks,
   parseInfoSubmenu,
 } from "@/components/core/nav";
 import { MobileMenuPanel } from "@/components/core/nav/MobileMenuPanel";
@@ -55,7 +54,6 @@ const Navbar = () => {
     setOpenMobileSubmenu(null);
   };
 
-  const importantLinks = parseImportantLinks(t.raw("importantLinks"));
   const infoSubmenu = parseInfoSubmenu(t.raw("InfoSubmenu"));
 
   useMobileMenu(isMobileMenuOpen || isMenuClosing, closeMobileMenu);
@@ -145,7 +143,6 @@ const Navbar = () => {
                 submenuKey={visibleSubmenu}
                 isVisible={!!visibleSubmenu}
                 close={() => setVisibleSubmenu(null)}
-                importantLinks={importantLinks}
                 infoSubmenu={infoSubmenu}
               />
             </div>
@@ -186,7 +183,6 @@ const Navbar = () => {
           links={links}
           contact={contact}
           pathname={pathname}
-          importantLinks={importantLinks}
           infoSubmenu={infoSubmenu}
           onClose={closeMobileMenu}
           openSubmenu={openMobileSubmenu}

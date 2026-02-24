@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/utils/routes";
 import LangSwitch from "@/components/core/LangSwitch";
 import { ImportantLinkItem } from "./ImportantLinkItem";
-import type { NavLink, ImportantLink, InfoSubmenu, MobileSubmenuKey } from "./types";
+import type { NavLink, InfoSubmenu, MobileSubmenuKey } from "./types";
 
 const ChevronDown = ({ open }: { open: boolean }) => (
   <svg
@@ -31,7 +31,6 @@ type Props = {
   links: NavLink[];
   contact: { title: string; href: string };
   pathname: string | null;
-  importantLinks: ImportantLink[];
   infoSubmenu: InfoSubmenu | null;
   onClose: () => void;
   openSubmenu: MobileSubmenuKey;
@@ -47,7 +46,6 @@ export function MobileMenuPanel({
   links,
   contact,
   pathname,
-  importantLinks,
   infoSubmenu,
   onClose,
   openSubmenu,
