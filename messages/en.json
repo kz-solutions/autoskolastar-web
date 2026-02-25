@@ -18,6 +18,15 @@
     "title": "Ups… tady cesta končí.",
     "subtitle": "Vypadá to, že jste zahnuli špatným směrem. Požadovaná stránka neexistuje nebo byla přesunuta."
   },
+  "InfoPage": {
+    "title": "Information",
+    "intro": "Documents to download and useful links for driving license applicants. All in one place.",
+    "documentsLead": "Forms and documents required for registration and training.",
+    "linksLead": "Official Ministry of Transport pages and tests.",
+    "ctaDownload": "Download",
+    "ctaReadMore": "Find out more",
+    "ctaOpen": "Open"
+  },
   "HomePage": {
     "priceTemplate": "{price, number} CZK",
     "LicenseCategories": {
@@ -208,7 +217,8 @@
             },
             {
               "label": "Medical examination",
-              "href": "/informace/lekarska-prohlidka"
+              "href": "/informace/lekarska-prohlidka",
+              "download": true
             }
           ]
         },
