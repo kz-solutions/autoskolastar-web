@@ -18,6 +18,15 @@
     "title": "Ups… tady cesta končí.",
     "subtitle": "Vypadá to, že jste zahnuli špatným směrem. Požadovaná stránka neexistuje nebo byla přesunuta."
   },
+  "InfoPage": {
+    "title": "Informace",
+    "intro": "Dokumenty ke stažení a užitečné odkazy pro uchazeče o řidičský průkaz. Vše na jednom místě.",
+    "documentsLead": "Formuláře a dokumenty potřebné k přihlášení a k výuce.",
+    "linksLead": "Oficiální stránky a testy Ministerstva dopravy.",
+    "ctaDownload": "Stáhnout",
+    "ctaReadMore": "Zjistit více",
+    "ctaOpen": "Otevřít"
+  },
   "HomePage": {
     "priceTemplate": "{price, number} Kč",
     "LicenseCategories": {
@@ -207,7 +216,8 @@
             },
             {
               "label": "Lékařská prohlídka",
-              "href": "/informace/lekarska-prohlidka"
+              "href": "/informace/lekarska-prohlidka",
+              "download": true
             }
           ]
         },
