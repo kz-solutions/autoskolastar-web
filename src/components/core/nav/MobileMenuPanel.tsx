@@ -8,9 +8,9 @@ import LangSwitch from "@/components/core/LangSwitch";
 import { ImportantLinkItem } from "./ImportantLinkItem";
 import type { NavLink, InfoSubmenu, MobileSubmenuKey } from "./types";
 
-const ChevronDown = ({ open }: { open: boolean }) => (
+const ChevronDown = ({ open, className = "" }: { open: boolean; className?: string }) => (
   <svg
-    className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+    className={`w-5 h-5 shrink-0 transition-transform duration-300 mr-2 ${open ? "rotate-180" : ""} ${className}`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -254,6 +254,13 @@ export function MobileMenuPanel({
             </div>
           </div>
         </nav>
+        {/* Klik do prázdného místa dole pod kontaktem a jazyky zavře menu */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex-1 min-h-[80px] w-full cursor-default"
+          aria-label="Zavřít menu"
+        />
       </div>
     </div>
   );
